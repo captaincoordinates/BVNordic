@@ -1,0 +1,9 @@
+Outstanding Changes
+- add dog icon to dog trails 
+- add lodge icon (these can be found on POI_2018_2 or something like this file) 
+- add viewpoint at valley map (these can be found on POI_2018_2 or something like this file) 
+- tidy and add legend to map for POI and trails grouped by colours
+- add trail marker (square,diamond, circle ) with colour to the names of the trails
+- add all names to the map and if possible distances as this may be more relevant than numbers
+- smooth the sharp corners on the trails 14,15 and 22
+- experiment with LiDAR / DEM data and provide some examples
