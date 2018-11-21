@@ -1,9 +1,16 @@
 Outstanding Changes
-- add dog icon to dog trails 
-- add lodge icon (these can be found on POI_2018_2 or something like this file) 
-- add viewpoint at valley map (these can be found on POI_2018_2 or something like this file) 
+- add dog icon to dog trails
+	- what is the expectation here - that the icon shows next to the trail name? We can't have an icon as part of the label, and label positions change as we zoom / pan the map, so we may have to enforce rules about where the labels display on the trail to ensure a dog icon displays next to it. This could be problematic as it may prevent the labels from fitting to the curve of the trail like they currently do. I think this will require that we only show trail numbers, not names, in the labels
+- add lodge icon
+	- added, though size and positioning relative to toilet and emergency kit icons needs fixing
+x add viewpoint at valley map
+	- done
 - tidy and add legend to map for POI and trails grouped by colours
-- add trail marker (square,diamond, circle ) with colour to the names of the trails
+- add trail marker (square, diamond, circle) with colour to the names of the trails
 - add all names to the map and if possible distances as this may be more relevant than numbers
+	- still trying to understand how to do this. Labels are set to not be scale-dependent but QGIS is clearly still showing / hiding them based on scale. As above, we may have to use trail numbers only as names will be too crowded
 - smooth the sharp corners on the trails 14,15 and 22
+	- why - if the data says there's a sharp corner why would we not trust it?
 - experiment with LiDAR / DEM data and provide some examples
+- incorporate new .gpx tracks
+	- unclear what is expected here
