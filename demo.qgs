@@ -57,10 +57,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>-14169461.81504338420927525</xmin>
-      <ymin>7306895.11630913056433201</ymin>
-      <xmax>-14156070.86673894338309765</xmax>
-      <ymax>7315103.30349189043045044</ymax>
+      <xmin>-14173398.30690694972872734</xmin>
+      <ymin>7306173.13963546417653561</ymin>
+      <xmax>-14160007.35860250890254974</xmax>
+      <ymax>7314381.32681822404265404</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -1270,7 +1270,7 @@
     </Composition>
   </Composer>
   <Composer title="2018-11-24.01" visible="1">
-    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{e0ca2b06-1c2d-4cc5-8fd3-8411cce7ff76}" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{3bd6d2f3-2193-4a6d-abf6-7c79ccc30d7e}" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="1" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -1287,11 +1287,59 @@
         </layer>
       </symbol>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="7306895.11630913056433201" xmin="-14169461.81504338420927525" ymax="7316254.87948386091738939" xmax="-14156070.86673894338309765"/>
+        <Extent ymin="7306895.11630913056433201" xmin="-14169461.81504338420927525" ymax="7316556.93976929690688848" xmax="-14156070.86673894338309765"/>
         <LayerSet/>
         <Grid/>
+        <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{04e63ea8-0721-4799-b936-30d0f1e42001}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
+          <lineStyle>
+            <symbol alpha="1" clip_to_extent="1" type="line" name="">
+              <layer pass="0" class="SimpleLine" locked="0">
+                <prop k="capstyle" v="square"/>
+                <prop k="customdash" v="5;2"/>
+                <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="customdash_unit" v="MM"/>
+                <prop k="draw_inside_polygon" v="0"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="line_color" v="0,0,0,255"/>
+                <prop k="line_style" v="solid"/>
+                <prop k="line_width" v="0"/>
+                <prop k="line_width_unit" v="MM"/>
+                <prop k="offset" v="0"/>
+                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="use_custom_dash" v="0"/>
+                <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              </layer>
+            </symbol>
+          </lineStyle>
+          <markerStyle>
+            <symbol alpha="1" clip_to_extent="1" type="marker" name="">
+              <layer pass="0" class="SimpleMarker" locked="0">
+                <prop k="angle" v="0"/>
+                <prop k="color" v="0,0,0,255"/>
+                <prop k="horizontal_anchor_point" v="1"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="name" v="circle"/>
+                <prop k="offset" v="0,0"/>
+                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="outline_color" v="0,0,0,255"/>
+                <prop k="outline_style" v="solid"/>
+                <prop k="outline_width" v="0"/>
+                <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="outline_width_unit" v="MM"/>
+                <prop k="scale_method" v="diameter"/>
+                <prop k="size" v="2"/>
+                <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="size_unit" v="MM"/>
+                <prop k="vertical_anchor_point" v="1"/>
+              </layer>
+            </symbol>
+          </markerStyle>
+          <annotationFontProperties description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
+        </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="3" page="1" id="" lastValidViewScaleFactor="1.97158" positionMode="0" positionLock="false" x="3" y="3" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="289" outlineWidth="0.3" excludeFromExports="0" uuid="{e0ca2b06-1c2d-4cc5-8fd3-8411cce7ff76}" height="202" itemRotation="0" frame="false" pagex="3">
+        <ComposerItem pagey="-14.6081" page="1" id="" lastValidViewScaleFactor="1.97158" positionMode="0" positionLock="false" x="-9.5" y="-14.6081" visibility="1" zValue="4" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="316" outlineWidth="0.3" excludeFromExports="0" uuid="{3bd6d2f3-2193-4a6d-abf6-7c79ccc30d7e}" height="228" itemRotation="0" frame="false" pagex="-9.5">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -2265,17 +2313,17 @@ def my_form_open(dialog, layer, feature):
               <prop k="color" v="19,129,13,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="accommodation/accommodation_house.svg"/>
-              <prop k="offset" v="0,-2"/>
+              <prop k="offset" v="0.5,-0.56000000000000005"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="Pixel"/>
+              <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="Pixel"/>
+              <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="25"/>
+              <prop k="size" v="7"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="Pixel"/>
+              <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
             </layer>
           </symbol>
@@ -2470,8 +2518,8 @@ def my_form_open(dialog, layer, feature):
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{57615533-e584-416c-95f8-c965d820bfa8}">
-          <rule description="Trail Junctions" filter="&quot;TYPE&quot; = 'Trail Junction North'" key="{888f2778-4fea-42c8-be1c-9213b0590fa0}">
+        <rules key="{7de3cca1-744e-42e3-81e2-b5c565f5f76d}">
+          <rule description="Trail Junctions" filter="&quot;TYPE&quot; = 'Trail Junction North'" key="{59e672b7-e390-4a4b-8c20-8dbe5ab0d0c6}">
             <settings>
               <text-style fontItalic="1" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="NAME" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2485,7 +2533,7 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Trail Junction South" filter="&quot;TYPE&quot; = 'Trail Junction South'" key="{d09baf0e-74e7-436d-add3-402840a4cf92}">
+          <rule description="Trail Junction South" filter="&quot;TYPE&quot; = 'Trail Junction South'" key="{6154f759-2dea-4bf8-b9a9-d4c3d696a8ec}">
             <settings>
               <text-style fontItalic="1" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="NAME" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2499,7 +2547,7 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Viewpoints" filter="&quot;TYPE&quot; = 'Viewpoint'" key="{ec048010-5acf-4244-9a0c-6ebb1053b4ad}">
+          <rule description="Viewpoints" filter="&quot;TYPE&quot; = 'Viewpoint'" key="{6705638a-ce92-4724-b955-88ad49e0c99b}">
             <settings>
               <text-style fontItalic="0" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -5485,13 +5533,13 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/fieldName" value="NAME"/>
         <property key="labeling/fitInPolygonOnly" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
-        <property key="labeling/fontFamily" value="MS Shell Dlg 2"/>
+        <property key="labeling/fontFamily" value="Sans Serif"/>
         <property key="labeling/fontItalic" value="false"/>
         <property key="labeling/fontLetterSpacing" value="0"/>
         <property key="labeling/fontLimitPixelSize" value="false"/>
         <property key="labeling/fontMaxPixelSize" value="10000"/>
         <property key="labeling/fontMinPixelSize" value="3"/>
-        <property key="labeling/fontSize" value="7.5"/>
+        <property key="labeling/fontSize" value="6"/>
         <property key="labeling/fontSizeInMapUnits" value="false"/>
         <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/fontStrikeout" value="false"/>
@@ -5510,11 +5558,11 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/maxNumLabels" value="2000"/>
         <property key="labeling/mergeLines" value="false"/>
         <property key="labeling/minFeatureSize" value="0"/>
-        <property key="labeling/multilineAlign" value="4294967295"/>
+        <property key="labeling/multilineAlign" value="1"/>
         <property key="labeling/multilineHeight" value="1"/>
         <property key="labeling/namedStyle" value="Normal"/>
         <property key="labeling/obstacle" value="true"/>
-        <property key="labeling/obstacleFactor" value="1"/>
+        <property key="labeling/obstacleFactor" value="0.94"/>
         <property key="labeling/obstacleType" value="0"/>
         <property key="labeling/offsetType" value="0"/>
         <property key="labeling/placeDirectionSymbol" value="0"/>
