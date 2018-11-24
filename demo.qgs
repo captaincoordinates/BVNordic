@@ -57,10 +57,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>-14168088.30376854166388512</xmin>
-      <ymin>7307135.77520035300403833</ymin>
-      <xmax>-14157564.70745939761400223</xmax>
-      <ymax>7315343.96238311287015676</ymax>
+      <xmin>-14169461.81504338420927525</xmin>
+      <ymin>7306895.11630913056433201</ymin>
+      <xmax>-14156070.86673894338309765</xmax>
+      <ymax>7315103.30349189043045044</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -268,7 +268,7 @@
             <styleFont description="MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0" style=""/>
           </style>
         </styles>
-        <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="88.1" outlineWidth="0.3" excludeFromExports="0" uuid="{1d057a9a-692e-4a90-8c4a-a1597156c59c}" height="141.8" itemRotation="0" frame="false" pagex="0">
+        <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="94.8844" outlineWidth="0.3" excludeFromExports="0" uuid="{1d057a9a-692e-4a90-8c4a-a1597156c59c}" height="219.315" itemRotation="0" frame="false" pagex="0">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -850,7 +850,7 @@
             <customproperties/>
           </layer-tree-layer>
         </layer-tree-group>
-        <ComposerItem pagey="78.5198" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="233.4" y="78.5198" visibility="1" zValue="6" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="62.6" outlineWidth="0.3" excludeFromExports="0" uuid="{d4533630-3aa9-4788-a759-5ed277b5be2b}" height="131.48" itemRotation="0" frame="false" pagex="233.4">
+        <ComposerItem pagey="78.5198" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="233.4" y="78.5198" visibility="1" zValue="6" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="83.9859" outlineWidth="0.3" excludeFromExports="0" uuid="{d4533630-3aa9-4788-a759-5ed277b5be2b}" height="158.615" itemRotation="0" frame="false" pagex="233.4">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -1261,6 +1261,37 @@
         </ComposerMapOverview>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
         <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="3.38531" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="841" outlineWidth="0.3" excludeFromExports="0" uuid="{e651bf89-e4c7-4c2e-8deb-df49e6f21426}" height="594" itemRotation="0" frame="false" pagex="0">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerMap>
+      <customproperties/>
+    </Composition>
+  </Composer>
+  <Composer title="2018-11-24.01" visible="1">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{e0ca2b06-1c2d-4cc5-8fd3-8411cce7ff76}" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
+      <symbol alpha="1" clip_to_extent="1" type="fill" name="">
+        <layer pass="0" class="SimpleFill" locked="0">
+          <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="color" v="255,255,255,255"/>
+          <prop k="joinstyle" v="miter"/>
+          <prop k="offset" v="0,0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="outline_color" v="0,0,0,255"/>
+          <prop k="outline_style" v="no"/>
+          <prop k="outline_width" v="0.26"/>
+          <prop k="outline_width_unit" v="MM"/>
+          <prop k="style" v="solid"/>
+        </layer>
+      </symbol>
+      <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
+        <Extent ymin="7306895.11630913056433201" xmin="-14169461.81504338420927525" ymax="7316254.87948386091738939" xmax="-14156070.86673894338309765"/>
+        <LayerSet/>
+        <Grid/>
+        <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
+        <ComposerItem pagey="3" page="1" id="" lastValidViewScaleFactor="1.97158" positionMode="0" positionLock="false" x="3" y="3" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="289" outlineWidth="0.3" excludeFromExports="0" uuid="{e0ca2b06-1c2d-4cc5-8fd3-8411cce7ff76}" height="202" itemRotation="0" frame="false" pagex="3">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -4030,38 +4061,38 @@ def my_form_open(dialog, layer, feature):
       </edittypes>
       <renderer-v2 type="nullSymbol"/>
       <labeling type="rule-based">
-        <rules key="{de07c83a-5472-4660-bbde-a3523551b539}">
-          <rule description="Easy Non-Dog Trails" filter="&quot;Trails_DOG_FRIEND&quot; = 'No' AND (&quot;Trails_DIFFICULTY&quot; IS NULL OR &quot;Trails_DIFFICULTY&quot; = 'Easy')" key="{0693eaef-acb6-4431-a722-34f1c521fd71}">
+        <rules key="{491b17cd-b595-4cc9-be48-d4ee4e12d22d}">
+          <rule description="Easy Non-Dog Trails" filter="&quot;Trails_DOG_FRIEND&quot; = 'No' AND (&quot;Trails_DIFFICULTY&quot; IS NULL OR &quot;Trails_DIFFICULTY&quot; = 'Easy')" key="{f2e52bec-bc93-42b3-aa9c-d3214b046757}">
             <settings>
-              <text-style fontItalic="0" fontFamily="Sans Serif" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7" fieldName="TRAIL_ID" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="0" fontFamily="Sans Serif" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="5" fieldName="TRAIL_ID" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="3" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
               <text-buffer bufferSize="0.4" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="0,0,0,255" bufferDraw="0" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="1" bufferJoinStyle="128"/>
-              <background shapeSizeUnits="1" shapeType="3" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="114,202,97,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="1" shapeBorderWidthUnits="1" shapeSizeX="0.5" shapeSizeY="0.5" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0.2" shapeBorderColor="0,0,0,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
+              <background shapeSizeUnits="1" shapeType="3" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="114,202,97,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="1" shapeBorderWidthUnits="1" shapeSizeX="0.4" shapeSizeY="0.4" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0.2" shapeBorderColor="0,0,0,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
               <placement repeatDistanceUnit="1" placement="0" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="10" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Intermediate Non-Dog Trails" filter="&quot;Trails_DOG_FRIEND&quot; = 'No' AND &quot;Trails_DIFFICULTY&quot; = 'Intermediate'" key="{52c0fe09-ac44-4311-b1ce-e1983266815e}">
+          <rule description="Intermediate Non-Dog Trails" filter="&quot;Trails_DOG_FRIEND&quot; = 'No' AND &quot;Trails_DIFFICULTY&quot; = 'Intermediate'" key="{05fb2071-3ce9-49e4-8b00-07e5aee17238}">
             <settings>
-              <text-style fontItalic="0" fontFamily="Sans Serif" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7" fieldName="TRAIL_ID" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="0" fontFamily="Sans Serif" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="5" fieldName="TRAIL_ID" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="3" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
               <text-buffer bufferSize="0.3" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="0,0,0,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="1" bufferJoinStyle="128"/>
-              <background shapeSizeUnits="1" shapeType="1" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="27,123,196,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="1" shapeBorderWidthUnits="1" shapeSizeX="0.5" shapeSizeY="0.5" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0.2" shapeBorderColor="0,0,0,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
+              <background shapeSizeUnits="1" shapeType="1" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="27,123,196,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="1" shapeBorderWidthUnits="1" shapeSizeX="0.4" shapeSizeY="0.4" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0.2" shapeBorderColor="0,0,0,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
               <placement repeatDistanceUnit="1" placement="0" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="10" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Dog Trails" filter="&quot;Trails_DOG_FRIEND&quot; = 'Yes'" key="{dade662d-a01e-4000-a4de-99bd6c1f53bf}">
+          <rule description="Dog Trails" filter="&quot;Trails_DOG_FRIEND&quot; = 'Yes'" key="{efd1f23c-faec-4ae0-8268-16bfac7945a1}">
             <settings>
-              <text-style fontItalic="0" fontFamily="Sans Serif" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="TRAIL_ID" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="0" fontFamily="Sans Serif" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="5" fieldName="TRAIL_ID" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="3" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
@@ -4073,9 +4104,9 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Advanced Non-Dog Trails" filter="&quot;Trails_DOG_FRIEND&quot; = 'No' AND &quot;Trails_DIFFICULTY&quot; = 'Advanced'" key="{6ebe3e80-1ba3-4091-86c2-586b0c9584ce}">
+          <rule description="Advanced Non-Dog Trails" filter="&quot;Trails_DOG_FRIEND&quot; = 'No' AND &quot;Trails_DIFFICULTY&quot; = 'Advanced'" key="{682c080b-9c1b-499a-ac13-202ab7333f82}">
             <settings>
-              <text-style fontItalic="0" fontFamily="Sans Serif" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7" fieldName="TRAIL_ID" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="0" fontFamily="Sans Serif" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="5" fieldName="TRAIL_ID" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="3" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
@@ -4541,10 +4572,10 @@ def my_form_open(dialog, layer, feature):
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{bfeb323a-5cdc-472e-a10e-829dd5321ef8}">
-          <rule description="Easy" filter="&quot;Difficulty&quot; = 'Easy'" key="{8dbc83da-3cc9-47c8-8cc3-d7a6c0818e10}">
+        <rules key="{dd0baa5c-c413-4f60-87e4-479d5edd236e}">
+          <rule description="Easy" filter="&quot;Difficulty&quot; = 'Easy'" key="{092e0a05-c5d3-46e0-b914-a96393e88592}">
             <settings>
-              <text-style fontItalic="0" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="51,160,44,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="Trail_name" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="1" fontFamily="Sans Serif" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="51,160,44,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="6" fieldName="Trail_name" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="4294967295" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
@@ -4556,9 +4587,9 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Intermediate" filter="&quot;Difficulty&quot; = 'Intermediate'" key="{e2107872-d0f8-49d3-adbc-080d023182ec}">
+          <rule description="Intermediate" filter="&quot;Difficulty&quot; = 'Intermediate'" key="{1e259c8e-6876-43c6-b154-1d9619f92ec4}">
             <settings>
-              <text-style fontItalic="0" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="31,120,180,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="Trail_name" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="0" fontFamily="Sans Serif" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="31,120,180,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="6" fieldName="Trail_name" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="4294967295" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
@@ -4570,7 +4601,7 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Advanced" filter="&quot;Difficulty&quot; = 'Advanced'" active="0" key="{63b1b731-6a64-4837-81d8-0009b6ef3cbd}">
+          <rule description="Advanced" filter="&quot;Difficulty&quot; = 'Advanced'" active="0" key="{b05acc86-e32f-4176-950a-23dbca60d772}">
             <settings>
               <text-style fontItalic="0" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="Trail_name" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
