@@ -8,10 +8,10 @@
     <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="POI_2018_copy20181106204310841" source="/home/tchristian/source/BVNordic/POI_2018.shp" name="POI">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="TrailsPoint20181124105152741" source="/home/tchristian/source/BVNordic/TrailsPoint.shp" name="TrailsPoint">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="LodgeArea_201820181106201326918" source="/home/tchristian/source/BVNordic/LodgeArea_2018.shp" name="LodgeArea">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="LodgeArea_201820181106201326918" source="/home/tchristian/source/BVNordic/LodgeArea_2018.shp" name="LodgeArea">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="TrailsPoint20181124105152741" source="/home/tchristian/source/BVNordic/TrailsPoint.shp" name="TrailsPoint">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Trails_201820181106201327000" source="/home/tchristian/source/BVNordic/Trails_2018.shp" name="Trails">
@@ -57,10 +57,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>-14167319.58864792436361313</xmin>
-      <ymin>7307280.37493753153830767</ymin>
-      <xmax>-14157905.2392510399222374</xmax>
-      <ymax>7315177.54051592666655779</ymax>
+      <xmin>-14168088.30376854166388512</xmin>
+      <ymin>7307135.77520035300403833</ymin>
+      <xmax>-14157564.70745939761400223</xmax>
+      <ymax>7315343.96238311287015676</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -92,6 +92,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_View20181117165456732"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_201820181120181537943"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_copy20181106204310841"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Nodes20181124140947307"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="WaterPoly_201820181106201327005"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:6338" srcDatumTransform="-1" destDatumTransform="-1" layerid="Smoothed20181115205337123"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_copy20181124112151598"/>
@@ -116,12 +117,14 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_track_points20181116131055455"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_routes20181116124852897"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_routes20181116124850914"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip20181124140837687"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_tracks20181116124854602"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_waypoints20181116124850987"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_track_points20181116124852915"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_tracks20181116124852932"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_route_points20181116124854543"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="TrailsPoint20181124105152741"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="interp5_500020181124141606595"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_route_points20181116124852875"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_routes20181116124816078"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_220181117165859018"/>
@@ -135,6 +138,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_View20181117165456795"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_tracks20181116124850963"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_copy20181106205315780"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip20181124124824647"/>
     </layer_coordinate_transform_info>
   </mapcanvas>
   <layer-tree-canvas>
@@ -161,14 +165,14 @@
         <legendlayerfile isInOverview="0" layerid="POI_2018_copy20181106204310841" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="TrailsPoint" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="TrailsPoint20181124105152741" visible="1"/>
-      </filegroup>
-    </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="LodgeArea" showFeatureCount="0">
       <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="LodgeArea_201820181106201326918" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="TrailsPoint" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="TrailsPoint20181124105152741" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Trails" showFeatureCount="0">
@@ -2230,7 +2234,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="color" v="19,129,13,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="accommodation/accommodation_house.svg"/>
-              <prop k="offset" v="0,0"/>
+              <prop k="offset" v="0,-2"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="Pixel"/>
               <prop k="outline_color" v="0,0,0,255"/>
@@ -2238,7 +2242,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="Pixel"/>
               <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="30"/>
+              <prop k="size" v="25"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="Pixel"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -2435,8 +2439,8 @@ def my_form_open(dialog, layer, feature):
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{c1bf4ebb-bc72-4568-b720-13997493f00f}">
-          <rule description="Trail Junctions" filter="&quot;TYPE&quot; = 'Trail Junction North'" key="{a5f45a73-280c-4474-8108-d21122b0a6e6}">
+        <rules key="{57615533-e584-416c-95f8-c965d820bfa8}">
+          <rule description="Trail Junctions" filter="&quot;TYPE&quot; = 'Trail Junction North'" key="{888f2778-4fea-42c8-be1c-9213b0590fa0}">
             <settings>
               <text-style fontItalic="1" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="NAME" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2450,7 +2454,7 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Trail Junction South" filter="&quot;TYPE&quot; = 'Trail Junction South'" key="{b2e41ba0-8922-4a22-8a4e-54d9236a87c2}">
+          <rule description="Trail Junction South" filter="&quot;TYPE&quot; = 'Trail Junction South'" key="{d09baf0e-74e7-436d-add3-402840a4cf92}">
             <settings>
               <text-style fontItalic="1" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="NAME" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2464,7 +2468,7 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Viewpoints" filter="&quot;TYPE&quot; = 'Viewpoint'" key="{549ec550-4575-4c9a-a94c-ba88aeaf7035}">
+          <rule description="Viewpoints" filter="&quot;TYPE&quot; = 'Viewpoint'" key="{ec048010-5acf-4244-9a0c-6ebb1053b4ad}">
             <settings>
               <text-style fontItalic="0" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -4537,8 +4541,8 @@ def my_form_open(dialog, layer, feature):
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{6ea02c25-3e11-4988-a1ae-b7f50dedfb3b}">
-          <rule description="Easy" filter="&quot;Difficulty&quot; = 'Easy'" active="0" key="{61b316a1-12ca-478e-aadb-81bf7057e5e0}">
+        <rules key="{bfeb323a-5cdc-472e-a10e-829dd5321ef8}">
+          <rule description="Easy" filter="&quot;Difficulty&quot; = 'Easy'" key="{8dbc83da-3cc9-47c8-8cc3-d7a6c0818e10}">
             <settings>
               <text-style fontItalic="0" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="51,160,44,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="Trail_name" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -4552,7 +4556,7 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Intermediate" filter="&quot;Difficulty&quot; = 'Intermediate'" active="0" key="{9716914a-eb51-40d7-aa47-5a3d991ee586}">
+          <rule description="Intermediate" filter="&quot;Difficulty&quot; = 'Intermediate'" key="{e2107872-d0f8-49d3-adbc-080d023182ec}">
             <settings>
               <text-style fontItalic="0" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="31,120,180,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="Trail_name" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -4566,7 +4570,7 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Advanced" filter="&quot;Difficulty&quot; = 'Advanced'" active="0" key="{7fc5573b-a00c-4e6c-85aa-371132333ad9}">
+          <rule description="Advanced" filter="&quot;Difficulty&quot; = 'Advanced'" active="0" key="{63b1b731-6a64-4837-81d8-0009b6ef3cbd}">
             <settings>
               <text-style fontItalic="0" fontFamily="Ubuntu" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="Trail_name" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
