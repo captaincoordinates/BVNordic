@@ -14,7 +14,7 @@
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="TrailsPoint20181124105152741" source="C:/Users/Tom/Source/BVNordic/TrailsPoint.shp" name="Trail Labels">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Trails_201820181106201327000" source="C:/Users/Tom/Source/BVNordic/Trails_2018.shp" name="Trails">
+    <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="Trails_201820181106201327000" source="C:/Users/Tom/Source/BVNordic/Trails_2018.shp" name="Trails">
       <customproperties>
         <property key="expandedLegendNodes" value="{b4baac2d-ed5c-4f74-8e33-ad5af30718f4}"/>
       </customproperties>
@@ -36,10 +36,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>-14167698.37104064226150513</xmin>
-      <ymin>7307386.36260383296757936</ymin>
-      <xmax>-14158527.90889641270041466</xmax>
-      <ymax>7315078.94495042879134417</ymax>
+      <xmin>-14166745.98216878063976765</xmin>
+      <ymin>7307271.15453343372792006</ymin>
+      <xmax>-14157267.55435850284993649</xmax>
+      <ymax>7315222.07187086995691061</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -57,73 +57,74 @@
     </destinationsrs>
     <rendermaptile>0</rendermaptile>
     <layer_coordinate_transform_info>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_route_points20181116124850883"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_2018_smooth20181115205244506"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_waypoints20181116124852948"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_routes20181116124854565"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_waypoints20181116124854619"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:6338" srcDatumTransform="-1" destDatumTransform="-1" layerid="Smoothed20181115205432669"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_routes20181116124811571"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="new_old_biathlon_2018_10_18__waypoints20181112190151273"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_2018_smooth20181120183243372"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_copy20181124122529284"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_Emergency_Kit_copy20181106204814858"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_View20181117165456732"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_201820181120181537943"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip20181127204800995"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_copy20181106204310841"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Nodes20181124140947307"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="WaterPoly_201820181106201327005"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:6338" srcDatumTransform="-1" destDatumTransform="-1" layerid="Smoothed20181115205337123"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_copy20181124112151598"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip_Simplified20181127205132315"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="new_old_biathlon_2018_10_18__tracks20181112190151244"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_View20181120183326037"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Other_Roads_201820181116130217042"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Other_Roads_201820181116130217111"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_2018_copy20181120173622811"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_track_points20181116124854583"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_201820181106201326997"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Other_Roads_201820181116130217157"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Other_Roads_201820181106201326968"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="OpenLayers_plugin_layer20181106202024831"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:6338" srcDatumTransform="-1" destDatumTransform="-1" layerid="Smoothed20181115205557859"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_201820181106201327000"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_tracks20181124103041597"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Lit_Trails20181113211421365"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="LodgeArea_201820181106201326918"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_routes20181116131055442"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip_Simplified20181127205312605"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_waypoints20181116131055485"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_tracks20181116131055471"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_track_points20181116131055455"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_routes20181116124852897"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_routes20181116124850914"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip20181124140837687"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_tracks20181116124854602"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_waypoints20181116124850987"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_copy20181106204310841"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_track_points20181116124852915"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_tracks20181116124852932"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_route_points20181116124854543"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="TrailsPoint20181124105152741"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="interp5_500020181124141606595"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_track20181127183921913"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_route_points20181116124852875"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_routes20181116124816078"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="memory_20181127204841292"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_220181117165859018"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_routes20181116124813960"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Nodes20181124140947307"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_201820181106201326997"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_201820181120180900944"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="new_old_biathlon20181112185639464"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_waypoints20181116124854619"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_tracks20181116124854602"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_201820181120181537943"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Other_Roads_201820181106201326968"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_route_points20181116131055423"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_201820181127202808172"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_copy20181124122529284"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_track_points20181116124850937"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_2018_smooth20181120183243372"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Other_Roads_201820181116130217111"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="new_old_biathlon_2018_10_18__routes20181112190151263"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_View20181117165456639"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_View20181117165456795"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_tracks20181116124850963"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_copy20181106205315780"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="new_old_biathlon_2018_10_18__waypoints20181112190151273"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_201820181106201327000"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_track_points20181116124854583"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_routes20181116124850914"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_201820181127202808172"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="LodgeArea_201820181106201326918"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_routes20181116124811571"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip20181124140837687"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_routes20181116124816078"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_tracks20181116124852932"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="WaterPoly_201820181106201327005"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_waypoints20181116124850987"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_waypoints20181116124852948"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_waypoints20181116131055485"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_View20181117165456732"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_tracks20181124103041597"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip20181124124824647"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip_Simplified20181127205312605"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_2018_copy20181120173622811"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:6338" srcDatumTransform="-1" destDatumTransform="-1" layerid="Smoothed20181115205557859"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:6338" srcDatumTransform="-1" destDatumTransform="-1" layerid="Smoothed20181115205337123"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="new_old_biathlon20181112185639464"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_View20181120183326037"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Lit_Trails20181113211421365"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_Emergency_Kit_copy20181106204814858"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_View20181117165456639"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_copy20181106205315780"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_route_points20181116124854543"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_220181117165859018"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_route_points20181116124852875"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_routes20181116124813960"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="interp5_500020181124141606595"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_routes20181116131055442"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_track20181127183921913"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Other_Roads_201820181116130217157"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_track_points20181116131055455"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_tracks20181116124850963"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip_Simplified20181127205132315"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:6338" srcDatumTransform="-1" destDatumTransform="-1" layerid="Smoothed20181115205432669"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="wild_dog_2018_11_10_tracks20181116131055471"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_135921_routes20181116124852897"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="memory_20181127204841292"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_125111_route_points20181116124850883"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="new_old_biathlon_2018_10_18__tracks20181112190151244"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Other_Roads_201820181116130217042"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Track_2018_11_15_151713_routes20181116124854565"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip20181127204800995"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_2018_smooth20181115205244506"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="interp1_300IDWStructure20181127213306558"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_copy20181124112151598"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="TrailsPoint20181124105152741"/>
     </layer_coordinate_transform_info>
   </mapcanvas>
   <layer-tree-canvas>
@@ -154,8 +155,8 @@
         <legendlayerfile isInOverview="0" layerid="TrailsPoint20181124105152741" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Trails" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Trails" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
         <legendlayerfile isInOverview="0" layerid="Trails_201820181106201327000" visible="1"/>
       </filegroup>
     </legendlayer>
@@ -1297,6 +1298,12 @@
   </Composer>
   <projectlayers>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <extent>
+        <xmin>610961.482421875</xmin>
+        <ymin>6063022.95819091796875</ymin>
+        <xmax>618630.34185791038908064</xmax>
+        <ymax>6069636.93999999947845936</ymax>
+      </extent>
       <id>5m_Contour_Clip_Simplified20181127205312605</id>
       <datasource>./5m_Contour_Clip_Simplified.shp</datasource>
       <keywordList>
@@ -1329,9 +1336,6 @@
         <edittype widgetv2type="TextEdit" name="GM_TYPE">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="ELEVATION">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="DGN_LEVEL">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
@@ -1344,8 +1348,15 @@
         <edittype widgetv2type="TextEdit" name="Shape_Leng">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="ELEVATION">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
       </edittypes>
-      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
+      <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
+        <rules key="{5a877e3e-077a-4c34-b783-8a25191a3b3a}">
+          <rule description="Contour lines not divisible by 50" filter="&quot;ELEVATION&quot; % 50 != 0" key="{978707d8-6173-47b5-8d65-f20d5b4afb68}" symbol="0" label="Minor Contours"/>
+          <rule description="Coutours divisible by 50" filter="&quot;ELEVATION&quot; % 50 = 0" key="{d46fbbe6-4d62-4eaa-8094-5aba7eedd10a}" symbol="1" label="Major Contours"/>
+        </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="line" name="0">
             <layer pass="0" class="SimpleLine" locked="0">
@@ -1355,7 +1366,26 @@
               <prop k="customdash_unit" v="MM"/>
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="211,211,211,255"/>
+              <prop k="line_color" v="233,233,233,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="0.15"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="1">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="170,170,170,255"/>
               <prop k="line_style" v="solid"/>
               <prop k="line_width" v="0.15"/>
               <prop k="line_width_unit" v="MM"/>
@@ -1367,8 +1397,6 @@
             </layer>
           </symbol>
         </symbols>
-        <rotation/>
-        <sizescale scalemethod="diameter"/>
       </renderer-v2>
       <labeling type="simple"/>
       <customproperties>
@@ -1391,31 +1419,32 @@
         <property key="labeling/bufferTransp" value="0"/>
         <property key="labeling/centroidInside" value="false"/>
         <property key="labeling/centroidWhole" value="false"/>
+        <property key="labeling/dataDefined/Show" value="1~~1~~&quot;ELEVATION&quot;  % 50 = 0~~"/>
         <property key="labeling/decimals" value="3"/>
         <property key="labeling/displayAll" value="false"/>
         <property key="labeling/dist" value="0"/>
         <property key="labeling/distInMapUnits" value="false"/>
         <property key="labeling/distMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/drawLabels" value="false"/>
-        <property key="labeling/enabled" value="false"/>
-        <property key="labeling/fieldName" value=""/>
+        <property key="labeling/drawLabels" value="true"/>
+        <property key="labeling/enabled" value="true"/>
+        <property key="labeling/fieldName" value="ELEVATION"/>
         <property key="labeling/fitInPolygonOnly" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="MS Shell Dlg 2"/>
-        <property key="labeling/fontItalic" value="false"/>
+        <property key="labeling/fontItalic" value="true"/>
         <property key="labeling/fontLetterSpacing" value="0"/>
         <property key="labeling/fontLimitPixelSize" value="false"/>
         <property key="labeling/fontMaxPixelSize" value="10000"/>
         <property key="labeling/fontMinPixelSize" value="3"/>
-        <property key="labeling/fontSize" value="7.5"/>
-        <property key="labeling/fontSizeInMapUnits" value="false"/>
+        <property key="labeling/fontSize" value="50"/>
+        <property key="labeling/fontSizeInMapUnits" value="true"/>
         <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/fontStrikeout" value="false"/>
         <property key="labeling/fontUnderline" value="false"/>
         <property key="labeling/fontWeight" value="50"/>
         <property key="labeling/fontWordSpacing" value="0"/>
         <property key="labeling/formatNumbers" value="false"/>
-        <property key="labeling/isExpression" value="true"/>
+        <property key="labeling/isExpression" value="false"/>
         <property key="labeling/labelOffsetInMapUnits" value="true"/>
         <property key="labeling/labelOffsetMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/labelPerPart" value="false"/>
@@ -1428,14 +1457,14 @@
         <property key="labeling/minFeatureSize" value="0"/>
         <property key="labeling/multilineAlign" value="4294967295"/>
         <property key="labeling/multilineHeight" value="1"/>
-        <property key="labeling/namedStyle" value="Normal"/>
+        <property key="labeling/namedStyle" value="Italic"/>
         <property key="labeling/obstacle" value="true"/>
         <property key="labeling/obstacleFactor" value="1"/>
         <property key="labeling/obstacleType" value="0"/>
         <property key="labeling/offsetType" value="0"/>
         <property key="labeling/placeDirectionSymbol" value="0"/>
-        <property key="labeling/placement" value="2"/>
-        <property key="labeling/placementFlags" value="10"/>
+        <property key="labeling/placement" value="3"/>
+        <property key="labeling/placementFlags" value="15"/>
         <property key="labeling/plussign" value="false"/>
         <property key="labeling/predefinedPositionOrder" value="TR,TL,BR,BL,R,L,TSR,BSR"/>
         <property key="labeling/preserveRotation" value="true"/>
@@ -1501,9 +1530,9 @@
         <property key="labeling/shapeType" value="0"/>
         <property key="labeling/substitutions" value="&lt;substitutions/>"/>
         <property key="labeling/textColorA" value="255"/>
-        <property key="labeling/textColorB" value="0"/>
-        <property key="labeling/textColorG" value="0"/>
-        <property key="labeling/textColorR" value="0"/>
+        <property key="labeling/textColorB" value="211"/>
+        <property key="labeling/textColorG" value="211"/>
+        <property key="labeling/textColorR" value="211"/>
         <property key="labeling/textTransp" value="0"/>
         <property key="labeling/upsidedownLabels" value="0"/>
         <property key="labeling/useSubstitutions" value="false"/>
@@ -1571,20 +1600,20 @@
       <aliases>
         <alias field="LAYER" index="0" name=""/>
         <alias field="GM_TYPE" index="1" name=""/>
-        <alias field="ELEVATION" index="2" name=""/>
-        <alias field="DGN_LEVEL" index="3" name=""/>
-        <alias field="Label_20m" index="4" name=""/>
-        <alias field="CalC" index="5" name=""/>
-        <alias field="Shape_Leng" index="6" name=""/>
+        <alias field="DGN_LEVEL" index="2" name=""/>
+        <alias field="Label_20m" index="3" name=""/>
+        <alias field="CalC" index="4" name=""/>
+        <alias field="Shape_Leng" index="5" name=""/>
+        <alias field="ELEVATION" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="73486664">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;ELEVATION&quot;" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="LAYER"/>
           <column width="-1" hidden="0" type="field" name="GM_TYPE"/>
-          <column width="-1" hidden="0" type="field" name="ELEVATION"/>
+          <column width="227" hidden="0" type="field" name="ELEVATION"/>
           <column width="-1" hidden="0" type="field" name="DGN_LEVEL"/>
           <column width="-1" hidden="0" type="field" name="Label_20m"/>
           <column width="-1" hidden="0" type="field" name="CalC"/>
@@ -1615,7 +1644,11 @@ def my_form_open(dialog, layer, feature):
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
-      <widgets/>
+      <widgets>
+        <widget name="ELEVATION">
+          <config/>
+        </widget>
+      </widgets>
       <conditionalstyles>
         <rowstyles/>
         <fieldstyles/>
@@ -1623,13 +1656,13 @@ def my_form_open(dialog, layer, feature):
       <defaults>
         <default field="LAYER" expression=""/>
         <default field="GM_TYPE" expression=""/>
-        <default field="ELEVATION" expression=""/>
         <default field="DGN_LEVEL" expression=""/>
         <default field="Label_20m" expression=""/>
         <default field="CalC" expression=""/>
         <default field="Shape_Leng" expression=""/>
+        <default field="ELEVATION" expression=""/>
       </defaults>
-      <previewExpression></previewExpression>
+      <previewExpression>COALESCE( "LAYER", '&lt;NULL>' )</previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
@@ -2072,7 +2105,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="joinstyle" v="bevel"/>
               <prop k="line_color" v="0,0,0,255"/>
               <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="0.35"/>
+              <prop k="line_width" v="0.3"/>
               <prop k="line_width_unit" v="MM"/>
               <prop k="offset" v="0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -2116,7 +2149,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/fieldName" value="ROADIDENTI"/>
         <property key="labeling/fitInPolygonOnly" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
-        <property key="labeling/fontFamily" value="Ubuntu"/>
+        <property key="labeling/fontFamily" value="MS Shell Dlg 2"/>
         <property key="labeling/fontItalic" value="true"/>
         <property key="labeling/fontLetterSpacing" value="0"/>
         <property key="labeling/fontLimitPixelSize" value="false"/>
@@ -2150,12 +2183,12 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/offsetType" value="0"/>
         <property key="labeling/placeDirectionSymbol" value="0"/>
         <property key="labeling/placement" value="3"/>
-        <property key="labeling/placementFlags" value="14"/>
+        <property key="labeling/placementFlags" value="9"/>
         <property key="labeling/plussign" value="false"/>
         <property key="labeling/predefinedPositionOrder" value="TR,TL,BR,BL,R,L,TSR,BSR"/>
         <property key="labeling/preserveRotation" value="true"/>
         <property key="labeling/previewBkgrdColor" value="#ffffff"/>
-        <property key="labeling/priority" value="5"/>
+        <property key="labeling/priority" value="0"/>
         <property key="labeling/quadOffset" value="4"/>
         <property key="labeling/repeatDistance" value="0"/>
         <property key="labeling/repeatDistanceMapUnitScale" value="0,0,0,0,0,0"/>
@@ -2231,7 +2264,7 @@ def my_form_open(dialog, layer, feature):
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
-      <layerTransparency>60</layerTransparency>
+      <layerTransparency>25</layerTransparency>
       <displayfield>NAME</displayfield>
       <label>0</label>
       <labelattributes>
@@ -2468,84 +2501,117 @@ def my_form_open(dialog, layer, feature):
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
         <rules key="{cf9aadab-c864-47a9-b0eb-8eeea4f4bd6f}">
-          <rule filter="&quot;TYPE&quot; = 'Emergency Kit' AND &quot;NAME&quot; IS NULL" key="{1d1eec5c-4742-47e2-a5fe-3878f1b92be1}" symbol="0" label="Emergency Kit Background"/>
-          <rule filter="&quot;TYPE&quot; = 'Emergency Kit' AND &quot;NAME&quot; = 'Lodge Emergency Kit'" key="{4518dcff-3546-4de9-bf78-fec55e4a28b6}" symbol="1" label="Lodge Emergency Kit Background"/>
-          <rule filter="&quot;TYPE&quot; = 'Emergency Kit' AND &quot;NAME&quot; IS NULL" key="{a590edc5-75d2-428c-9e34-daf55710d30d}" symbol="2" label="Emergency Kit"/>
-          <rule filter="&quot;TYPE&quot; = 'Emergency Kit' AND &quot;NAME&quot; = 'Lodge Emergency Kit'" key="{24a11340-24ee-4f40-b82b-dd7eb8f8b741}" symbol="3" label="Lodge Emergency Kit"/>
-          <rule filter="&quot;TYPE&quot; = 'Toilets' AND &quot;NAME&quot; IS NULL" key="{bc86f884-404f-435b-88da-0af8ace5ee60}" symbol="4" label="Toilets Background"/>
-          <rule filter="&quot;TYPE&quot; = 'Toilets' AND &quot;NAME&quot; = 'Lodge Toilets'" key="{ad2ff332-1ec8-47b3-b59b-bf9de3d98157}" symbol="5" label="Lodge Toilets Background"/>
-          <rule filter="&quot;TYPE&quot; = 'Toilets' AND &quot;NAME&quot; IS NULL" key="{640689d0-69da-4752-bc4c-7f0525b6ae69}" symbol="6" label="Toilets"/>
-          <rule filter="&quot;TYPE&quot; = 'Toilets' AND &quot;NAME&quot; = 'Lodge Toilets'" key="{156174b7-cfb3-4a39-b973-cd6352e60892}" symbol="7" label="Lodge Toilets"/>
-          <rule filter="&quot;TYPE&quot; = 'Parking'" key="{4e2093fd-3d09-46a5-b226-2244032600c3}" symbol="8" label="Parking Background"/>
-          <rule filter="&quot;TYPE&quot; = 'Parking'" key="{5e750fb8-1943-437e-a124-4afa161c7ee2}" symbol="9" label="Parking"/>
-          <rule checkstate="0" filter="&quot;TYPE&quot; IN ('Trail Junction South', 'Trail Junction North')" key="{f26766b7-230c-4c2e-9350-11b9687e4475}" symbol="10" label="Trail Junctions"/>
-          <rule filter="&quot;TYPE&quot; = 'Viewpoint'" key="{434ea887-57af-4407-8e57-ec72322f65dc}" symbol="11" label="View Point"/>
-          <rule filter="&quot;TYPE&quot; = 'Lodge'" key="{d6bbcafe-1fce-4a96-990e-f2c8a97a2d9c}" symbol="12" label="Lodge"/>
+          <rule filter="&quot;TYPE&quot; = 'Emergency Kit' AND &quot;NAME&quot; IS NULL" key="{a590edc5-75d2-428c-9e34-daf55710d30d}" symbol="0" label="Emergency Kit"/>
+          <rule filter="&quot;TYPE&quot; = 'Emergency Kit' AND &quot;NAME&quot; = 'Lodge Emergency Kit'" key="{24a11340-24ee-4f40-b82b-dd7eb8f8b741}" symbol="1" label="Lodge Emergency Kit"/>
+          <rule filter="&quot;TYPE&quot; = 'Toilets' AND &quot;NAME&quot; IS NULL" key="{640689d0-69da-4752-bc4c-7f0525b6ae69}" symbol="2" label="Bathroom"/>
+          <rule filter="&quot;TYPE&quot; = 'Toilets' AND &quot;NAME&quot; = 'Lodge Toilets'" key="{156174b7-cfb3-4a39-b973-cd6352e60892}" symbol="3" label="Lodge Bathroom"/>
+          <rule filter="&quot;TYPE&quot; = 'Parking'" key="{5e750fb8-1943-437e-a124-4afa161c7ee2}" symbol="4" label="Parking"/>
+          <rule filter="&quot;TYPE&quot; IN ('Trail Junction South', 'Trail Junction North')" key="{f26766b7-230c-4c2e-9350-11b9687e4475}" symbol="5" label="Trail Junctions"/>
+          <rule filter="&quot;TYPE&quot; = 'Viewpoint'" key="{434ea887-57af-4407-8e57-ec72322f65dc}" symbol="6" label="View Point"/>
+          <rule filter="&quot;TYPE&quot; = 'Lodge'" key="{d6bbcafe-1fce-4a96-990e-f2c8a97a2d9c}" symbol="7" label="Lodge"/>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
-            <layer pass="0" class="FilledMarker" locked="0">
+            <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="255,0,0,255"/>
+              <prop k="color" v="227,26,28,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="name" v="square"/>
+              <prop k="name" v="./icons/first-aid.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="diameter"/>
               <prop k="size" v="4"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <symbol alpha="1" clip_to_extent="1" type="fill" name="@0@0">
-                <layer pass="0" class="SimpleFill" locked="0">
-                  <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="color" v="255,0,0,255"/>
-                  <prop k="joinstyle" v="bevel"/>
-                  <prop k="offset" v="0,0"/>
-                  <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="outline_color" v="0,0,0,255"/>
-                  <prop k="outline_style" v="no"/>
-                  <prop k="outline_width" v="0"/>
-                  <prop k="outline_width_unit" v="MM"/>
-                  <prop k="style" v="solid"/>
-                </layer>
-              </symbol>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="1">
-            <layer pass="0" class="FilledMarker" locked="0">
+            <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="255,0,0,255"/>
+              <prop k="color" v="255,255,255,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="name" v="square"/>
-              <prop k="offset" v="0,0"/>
+              <prop k="name" v="./icons/first-aid.svg"/>
+              <prop k="offset" v="10,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="255,255,255,255"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="diameter"/>
               <prop k="size" v="4"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <symbol alpha="1" clip_to_extent="1" type="fill" name="@1@0">
-                <layer pass="0" class="SimpleFill" locked="0">
-                  <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="color" v="255,0,0,255"/>
-                  <prop k="joinstyle" v="bevel"/>
-                  <prop k="offset" v="10,0"/>
-                  <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="outline_color" v="0,0,0,255"/>
-                  <prop k="outline_style" v="no"/>
-                  <prop k="outline_width" v="0"/>
-                  <prop k="outline_width_unit" v="MM"/>
-                  <prop k="style" v="solid"/>
-                </layer>
-              </symbol>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="10">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="2">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="255,255,255,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./icons/bathroom.svg"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="4"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="3">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="255,255,255,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./icons/bathroom.svg"/>
+              <prop k="offset" v="5,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="4"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="4">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="255,255,255,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./icons/parking.svg"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="255,255,255,255"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="4"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="5">
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,255,255,255"/>
@@ -2567,7 +2633,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="vertical_anchor_point" v="1"/>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="11">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="6">
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="227,26,28,255"/>
@@ -2589,7 +2655,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="vertical_anchor_point" v="1"/>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="12">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="7">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="19,129,13,255"/>
@@ -2609,227 +2675,39 @@ def my_form_open(dialog, layer, feature):
               <prop k="vertical_anchor_point" v="1"/>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="2">
-            <layer pass="0" class="SimpleMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="255,255,255,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="cross_fill"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="255,255,255,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="3"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="3">
-            <layer pass="0" class="SimpleMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="255,255,255,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="cross_fill"/>
-              <prop k="offset" v="10,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="255,255,255,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="3"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="4">
-            <layer pass="0" class="FilledMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="31,120,180,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="name" v="square"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="4.2"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-              <symbol alpha="1" clip_to_extent="1" type="fill" name="@4@0">
-                <layer pass="0" class="SimpleFill" locked="0">
-                  <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="color" v="31,120,180,255"/>
-                  <prop k="joinstyle" v="bevel"/>
-                  <prop k="offset" v="0,0"/>
-                  <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="outline_color" v="0,0,0,255"/>
-                  <prop k="outline_style" v="no"/>
-                  <prop k="outline_width" v="0"/>
-                  <prop k="outline_width_unit" v="MM"/>
-                  <prop k="style" v="solid"/>
-                </layer>
-              </symbol>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="5">
-            <layer pass="0" class="FilledMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="31,120,180,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="name" v="square"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MapUnit"/>
-              <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="4.2"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-              <symbol alpha="1" clip_to_extent="1" type="fill" name="@5@0">
-                <layer pass="0" class="SimpleFill" locked="0">
-                  <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="color" v="31,120,180,255"/>
-                  <prop k="joinstyle" v="bevel"/>
-                  <prop k="offset" v="5,0"/>
-                  <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="outline_color" v="0,0,0,255"/>
-                  <prop k="outline_style" v="no"/>
-                  <prop k="outline_width" v="0"/>
-                  <prop k="outline_width_unit" v="MM"/>
-                  <prop k="style" v="solid"/>
-                </layer>
-              </symbol>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="6">
-            <layer pass="0" class="SvgMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="255,255,255,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="name" v="amenity/amenity_toilets.svg"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_width" v="0"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="4"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="7">
-            <layer pass="0" class="SvgMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="255,255,255,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="name" v="amenity/amenity_toilets.svg"/>
-              <prop k="offset" v="5,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_width" v="0"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="4"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="8">
-            <layer pass="0" class="SimpleMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="31,120,180,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="square"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,0"/>
-              <prop k="outline_style" v="no"/>
-              <prop k="outline_width" v="0"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="4"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="9">
-            <layer pass="0" class="SvgMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="255,255,255,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="name" v="gpsicons/parking.svg"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="255,255,255,255"/>
-              <prop k="outline_width" v="0"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="4"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-            </layer>
-          </symbol>
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{7de3cca1-744e-42e3-81e2-b5c565f5f76d}">
-          <rule description="Trail Junctions" filter="&quot;TYPE&quot; = 'Trail Junction North'" key="{59e672b7-e390-4a4b-8c20-8dbe5ab0d0c6}">
+        <rules key="{e72350eb-807e-4182-a216-73ab8cb3ab11}">
+          <rule description="Trail Junctions" filter="&quot;TYPE&quot; = 'Trail Junction North'" key="{0b465348-420a-48b5-9de5-8aa5f8d19267}">
             <settings>
-              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="NAME" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="6" fieldName="NAME" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="3" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
               <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="0" bufferBlendMode="0" bufferTransp="60" bufferSizeInMapUnits="0" bufferNoFill="1" bufferJoinStyle="128"/>
-              <background shapeSizeUnits="2" shapeType="3" shapeSVGFile="" shapeOffsetX="-0.1" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="255,127,0,255" shapeTransparency="44" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="1" shapeBorderWidthUnits="1" shapeSizeX="4.2" shapeSizeY="4.2" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0.2" shapeBorderColor="255,127,0,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
+              <background shapeSizeUnits="1" shapeType="3" shapeSVGFile="" shapeOffsetX="-0.1" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="255,127,0,255" shapeTransparency="44" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="1" shapeBorderWidthUnits="1" shapeSizeX="0.3" shapeSizeY="0.3" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0.3" shapeBorderColor="227,26,28,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
               <placement repeatDistanceUnit="1" placement="0" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="0" yOffset="0" offsetType="0" placementFlags="10" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Trail Junction South" filter="&quot;TYPE&quot; = 'Trail Junction South'" key="{6154f759-2dea-4bf8-b9a9-d4c3d696a8ec}">
+          <rule description="Trail Junction South" filter="&quot;TYPE&quot; = 'Trail Junction South'" key="{b05eb83b-37da-4012-add7-da75a34ea569}">
             <settings>
-              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="NAME" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="255,255,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="6" fieldName="NAME" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="3" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
               <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="0,0,0,255" bufferDraw="0" bufferBlendMode="0" bufferTransp="60" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
-              <background shapeSizeUnits="2" shapeType="3" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="21,223,14,255" shapeTransparency="44" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="1" shapeBorderWidthUnits="1" shapeSizeX="4.2" shapeSizeY="4.2" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0.2" shapeBorderColor="255,255,255,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
+              <background shapeSizeUnits="1" shapeType="3" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="21,223,14,255" shapeTransparency="44" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="1" shapeBorderWidthUnits="1" shapeSizeX="0.3" shapeSizeY="0.3" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0.3" shapeBorderColor="51,160,44,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
               <placement repeatDistanceUnit="1" placement="0" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="1" yOffset="0" offsetType="0" placementFlags="10" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Viewpoints" filter="&quot;TYPE&quot; = 'Viewpoint'" key="{6705638a-ce92-4724-b955-88ad49e0c99b}">
+          <rule description="Viewpoints" filter="&quot;TYPE&quot; = 'Viewpoint'" key="{5d94771d-e492-46fb-8f8a-95c36b03a072}">
             <settings>
               <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -3632,8 +3510,8 @@ def my_form_open(dialog, layer, feature):
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{dde3efb8-b10d-4d4a-9927-d7eb4e15b108}">
-          <rule description="Easy" filter="&quot;Difficulty&quot; = 'Easy'" key="{7f250360-596a-4260-b554-84aed6c060b8}">
+        <rules key="{e35e285f-21ce-4e90-b131-9d2c5c48afb7}">
+          <rule description="Easy" filter="&quot;Difficulty&quot; = 'Easy'" active="0" key="{a4228992-2740-4dec-8980-e11df22fd646}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="51,160,44,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="6" fieldName="Trail_name" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -3647,7 +3525,7 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Intermediate" filter="&quot;Difficulty&quot; = 'Intermediate'" key="{7573aa9e-8446-4f86-bfa7-facf8ed79430}">
+          <rule description="Intermediate" filter="&quot;Difficulty&quot; = 'Intermediate'" active="0" key="{93fd5f9e-a369-4250-8ab8-2375392e8506}">
             <settings>
               <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="31,120,180,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="6" fieldName="Trail_name" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -3661,7 +3539,7 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Advanced" filter="&quot;Difficulty&quot; = 'Advanced'" active="0" key="{2ab73579-7ad7-48b2-b2c0-0a7174f62134}">
+          <rule description="Advanced" filter="&quot;Difficulty&quot; = 'Advanced'" active="0" key="{c979258f-6edc-4a15-832b-8896a43b5f7d}">
             <settings>
               <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="Trail_name" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -4811,19 +4689,47 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
   </projectlayers>
   <properties>
-    <Measurement>
-      <DistanceUnits type="QString">meters</DistanceUnits>
-      <AreaUnits type="QString"></AreaUnits>
-    </Measurement>
-    <SpatialRefSys>
-      <ProjectCRSProj4String type="QString">+proj=longlat +datum=WGS84 +no_defs</ProjectCRSProj4String>
-      <ProjectCrs type="QString">EPSG:4326</ProjectCrs>
-      <ProjectCRSID type="int">3452</ProjectCRSID>
-      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
-    </SpatialRefSys>
+    <WMSContactPerson type="QString"></WMSContactPerson>
+    <Variables>
+      <variableNames type="QStringList"/>
+      <variableValues type="QStringList"/>
+    </Variables>
+    <WMSOnlineResource type="QString"></WMSOnlineResource>
+    <WMSUseLayerIDs type="bool">false</WMSUseLayerIDs>
+    <WMSContactOrganization type="QString"></WMSContactOrganization>
+    <WMSKeywordList type="QStringList">
+      <value></value>
+    </WMSKeywordList>
+    <WFSUrl type="QString"></WFSUrl>
     <Paths>
       <Absolute type="bool">false</Absolute>
     </Paths>
+    <WMSServiceTitle type="QString"></WMSServiceTitle>
+    <WFSLayers type="QStringList"/>
+    <WMSContactMail type="QString"></WMSContactMail>
+    <WMSRestrictedComposers type="QStringList"/>
+    <WMSRestrictedLayers type="QStringList"/>
+    <PositionPrecision>
+      <DecimalPlaces type="int">2</DecimalPlaces>
+      <Automatic type="bool">true</Automatic>
+      <DegreeFormat type="QString">MU</DegreeFormat>
+    </PositionPrecision>
+    <WCSUrl type="QString"></WCSUrl>
+    <WMSContactPhone type="QString"></WMSContactPhone>
+    <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
+    <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+    <WMSContactPosition type="QString"></WMSContactPosition>
+    <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
+    <Measure>
+      <Ellipsoid type="QString">NONE</Ellipsoid>
+    </Measure>
+    <WMSPrecision type="QString">8</WMSPrecision>
+    <WMSSegmentizeFeatureInfoGeometry type="bool">false</WMSSegmentizeFeatureInfoGeometry>
+    <WFSTLayers>
+      <Insert type="QStringList"/>
+      <Update type="QStringList"/>
+      <Delete type="QStringList"/>
+    </WFSTLayers>
     <Gui>
       <SelectionColorBluePart type="int">0</SelectionColorBluePart>
       <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
@@ -4843,8 +4749,10 @@ def my_form_open(dialog, layer, feature):
         <value>Trails_201820181106201327000</value>
         <value>Trails_copy20181124112151598</value>
         <value>WaterPoly_201820181106201327005</value>
+        <value>5m_Contour_Clip_Simplified20181127205312605</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
+        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -4863,8 +4771,10 @@ def my_form_open(dialog, layer, feature):
         <value>0</value>
         <value>2</value>
         <value>0</value>
+        <value>0</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -4883,15 +4793,41 @@ def my_form_open(dialog, layer, feature):
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
+        <value>0.000000</value>
       </LayerSnappingToleranceList>
     </Digitizing>
-    <PositionPrecision>
-      <DecimalPlaces type="int">2</DecimalPlaces>
-      <Automatic type="bool">true</Automatic>
-    </PositionPrecision>
+    <Identify>
+      <disabledLayers type="QStringList"/>
+    </Identify>
+    <Macros>
+      <pythonCode type="QString"></pythonCode>
+    </Macros>
+    <WMSAccessConstraints type="QString">None</WMSAccessConstraints>
+    <WCSLayers type="QStringList"/>
     <Legend>
       <filterByMap type="bool">false</filterByMap>
     </Legend>
+    <SpatialRefSys>
+      <ProjectCRSProj4String type="QString">+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</ProjectCRSProj4String>
+      <ProjectCrs type="QString">EPSG:3857</ProjectCrs>
+      <ProjectCRSID type="int">3857</ProjectCRSID>
+      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
+    </SpatialRefSys>
+    <DefaultStyles>
+      <Fill type="QString"></Fill>
+      <Line type="QString"></Line>
+      <Marker type="QString"></Marker>
+      <RandomColors type="bool">true</RandomColors>
+      <AlphaInt type="int">255</AlphaInt>
+      <ColorRamp type="QString"></ColorRamp>
+    </DefaultStyles>
+    <WMSFees type="QString">conditions unknown</WMSFees>
+    <WMSImageQuality type="int">90</WMSImageQuality>
+    <Measurement>
+      <DistanceUnits type="QString">meters</DistanceUnits>
+      <AreaUnits type="QString">m2</AreaUnits>
+    </Measurement>
+    <WMSUrl type="QString"></WMSUrl>
   </properties>
   <visibility-presets/>
 </qgis>
