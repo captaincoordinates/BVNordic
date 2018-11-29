@@ -5,7 +5,7 @@
   <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="POI_2018_copy20181106204310841" source="/home/tchristian/source/BVNordic/POI_2018.shp" name="POI">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="POI_2018_copy20181106204310841" source="/home/tchristian/source/BVNordic/POI_2018.shp" name="POI">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="LodgeArea_201820181106201326918" source="/home/tchristian/source/BVNordic/LodgeArea_2018.shp" name="Lodge Area">
@@ -39,10 +39,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>-14169195.72440832108259201</xmin>
-      <ymin>7306635.99049023725092411</ymin>
-      <xmax>-14157663.28618922829627991</xmax>
-      <ymax>7315863.92952102050185204</ymax>
+      <xmin>-14167886.25938154384493828</xmin>
+      <ymin>7306524.02928656898438931</ymin>
+      <xmax>-14156490.92818068340420723</xmax>
+      <ymax>7315732.17738700471818447</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -148,8 +148,8 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="POI" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="POI" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="POI_2018_copy20181106204310841" visible="1"/>
       </filegroup>
     </legendlayer>
@@ -1310,7 +1310,7 @@
     </Composition>
   </Composer>
   <Composer title="2018-11-28.01" visible="0">
-    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{ee514cc2-e1a6-4eae-a8d9-07fe1268d5fa}" alignmentSnap="1" printResolution="300" paperWidth="279.4" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="215.9" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{ae026f8e-591f-41dd-8404-975020bc2104}" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -1326,60 +1326,53 @@
           <prop k="style" v="solid"/>
         </layer>
       </symbol>
+      <ComposerLegend symbolWidth="7" title="Legend" rasterBorderWidth="0" titleAlignment="1" map="0" wmsLegendWidth="50" rasterBorderColor="0,0,0,255" wrapChar="" fontColor="#000000" legendFilterByAtlas="0" columnCount="1" wmsLegendHeight="25" columnSpace="2" symbolHeight="4" equalColumnWidth="0" resizeToContents="1" splitLayer="0" boxSpace="2" rasterBorder="1">
+        <styles>
+          <style marginBottom="2" name="title">
+            <styleFont description="Ubuntu,16,-1,5,50,0,0,0,0,0" style=""/>
+          </style>
+          <style marginTop="2" name="group">
+            <styleFont description="Ubuntu,14,-1,5,50,0,0,0,0,0" style=""/>
+          </style>
+          <style marginTop="2" name="subgroup">
+            <styleFont description="Ubuntu,12,-1,5,50,0,0,0,0,0" style=""/>
+          </style>
+          <style marginTop="2" name="symbol">
+            <styleFont description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
+          </style>
+          <style marginTop="2" marginLeft="2" name="symbolLabel">
+            <styleFont description="Ubuntu,12,-1,5,50,0,0,0,0,0" style=""/>
+          </style>
+        </styles>
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+          <customproperties/>
+          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="POI_2018_copy20181106204310841" source="/home/tchristian/source/BVNordic/POI_2018.shp" name="POI">
+            <customproperties>
+              <property key="legend/node-order" value="0,2,4,6,7"/>
+            </customproperties>
+          </layer-tree-layer>
+          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="TrailsPoint20181124105152741" source="/home/tchristian/source/BVNordic/TrailsPoint.shp" name="Trail Labels">
+            <customproperties>
+              <property key="legend/expressionFilter" value=""/>
+              <property key="legend/expressionFilterEnabled" value="false"/>
+            </customproperties>
+          </layer-tree-layer>
+          <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Trails_copy20181124112151598" source="/home/tchristian/source/BVNordic/Trails_2018.shp|layerid=0|subset=&quot;LIGHTS&quot; = 'Yes'" name="Lit Trails">
+            <customproperties/>
+          </layer-tree-layer>
+        </layer-tree-group>
+        <ComposerItem pagey="105.499" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="227.229" y="105.499" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="40.5594" outlineWidth="0.3" excludeFromExports="0" uuid="{ac9f3f0a-262c-4e11-8aed-181b8bf8acea}" height="65.8" itemRotation="0" frame="false" pagex="227.229">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerLegend>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="7305635.43051504343748093" xmin="-14169786.89590281993150711" ymax="7316287.65112787391990423" xmax="-14155872.79056230559945107"/>
+        <Extent ymin="7305708.46176521852612495" xmin="-14171210.09023086540400982" ymax="7316786.24423978663980961" xmax="-14155520.98203721828758717"/>
         <LayerSet/>
         <Grid/>
-        <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{5b83dd46-3f01-43ce-a220-2f9d21501146}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
-          <lineStyle>
-            <symbol alpha="1" clip_to_extent="1" type="line" name="">
-              <layer pass="0" class="SimpleLine" locked="0">
-                <prop k="capstyle" v="square"/>
-                <prop k="customdash" v="5;2"/>
-                <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-                <prop k="customdash_unit" v="MM"/>
-                <prop k="draw_inside_polygon" v="0"/>
-                <prop k="joinstyle" v="bevel"/>
-                <prop k="line_color" v="0,0,0,255"/>
-                <prop k="line_style" v="solid"/>
-                <prop k="line_width" v="0"/>
-                <prop k="line_width_unit" v="MM"/>
-                <prop k="offset" v="0"/>
-                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-                <prop k="offset_unit" v="MM"/>
-                <prop k="use_custom_dash" v="0"/>
-                <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-              </layer>
-            </symbol>
-          </lineStyle>
-          <markerStyle>
-            <symbol alpha="1" clip_to_extent="1" type="marker" name="">
-              <layer pass="0" class="SimpleMarker" locked="0">
-                <prop k="angle" v="0"/>
-                <prop k="color" v="0,0,0,255"/>
-                <prop k="horizontal_anchor_point" v="1"/>
-                <prop k="joinstyle" v="bevel"/>
-                <prop k="name" v="circle"/>
-                <prop k="offset" v="0,0"/>
-                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-                <prop k="offset_unit" v="MM"/>
-                <prop k="outline_color" v="0,0,0,255"/>
-                <prop k="outline_style" v="solid"/>
-                <prop k="outline_width" v="0"/>
-                <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-                <prop k="outline_width_unit" v="MM"/>
-                <prop k="scale_method" v="diameter"/>
-                <prop k="size" v="2"/>
-                <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-                <prop k="size_unit" v="MM"/>
-                <prop k="vertical_anchor_point" v="1"/>
-              </layer>
-            </symbol>
-          </markerStyle>
-          <annotationFontProperties description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
-        </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="1.97158" positionMode="0" positionLock="false" x="-26.4037" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="310.101" outlineWidth="0.3" excludeFromExports="0" uuid="{ee514cc2-e1a6-4eae-a8d9-07fe1268d5fa}" height="237.404" itemRotation="0" frame="false" pagex="-26.4037">
+        <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="1.97158" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="296" outlineWidth="0.3" excludeFromExports="0" uuid="{ae026f8e-591f-41dd-8404-975020bc2104}" height="209" itemRotation="0" frame="false" pagex="0">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
