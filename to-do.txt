@@ -15,6 +15,14 @@ x incorporate new .gpx tracks
 	- include an area map prototype (should show full trail names instead of IDs)
 x attempt to get trail junctions displaying without making the map too crowded
 x experiment with different page sizes for printing, see how this effects the outcome
+- improve display of inset outline
+- reduce crowding in middle of map and just show those junctions / trail markers in inset
+- trail names / numbers
+	dimensions (cm)
+	13h x 12w
+	17.5h x 9.2w
+	27.6h x 5.8w
+- attempt to clean up L junction area
 
 From Steve:
 x make minor contour lines more obvious
