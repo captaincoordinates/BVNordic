@@ -18,8 +18,8 @@ x experiment with different page sizes for printing, see how this effects the ou
 
 From Steve:
 x make minor contour lines more obvious
-- improve visibility of junction letters
-	- black lettering instead of white
+x improve visibility of junction letters
+	x black lettering instead of white
 	x put in boxes
 	x match junction letter signs colouring
 x trail name updates
@@ -32,7 +32,7 @@ x dog trails
 - add viewpoints (waiting on Steve for GPS data)
 x lit trails highlighting thinner
 x add biathlon
-- add junction L to the junction that is left of K and right of L1
+x add junction L to the junction that is left of K and right of L1
 
 
 Check in print
