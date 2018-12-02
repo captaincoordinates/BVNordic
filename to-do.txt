@@ -13,5 +13,29 @@ x incorporate new .gpx tracks
 	x updated Wild Dog
 - create some map prototypes
 	- include an area map prototype (should show full trail names instead of IDs)
-- attempt to get trail junctions displaying without making the map too crowded
-- experiment with different page sizes for printing, see how this effects the outcome
+x attempt to get trail junctions displaying without making the map too crowded
+x experiment with different page sizes for printing, see how this effects the outcome
+
+From Steve:
+x make minor contour lines more obvious
+- improve visibility of junction letters
+	- black lettering instead of white
+	x put in boxes
+	x match junction letter signs colouring
+x trail name updates
+	x harvest connector -> forest demo
+x move trail label 10 south
+x dog trails
+	x rename to Dogs One Way
+	x bolden arrows
+	x change dog icon
+- add viewpoints (waiting on Steve for GPS data)
+x lit trails highlighting thinner
+x add biathlon
+- add junction L to the junction that is left of K and right of L1
+
+
+Check in print
+- dog size
+- biathlon label
+- contour visibility
