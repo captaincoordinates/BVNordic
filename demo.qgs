@@ -39,10 +39,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>-14170231.83145922794938087</xmin>
-      <ymin>7307501.19657584745436907</ymin>
-      <xmax>-14158836.50025838986039162</xmax>
-      <ymax>7316709.34467628318816423</ymax>
+      <xmin>-14169063.20173447206616402</xmin>
+      <ymin>7306643.2789522847160697</ymin>
+      <xmax>-14157667.87053361162543297</xmax>
+      <ymax>7315851.42705272044986486</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -1429,7 +1429,7 @@
       <customproperties/>
     </Composition>
   </Composer>
-  <Composer title="2018-12-02.01" visible="1">
+  <Composer title="2018-12-02.01" visible="0">
     <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{f14591f3-4239-4fe7-a150-c560be19875c}" alignmentSnap="1" printResolution="300" paperWidth="432" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="279" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
@@ -1484,19 +1484,67 @@
             <customproperties/>
           </layer-tree-layer>
         </layer-tree-group>
-        <ComposerItem pagey="112.7" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="342.3" y="112.7" visibility="1" zValue="4" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="40.5594" outlineWidth="0.3" excludeFromExports="0" uuid="{d0845c19-673e-4e82-b422-a93cfb11ab1e}" height="64.8" itemRotation="0" frame="false" pagex="342.3">
+        <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="376.95" y="0" visibility="1" zValue="4" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="40.5594" outlineWidth="0.3" excludeFromExports="0" uuid="{d0845c19-673e-4e82-b422-a93cfb11ab1e}" height="64.8" itemRotation="0" frame="false" pagex="376.95">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
         </ComposerItem>
       </ComposerLegend>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="1" previewMode="Render" drawCanvasItems="true">
-        <Extent ymin="7310100.71497464459389448" xmin="-14163463.32933898456394672" ymax="7311665.45494832377880812" xmax="-14161503.45300831086933613"/>
+        <Extent ymin="7310100.71497464459389448" xmin="-14163463.32933898456394672" ymax="7311665.45494832750409842" xmax="-14161503.45300831086933613"/>
         <LayerSet/>
         <Grid/>
+        <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{b25ea0be-c2b2-477e-944c-06600ca8ccbe}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
+          <lineStyle>
+            <symbol alpha="1" clip_to_extent="1" type="line" name="">
+              <layer pass="0" class="SimpleLine" locked="0">
+                <prop k="capstyle" v="square"/>
+                <prop k="customdash" v="5;2"/>
+                <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="customdash_unit" v="MM"/>
+                <prop k="draw_inside_polygon" v="0"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="line_color" v="0,0,0,255"/>
+                <prop k="line_style" v="solid"/>
+                <prop k="line_width" v="0"/>
+                <prop k="line_width_unit" v="MM"/>
+                <prop k="offset" v="0"/>
+                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="use_custom_dash" v="0"/>
+                <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              </layer>
+            </symbol>
+          </lineStyle>
+          <markerStyle>
+            <symbol alpha="1" clip_to_extent="1" type="marker" name="">
+              <layer pass="0" class="SimpleMarker" locked="0">
+                <prop k="angle" v="0"/>
+                <prop k="color" v="0,0,0,255"/>
+                <prop k="horizontal_anchor_point" v="1"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="name" v="circle"/>
+                <prop k="offset" v="0,0"/>
+                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="outline_color" v="0,0,0,255"/>
+                <prop k="outline_style" v="solid"/>
+                <prop k="outline_width" v="0"/>
+                <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="outline_width_unit" v="MM"/>
+                <prop k="scale_method" v="diameter"/>
+                <prop k="size" v="2"/>
+                <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="size_unit" v="MM"/>
+                <prop k="vertical_anchor_point" v="1"/>
+              </layer>
+            </symbol>
+          </markerStyle>
+          <annotationFontProperties description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
+        </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="2.85714" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="124" outlineWidth="0.1" excludeFromExports="0" uuid="{604306bd-3f44-49a6-9355-e5f81bc8026e}" height="99" itemRotation="0" frame="true" pagex="0">
-          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+        <ComposerItem pagey="0.25" page="1" id="Inset Map" lastValidViewScaleFactor="2.85714" positionMode="0" positionLock="false" x="0.25" y="0.25" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="124" outlineWidth="0.5" excludeFromExports="0" uuid="{604306bd-3f44-49a6-9355-e5f81bc8026e}" height="99" itemRotation="0" frame="true" pagex="0.25">
+          <FrameColor alpha="128" red="250" blue="48" green="115"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
         </ComposerItem>
@@ -1554,24 +1602,24 @@
           <annotationFontProperties description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <ComposerMapOverview frameMap="1" centered="0" inverted="0" uuid="{fdb71880-be32-44d5-9e5a-77947132695a}" name="Overview 1" show="1" blendMode="0">
-          <symbol alpha="0.3" clip_to_extent="1" type="fill" name="">
+          <symbol alpha="0.498039" clip_to_extent="1" type="fill" name="">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="color" v="255,0,0,255"/>
+              <prop k="color" v="255,0,0,0"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="no"/>
-              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_color" v="250,115,48,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.5"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="style" v="solid"/>
             </layer>
           </symbol>
         </ComposerMapOverview>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="-8.88178e-16" page="1" id="" lastValidViewScaleFactor="2.85714" positionMode="0" positionLock="false" x="0" y="-8.88178e-16" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="432" outlineWidth="0.3" excludeFromExports="0" uuid="{f14591f3-4239-4fe7-a150-c560be19875c}" height="279" itemRotation="0" frame="false" pagex="0">
+        <ComposerItem pagey="-8.88178e-16" page="1" id="Main Map" lastValidViewScaleFactor="2.85714" positionMode="0" positionLock="false" x="0" y="-8.88178e-16" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="432" outlineWidth="0.3" excludeFromExports="0" uuid="{f14591f3-4239-4fe7-a150-c560be19875c}" height="279" itemRotation="0" frame="false" pagex="0">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -4092,7 +4140,7 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;TRAIL_ID&quot;" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;TRAIL_NAME&quot;" sortOrder="0">
         <columns>
           <column width="-1" hidden="1" type="actions"/>
           <column width="-1" hidden="0" type="field" name="LIGHTS"/>
