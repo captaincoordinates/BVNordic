@@ -38,6 +38,7 @@ x dog trails
 	x bolden arrows
 	x change dog icon
 - add viewpoints (waiting on Steve for GPS data)
+- change D junction to F
 x lit trails highlighting thinner
 x add biathlon
 x add junction L to the junction that is left of K and right of L1
