@@ -11,18 +11,16 @@ x smooth the sharp corners on the trails 14,15 and 22
 x experiment with LiDAR / DEM data and provide some examples
 x incorporate new .gpx tracks
 	x updated Wild Dog
-- create some map prototypes
-	- include an area map prototype (should show full trail names instead of IDs)
 x attempt to get trail junctions displaying without making the map too crowded
 x experiment with different page sizes for printing, see how this effects the outcome
-- improve display of inset outline
-- reduce crowding in middle of map and just show those junctions / trail markers in inset
+x improve display of inset outline
+x reduce crowding in middle of map and just show those junctions / trail markers in inset
 - trail names / numbers
 	dimensions (cm)
 	13h x 12w
 	17.5h x 9.2w
 	27.6h x 5.8w
-- attempt to clean up L junction area
+x attempt to clean up L junction area
 
 From Steve:
 x make minor contour lines more obvious
@@ -37,8 +35,8 @@ x dog trails
 	x rename to Dogs One Way
 	x bolden arrows
 	x change dog icon
-- add viewpoints (waiting on Steve for GPS data)
-- change D junction to F
+x add viewpoints (waiting on Steve for GPS data)
+x change D junction to F
 x lit trails highlighting thinner
 x add biathlon
 x add junction L to the junction that is left of K and right of L1
