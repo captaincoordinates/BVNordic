@@ -2,7 +2,7 @@ Outstanding Changes
 x add dog icon to dog trails
 x add lodge icon
 x add viewpoint at valley map
-- tidy and add legend to map for POI and trails grouped by colours
+x tidy and add legend to map for POI and trails grouped by colours
 x add trail marker (square, diamond, circle) with colour to the names of the trails
 x add all names to the map and if possible distances as this may be more relevant than numbers
 	x not doing as unable to display many names when zoomed-out. Will use trail IDs with full names in legend for the full map, can use trail names in area maps as they're more zoomed-in
