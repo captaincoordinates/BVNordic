@@ -2597,10 +2597,10 @@ def my_form_open(dialog, layer, feature):
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{b676f059-4bc6-4047-82df-3f819819c0a8}">
-          <rule description="Easy, outside inset, curved labels" filter="&quot;Difficulty&quot; = 'Easy' AND (NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR INSET_HINT != 'Yes') AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{99d99617-5014-4617-b7f5-df7c30eed6fa}">
+        <rules key="{240db444-f8be-4ada-97fd-976480696d6f}">
+          <rule description="Easy, outside inset, curved labels" filter="&quot;Difficulty&quot; = 'Easy' AND (NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR INSET_HINT != 'Yes') AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{0a5225f4-de34-4f60-a693-336920b8ef3d}">
             <settings>
-              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="51,160,44,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, null, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="51,160,44,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
@@ -2612,9 +2612,9 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Intermediate, outside inset, curved labels" filter="&quot;Difficulty&quot; = 'Intermediate' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{240a196c-6e9b-4b1e-b3ee-7b431250f0c0}">
+          <rule description="Intermediate, outside inset, curved labels" filter="&quot;Difficulty&quot; = 'Intermediate' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{ff05b314-f508-4366-8c2c-23220e9dc510}">
             <settings>
-              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="31,120,180,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, null, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="31,120,180,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
@@ -2626,9 +2626,9 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Advanced, outside inset, curved labels" filter="&quot;Difficulty&quot; = 'Advanced' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{966cc5dc-c15d-4fe7-a52b-215a99de2947}">
+          <rule description="Advanced, outside inset, curved labels" filter="&quot;Difficulty&quot; = 'Advanced' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{e1eff7c7-c3e0-40e1-8b6b-0e49d8917c22}">
             <settings>
-              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, null, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
@@ -2640,9 +2640,9 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Easy, inside inset, curved labels" filter="&quot;Difficulty&quot; = 'Easy' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{0713798f-df54-4fcb-8ce0-dc3ba553bf1e}">
+          <rule description="Easy, inside inset, curved labels" filter="&quot;Difficulty&quot; = 'Easy' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{02582fa2-a541-4339-961e-37c594776058}">
             <settings>
-              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="51,160,44,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, null, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="51,160,44,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
@@ -2654,9 +2654,9 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Intermediate, inside inset, curved labels" filter="&quot;Difficulty&quot; = 'Intermediate' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{1ad954fb-7fe9-41f7-a958-086afe137987}">
+          <rule description="Intermediate, inside inset, curved labels" filter="&quot;Difficulty&quot; = 'Intermediate' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{e04a67b8-993a-49fa-a85a-e25218e230e9}">
             <settings>
-              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="31,120,180,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, null, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="31,120,180,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
@@ -2668,9 +2668,9 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Advanced, inside inset, curved labels" filter="&quot;Difficulty&quot; = 'Advanced' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{28f1af3b-2fe8-4b6a-bcdc-f268fa496dd2}">
+          <rule description="Advanced, inside inset, curved labels" filter="&quot;Difficulty&quot; = 'Advanced' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{082963c4-b56c-4bdd-9f82-b73e43936238}">
             <settings>
-              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, null, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
+              <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
