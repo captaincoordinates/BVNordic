@@ -3023,9 +3023,6 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="LIGHTS">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="LENGTH">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="DOG_FRIEND">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
@@ -3036,6 +3033,12 @@ def my_form_open(dialog, layer, feature):
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="TRAIL_ID">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="DISP_DIST">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="INSET_HINT">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="orig_ogc_fid">
@@ -3312,12 +3315,13 @@ def my_form_open(dialog, layer, feature):
       <annotationform>.</annotationform>
       <aliases>
         <alias field="LIGHTS" index="0" name=""/>
-        <alias field="LENGTH" index="1" name=""/>
-        <alias field="DOG_FRIEND" index="2" name=""/>
-        <alias field="DIFFICULTY" index="3" name=""/>
-        <alias field="TRAIL_NAME" index="4" name=""/>
-        <alias field="TRAIL_ID" index="5" name=""/>
-        <alias field="orig_ogc_fid" index="6" name=""/>
+        <alias field="DOG_FRIEND" index="1" name=""/>
+        <alias field="DIFFICULTY" index="2" name=""/>
+        <alias field="TRAIL_NAME" index="3" name=""/>
+        <alias field="TRAIL_ID" index="4" name=""/>
+        <alias field="DISP_DIST" index="5" name=""/>
+        <alias field="INSET_HINT" index="6" name=""/>
+        <alias field="orig_ogc_fid" index="7" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -3407,11 +3411,12 @@ def my_form_open(dialog, layer, feature):
       </conditionalstyles>
       <defaults>
         <default field="LIGHTS" expression=""/>
-        <default field="LENGTH" expression=""/>
         <default field="DOG_FRIEND" expression=""/>
         <default field="DIFFICULTY" expression=""/>
         <default field="TRAIL_NAME" expression=""/>
         <default field="TRAIL_ID" expression=""/>
+        <default field="DISP_DIST" expression=""/>
+        <default field="INSET_HINT" expression=""/>
         <default field="orig_ogc_fid" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "Trail_name", '&lt;NULL>' )</previewExpression>
