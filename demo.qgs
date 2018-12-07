@@ -135,10 +135,18 @@
           <prop k="style" v="solid"/>
         </layer>
       </symbol>
-      <SnapLine y1="0" x1="462.179" y2="279" x2="462.179"/>
-      <SnapLine y1="0" x1="482.143" y2="279" x2="482.143"/>
-      <SnapLine y1="0" x1="0" y2="279" x2="0"/>
-      <SnapLine y1="0" x1="461.803" y2="279" x2="461.803"/>
+      <ComposerScaleBar lineCapStyle="square" style="Single Box" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="3" segmentMillimeters="13.3497" lineJoinStyle="miter" minBarWidth="50" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="0.3" numSegmentsLeft="0" maxBarWidth="150" height="3" boxContentSpace="1" mapId="1" unitLabel="m">
+        <scaleBarFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+        <fillColor alpha="255" red="0" blue="0" green="0"/>
+        <fillColor2 alpha="255" red="255" blue="255" green="255"/>
+        <strokeColor alpha="255" red="0" blue="0" green="0"/>
+        <textColor alpha="255" red="0" blue="0" green="0"/>
+        <ComposerItem pagey="147.288" page="1" id="Inset Scale Bar" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="2.15417" y="147.288" visibility="1" zValue="7" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="50.449" outlineWidth="0.3" excludeFromExports="0" uuid="{8163d516-dfc4-40d0-91f8-ec5edce8ddcf}" height="20" itemRotation="0" frame="false" pagex="2.15417">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerScaleBar>
       <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="40.6808" svgFillColor="0,0,0,255" svgBorderColor="0,0,0,255" northMode="0" file="./icons/NorthArrow_07.svg" northOffset="0" pictureHeight="40.6808" mapId="1" anchorPoint="0">
         <ComposerItem pagey="235.055" page="1" id="North Arrow" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="178.398" y="235.055" visibility="1" zValue="6" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="40.6808" outlineWidth="0.3" excludeFromExports="0" uuid="{4519abb6-11b4-41e9-8a0d-c263b1262b1b}" height="40.945" itemRotation="0" frame="false" pagex="178.398">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
@@ -155,13 +163,13 @@
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerScaleBar lineCapStyle="square" style="Single Box" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="5" segmentMillimeters="13.3497" lineJoinStyle="miter" minBarWidth="50" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="0.3" numSegmentsLeft="1" maxBarWidth="150" height="2" boxContentSpace="1" mapId="1" unitLabel="m">
+      <ComposerScaleBar lineCapStyle="square" style="Single Box" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="4" segmentMillimeters="15.6212" lineJoinStyle="miter" minBarWidth="50" numUnitsPerSegment="250" units="1" labelBarSpace="3" outlineWidth="0.3" numSegmentsLeft="0" maxBarWidth="150" height="2" boxContentSpace="1" mapId="0" unitLabel="m">
         <scaleBarFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="266.397" page="1" id="Scale Bar" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="72.2554" y="266.397" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="92.3981" outlineWidth="0.3" excludeFromExports="0" uuid="{30e542f1-47fe-4654-919e-076baa36ebc1}" height="12.6032" itemRotation="0" frame="false" pagex="72.2554">
+        <ComposerItem pagey="261.407" page="1" id="Main Scale Bar" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="72.2555" y="261.407" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="73.8349" outlineWidth="0.3" excludeFromExports="0" uuid="{30e542f1-47fe-4654-919e-076baa36ebc1}" height="12.6032" itemRotation="0" frame="false" pagex="72.2555">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -209,7 +217,7 @@
         </ComposerItem>
       </ComposerLegend>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="1" previewMode="Render" drawCanvasItems="true">
-        <Extent ymin="6066085.11600000038743019" xmin="613972.79899999999906868" ymax="6067290.25" xmax="615052.79899999999906868"/>
+        <Extent ymin="6066085.11600000038743019" xmin="613972.79899999999906868" ymax="6067290.25014372076839209" xmax="615052.79899999999906868"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{b25ea0be-c2b2-477e-944c-06600ca8ccbe}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -261,7 +269,7 @@
           <annotationFontProperties description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="0.15" page="1" id="Inset Map" lastValidViewScaleFactor="2.65481" positionMode="0" positionLock="true" x="0.15" y="0.15" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="144.211" outlineWidth="0.3" excludeFromExports="0" uuid="{604306bd-3f44-49a6-9355-e5f81bc8026e}" height="160.92" itemRotation="0" frame="true" pagex="0.15">
+        <ComposerItem pagey="0.15" page="1" id="Inset Map" lastValidViewScaleFactor="2.70386" positionMode="0" positionLock="true" x="0.15" y="0.15" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="144.211" outlineWidth="0.3" excludeFromExports="0" uuid="{604306bd-3f44-49a6-9355-e5f81bc8026e}" height="160.92" itemRotation="0" frame="true" pagex="0.15">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -337,7 +345,7 @@
           </symbol>
         </ComposerMapOverview>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="0" page="1" id="Main Map" lastValidViewScaleFactor="2.65481" positionMode="0" positionLock="true" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="432" outlineWidth="0.3" excludeFromExports="0" uuid="{f14591f3-4239-4fe7-a150-c560be19875c}" height="279" itemRotation="0" frame="true" pagex="0">
+        <ComposerItem pagey="0" page="1" id="Main Map" lastValidViewScaleFactor="2.70386" positionMode="0" positionLock="true" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="432" outlineWidth="0.3" excludeFromExports="0" uuid="{f14591f3-4239-4fe7-a150-c560be19875c}" height="279" itemRotation="0" frame="true" pagex="0">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
