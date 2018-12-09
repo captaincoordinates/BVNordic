@@ -135,6 +135,15 @@
           <prop k="style" v="solid"/>
         </layer>
       </symbol>
+      <ComposerLabel valign="32" marginX="1" marginY="1" labelText="[% concat(format_date(now() , 'MMMM d, yyyy'), '\nDownload georeferenced PDF from bvnordic.ca/map')%]" htmlState="0" halign="1">
+        <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+        <FontColor red="0" blue="0" green="0"/>
+        <ComposerItem pagey="262.802" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="78.7349" y="262.802" visibility="1" zValue="8" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="96.5286" outlineWidth="0.3" excludeFromExports="0" uuid="{9206910c-a2a1-4ac5-9b01-6e1cdf75e898}" height="13.1984" itemRotation="0" frame="false" pagex="78.7349">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerLabel>
       <ComposerScaleBar lineCapStyle="square" style="Single Box" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="3" segmentMillimeters="13.3497" lineJoinStyle="miter" minBarWidth="50" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="0.3" numSegmentsLeft="0" maxBarWidth="150" height="3" boxContentSpace="1" mapId="1" unitLabel="m">
         <scaleBarFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
         <fillColor alpha="255" red="0" blue="0" green="0"/>
@@ -169,7 +178,7 @@
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="261.407" page="1" id="Main Scale Bar" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="72.2555" y="261.407" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="73.8349" outlineWidth="0.3" excludeFromExports="0" uuid="{30e542f1-47fe-4654-919e-076baa36ebc1}" height="12.6032" itemRotation="0" frame="false" pagex="72.2555">
+        <ComposerItem pagey="247.407" page="1" id="Main Scale Bar" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="78.2555" y="247.407" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="73.8349" outlineWidth="0.3" excludeFromExports="0" uuid="{30e542f1-47fe-4654-919e-076baa36ebc1}" height="12.6032" itemRotation="0" frame="false" pagex="78.2555">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -269,7 +278,7 @@
           <annotationFontProperties description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="0.15" page="1" id="Inset Map" lastValidViewScaleFactor="2.70386" positionMode="0" positionLock="true" x="0.15" y="0.15" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="144.211" outlineWidth="0.3" excludeFromExports="0" uuid="{604306bd-3f44-49a6-9355-e5f81bc8026e}" height="160.92" itemRotation="0" frame="true" pagex="0.15">
+        <ComposerItem pagey="0.15" page="1" id="Inset Map" lastValidViewScaleFactor="2.65481" positionMode="0" positionLock="true" x="0.15" y="0.15" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="144.211" outlineWidth="0.3" excludeFromExports="0" uuid="{604306bd-3f44-49a6-9355-e5f81bc8026e}" height="160.92" itemRotation="0" frame="true" pagex="0.15">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -345,7 +354,7 @@
           </symbol>
         </ComposerMapOverview>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="0" page="1" id="Main Map" lastValidViewScaleFactor="2.70386" positionMode="0" positionLock="true" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="432" outlineWidth="0.3" excludeFromExports="0" uuid="{f14591f3-4239-4fe7-a150-c560be19875c}" height="279" itemRotation="0" frame="true" pagex="0">
+        <ComposerItem pagey="0" page="1" id="Main Map" lastValidViewScaleFactor="2.65481" positionMode="0" positionLock="true" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="432" outlineWidth="0.3" excludeFromExports="0" uuid="{f14591f3-4239-4fe7-a150-c560be19875c}" height="279" itemRotation="0" frame="true" pagex="0">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
