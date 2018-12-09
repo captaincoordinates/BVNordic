@@ -22,7 +22,7 @@
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Other_Roads_201820181106201326968" source="C:/Users/Tom/Source/BVNordic/Other_Roads_2018_Cut.shp" name="Other Roads">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="5m_Contour_Clip_Simplified20181127205312605" source="C:/Users/Tom/Source/BVNordic/5m_Contour_Clip_Simplified_Cut.shp" name="5m Contours">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="5m_Contour_Clip_Simplified20181127205312605" source="C:/Users/Tom/Source/BVNordic/5m_Contour_Clip_Simplified_Cut.shp" name="5m Contours">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="Inset_Extent_315620181203214745058" source="C:/Users/Tom/Source/BVNordic/Inset_Extent_3156.shp" name="Inset Extent">
@@ -107,8 +107,8 @@
         <legendlayerfile isInOverview="0" layerid="Other_Roads_201820181106201326968" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="5m Contours" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="5m Contours" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="5m_Contour_Clip_Simplified20181127205312605" visible="1"/>
       </filegroup>
     </legendlayer>
@@ -269,7 +269,7 @@
           <annotationFontProperties description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="0.15" page="1" id="Inset Map" lastValidViewScaleFactor="1.68302" positionMode="0" positionLock="true" x="0.15" y="0.15" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="144.211" outlineWidth="0.3" excludeFromExports="0" uuid="{604306bd-3f44-49a6-9355-e5f81bc8026e}" height="160.92" itemRotation="0" frame="true" pagex="0.15">
+        <ComposerItem pagey="0.15" page="1" id="Inset Map" lastValidViewScaleFactor="2.70386" positionMode="0" positionLock="true" x="0.15" y="0.15" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="144.211" outlineWidth="0.3" excludeFromExports="0" uuid="{604306bd-3f44-49a6-9355-e5f81bc8026e}" height="160.92" itemRotation="0" frame="true" pagex="0.15">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -345,7 +345,7 @@
           </symbol>
         </ComposerMapOverview>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="0" page="1" id="Main Map" lastValidViewScaleFactor="1.68302" positionMode="0" positionLock="true" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="432" outlineWidth="0.3" excludeFromExports="0" uuid="{f14591f3-4239-4fe7-a150-c560be19875c}" height="279" itemRotation="0" frame="true" pagex="0">
+        <ComposerItem pagey="0" page="1" id="Main Map" lastValidViewScaleFactor="2.70386" positionMode="0" positionLock="true" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="432" outlineWidth="0.3" excludeFromExports="0" uuid="{f14591f3-4239-4fe7-a150-c560be19875c}" height="279" itemRotation="0" frame="true" pagex="0">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -2490,6 +2490,9 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="LENGTH">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="LBL_REPEAT">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="1">
         <rules key="{0bd9e16b-93e0-47dc-a7f5-6c076de0a4bf}">
@@ -2634,8 +2637,8 @@ def my_form_open(dialog, layer, feature):
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{4f90f617-6056-4dfd-ae3a-c21f70981f40}">
-          <rule description="Easy, outside inset" filter="&quot;Difficulty&quot; = 'Easy' AND (NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR INSET_HINT != 'Yes') AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{ade2e64f-43fa-49bb-a7dd-074d13742737}">
+        <rules key="{afdb174f-739c-4bfd-b97f-a7c201892ea9}">
+          <rule description="Easy, outside inset" filter="&quot;Difficulty&quot; = 'Easy' AND (NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR INSET_HINT != 'Yes') AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{abb51dac-173f-456e-8689-673f172cf51b}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2644,12 +2647,14 @@ def my_form_open(dialog, layer, feature):
               <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="3" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="51,160,44,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
-              <placement repeatDistanceUnit="1" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="10" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
+              <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="10" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="26000" fontMaxPixelSize="10000" scaleMin="0" upsidedownLabels="0" limitNumLabels="1" obstacle="1" obstacleFactor="2" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="1" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
-              <data-defined/>
+              <data-defined>
+                <RepeatDistance expr="" field="LBL_REPEAT" active="true" useExpr="false"/>
+              </data-defined>
             </settings>
           </rule>
-          <rule description="Intermediate, outside inset" filter="&quot;Difficulty&quot; = 'Intermediate' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{0a177fb6-8fe7-495f-9767-be224508122b}">
+          <rule description="Intermediate, outside inset" filter="&quot;Difficulty&quot; = 'Intermediate' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{b3aaf8b3-cbbc-46bb-9e83-59fe0814c4dc}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2658,12 +2663,14 @@ def my_form_open(dialog, layer, feature):
               <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="1" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="31,120,180,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
-              <placement repeatDistanceUnit="1" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
+              <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="26000" fontMaxPixelSize="10000" scaleMin="0" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="2" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
-              <data-defined/>
+              <data-defined>
+                <RepeatDistance expr="" field="LBL_REPEAT" active="true" useExpr="false"/>
+              </data-defined>
             </settings>
           </rule>
-          <rule description="Advanced, outside inset" filter="&quot;Difficulty&quot; = 'Advanced' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{eb5b0592-fec2-425d-8c4c-80659c7df709}">
+          <rule description="Advanced, outside inset" filter="&quot;Difficulty&quot; = 'Advanced' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{91c69645-3c22-4000-8123-b3c3582a99e9}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2672,12 +2679,14 @@ def my_form_open(dialog, layer, feature):
               <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="0" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="0,0,0,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
-              <placement repeatDistanceUnit="1" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
+              <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="26000" fontMaxPixelSize="10000" scaleMin="0" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="2" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
-              <data-defined/>
+              <data-defined>
+                <RepeatDistance expr="" field="LBL_REPEAT" active="true" useExpr="false"/>
+              </data-defined>
             </settings>
           </rule>
-          <rule description="Easy, inside inset" filter="&quot;Difficulty&quot; = 'Easy' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{df818616-c3af-47ee-9a4e-e44897bac47e}">
+          <rule description="Easy, inside inset" filter="&quot;Difficulty&quot; = 'Easy' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{70c76d6b-2723-4188-ab81-32606abd1681}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2686,12 +2695,14 @@ def my_form_open(dialog, layer, feature):
               <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="3" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="51,160,44,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
-              <placement repeatDistanceUnit="1" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="10" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
+              <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="10" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="10000" fontMaxPixelSize="10000" scaleMin="0" upsidedownLabels="0" limitNumLabels="1" obstacle="1" obstacleFactor="2" scaleVisibility="1" fontLimitPixelSize="0" mergeLines="1" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
-              <data-defined/>
+              <data-defined>
+                <RepeatDistance expr="" field="LBL_REPEAT" active="true" useExpr="false"/>
+              </data-defined>
             </settings>
           </rule>
-          <rule description="Intermediate, inside inset" filter="&quot;Difficulty&quot; = 'Intermediate' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{e005bc0e-1285-4896-9e15-3facad5445a3}">
+          <rule description="Intermediate, inside inset" filter="&quot;Difficulty&quot; = 'Intermediate' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{4b689ee6-75d1-4314-9237-bf1744b7e924}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2700,12 +2711,14 @@ def my_form_open(dialog, layer, feature):
               <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="1" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="31,120,180,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
-              <placement repeatDistanceUnit="1" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
+              <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="10000" fontMaxPixelSize="10000" scaleMin="0" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="2" scaleVisibility="1" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
-              <data-defined/>
+              <data-defined>
+                <RepeatDistance expr="" field="LBL_REPEAT" active="true" useExpr="false"/>
+              </data-defined>
             </settings>
           </rule>
-          <rule description="Advanced, inside inset" filter="&quot;Difficulty&quot; = 'Advanced' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{c3aa0f3a-ed15-4f46-8104-e20618c9c010}">
+          <rule description="Advanced, inside inset" filter="&quot;Difficulty&quot; = 'Advanced' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{892b3577-640a-4750-b34b-d8f29c481a7d}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2714,9 +2727,11 @@ def my_form_open(dialog, layer, feature):
               <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="0" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="0,0,0,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
-              <placement repeatDistanceUnit="1" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
+              <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="10000" fontMaxPixelSize="10000" scaleMin="0" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="2" scaleVisibility="1" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
-              <data-defined/>
+              <data-defined>
+                <RepeatDistance expr="" field="LBL_REPEAT" active="true" useExpr="false"/>
+              </data-defined>
             </settings>
           </rule>
         </rules>
@@ -2927,6 +2942,7 @@ def my_form_open(dialog, layer, feature):
         <alias field="DISP_DIST" index="5" name=""/>
         <alias field="INSET_HINT" index="6" name=""/>
         <alias field="LENGTH" index="7" name=""/>
+        <alias field="LBL_REPEAT" index="8" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -2942,6 +2958,7 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="DISP_DIST"/>
           <column width="-1" hidden="0" type="field" name="INSET_HINT"/>
           <column width="-1" hidden="0" type="field" name="LENGTH"/>
+          <column width="-1" hidden="0" type="field" name="LBL_REPEAT"/>
         </columns>
       </attributetableconfig>
       <editform>.</editform>
@@ -3024,6 +3041,7 @@ def my_form_open(dialog, layer, feature):
         <default field="DISP_DIST" expression=""/>
         <default field="INSET_HINT" expression=""/>
         <default field="LENGTH" expression=""/>
+        <default field="LBL_REPEAT" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "Trail_name", '&lt;NULL>' )</previewExpression>
     </maplayer>
