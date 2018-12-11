@@ -135,10 +135,18 @@
           <prop k="style" v="solid"/>
         </layer>
       </symbol>
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="63.5763" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./icons/RSTBC_No BPOE.png" northOffset="0" pictureHeight="13.7749" mapId="-1" anchorPoint="0">
+        <ComposerItem pagey="261.305" page="1" id="BC Rec Sites Logo" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="3.59417" y="261.305" visibility="1" zValue="9" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="63.5763" outlineWidth="0.3" excludeFromExports="0" uuid="{027f5c17-fa9e-457b-ace1-0401075eb290}" height="17.6947" itemRotation="0" frame="false" pagex="3.59417">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <dataDefinedSource expr="" field="" active="false" useExpr="true"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerPicture>
       <ComposerLabel valign="32" marginX="1" marginY="1" labelText="[% concat(format_date(now() , 'MMMM d, yyyy'), '\nDownload georeferenced PDF from bvnordic.ca/map')%]" htmlState="0" halign="1">
         <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
         <FontColor red="0" blue="0" green="0"/>
-        <ComposerItem pagey="262.802" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="78.7349" y="262.802" visibility="1" zValue="8" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="96.5286" outlineWidth="0.3" excludeFromExports="0" uuid="{9206910c-a2a1-4ac5-9b01-6e1cdf75e898}" height="13.1984" itemRotation="0" frame="false" pagex="78.7349">
+        <ComposerItem pagey="262.802" page="1" id="Date &amp; Download Label" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="78.7349" y="262.802" visibility="1" zValue="8" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="96.5286" outlineWidth="0.3" excludeFromExports="0" uuid="{9206910c-a2a1-4ac5-9b01-6e1cdf75e898}" height="13.1984" itemRotation="0" frame="false" pagex="78.7349">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -165,7 +173,7 @@
         </ComposerItem>
       </ComposerPicture>
       <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="94.172" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./icons/logo-white.png" northOffset="0" pictureHeight="43.1763" mapId="-1" anchorPoint="0">
-        <ComposerItem pagey="3.763" page="1" id="Logo" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="170" y="3.763" visibility="1" zValue="5" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="94.172" outlineWidth="0.3" excludeFromExports="0" uuid="{ceaedbd1-e6ac-4b86-8ffa-451b3457d0f9}" height="48.684" itemRotation="0" frame="false" pagex="170">
+        <ComposerItem pagey="7.763" page="1" id="BV Nordic Logo" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="238" y="7.763" visibility="1" zValue="5" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="94.172" outlineWidth="0.3" excludeFromExports="0" uuid="{ceaedbd1-e6ac-4b86-8ffa-451b3457d0f9}" height="48.684" itemRotation="0" frame="false" pagex="238">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="128" red="255" blue="255" green="255"/>
           <dataDefinedSource expr="" field="" active="false" useExpr="true"/>
@@ -178,7 +186,7 @@
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="247.407" page="1" id="Main Scale Bar" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="78.2555" y="247.407" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="73.8349" outlineWidth="0.3" excludeFromExports="0" uuid="{30e542f1-47fe-4654-919e-076baa36ebc1}" height="12.6032" itemRotation="0" frame="false" pagex="78.2555">
+        <ComposerItem pagey="247.407" page="1" id="Main Scale Bar" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="78.2555" y="247.407" visibility="1" zValue="4" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="73.8349" outlineWidth="0.3" excludeFromExports="0" uuid="{30e542f1-47fe-4654-919e-076baa36ebc1}" height="12.6032" itemRotation="0" frame="false" pagex="78.2555">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -187,7 +195,7 @@
       <ComposerLegend symbolWidth="7" title="Legend" rasterBorderWidth="0" titleAlignment="1" map="1" wmsLegendWidth="50" rasterBorderColor="0,0,0,255" wrapChar="" fontColor="#000000" legendFilterByAtlas="0" columnCount="1" wmsLegendHeight="25" columnSpace="2" symbolHeight="4" equalColumnWidth="0" resizeToContents="1" splitLayer="0" boxSpace="2" rasterBorder="1">
         <styles>
           <style marginBottom="2" name="title">
-            <styleFont description="Ubuntu,16,-1,5,50,0,0,0,0,0" style=""/>
+            <styleFont description="MS Shell Dlg 2,16,-1,5,50,0,0,0,0,0" style=""/>
           </style>
           <style marginTop="2" name="group">
             <styleFont description="Ubuntu,14,-1,5,50,0,0,0,0,0" style=""/>
@@ -219,7 +227,7 @@
             </customproperties>
           </layer-tree-layer>
         </layer-tree-group>
-        <ComposerItem pagey="169.507" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="13.9032" y="169.507" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="40.3" outlineWidth="0.3" excludeFromExports="0" uuid="{d0845c19-673e-4e82-b422-a93cfb11ab1e}" height="91.9" itemRotation="0" frame="false" pagex="13.9032">
+        <ComposerItem pagey="163.507" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="3.9032" y="163.507" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="40.3" outlineWidth="0.3" excludeFromExports="0" uuid="{d0845c19-673e-4e82-b422-a93cfb11ab1e}" height="91.9" itemRotation="0" frame="false" pagex="3.9032">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="166" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -278,7 +286,7 @@
           <annotationFontProperties description="Ubuntu,10,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="0.15" page="1" id="Inset Map" lastValidViewScaleFactor="2.65481" positionMode="0" positionLock="true" x="0.15" y="0.15" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="144.211" outlineWidth="0.3" excludeFromExports="0" uuid="{604306bd-3f44-49a6-9355-e5f81bc8026e}" height="160.92" itemRotation="0" frame="true" pagex="0.15">
+        <ComposerItem pagey="0.15" page="1" id="Inset Map" lastValidViewScaleFactor="1.68302" positionMode="0" positionLock="true" x="0.15" y="0.15" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="144.211" outlineWidth="0.3" excludeFromExports="0" uuid="{604306bd-3f44-49a6-9355-e5f81bc8026e}" height="160.92" itemRotation="0" frame="true" pagex="0.15">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -354,7 +362,7 @@
           </symbol>
         </ComposerMapOverview>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="0" page="1" id="Main Map" lastValidViewScaleFactor="2.65481" positionMode="0" positionLock="true" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="432" outlineWidth="0.3" excludeFromExports="0" uuid="{f14591f3-4239-4fe7-a150-c560be19875c}" height="279" itemRotation="0" frame="true" pagex="0">
+        <ComposerItem pagey="0" page="1" id="Main Map" lastValidViewScaleFactor="1.68302" positionMode="0" positionLock="true" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="432" outlineWidth="0.3" excludeFromExports="0" uuid="{f14591f3-4239-4fe7-a150-c560be19875c}" height="279" itemRotation="0" frame="true" pagex="0">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -1395,97 +1403,10 @@ def my_form_open(dialog, layer, feature):
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="OBJECTID_1">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="OBJECTID">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="MODIFIEDBY">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="MODIFIEDON">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="MODIFIEDUS">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="INSTANCEID">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ROADIDENTI">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="NAME">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="COMMONNAME">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="MGMTAREACO">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="UNITCODE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ROADSTATUS">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ROADLENGTH">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ROADTENURE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ROADTYPECO">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="AGENCY_ID">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ORG_UNIT_N">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="WATERSHED_">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ROAD_ID">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="SECTION_ID">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ROAD_NAME">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="FOREST_FIL">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CUTTING_PE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="ROAD_SKEY">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="COMMENTS">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="DOCUMENTKE">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CREATEDBY">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CREATEDON">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="CREATEDUSI">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="SHAPE_Leng">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="Shape_Le_1">
+        <edittype widgetv2type="TextEdit" name="LBL_REPEAT">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
@@ -1535,6 +1456,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/bufferTransp" value="0"/>
         <property key="labeling/centroidInside" value="false"/>
         <property key="labeling/centroidWhole" value="false"/>
+        <property key="labeling/dataDefined/RepeatDistance" value="1~~0~~~~LBL_REPEAT"/>
         <property key="labeling/decimals" value="3"/>
         <property key="labeling/displayAll" value="false"/>
         <property key="labeling/dist" value="0"/>
@@ -1542,10 +1464,10 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/distMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/drawLabels" value="true"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="ROADIDENTI"/>
+        <property key="labeling/fieldName" value="NAME"/>
         <property key="labeling/fitInPolygonOnly" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
-        <property key="labeling/fontFamily" value="Ubuntu"/>
+        <property key="labeling/fontFamily" value="MS Shell Dlg 2"/>
         <property key="labeling/fontItalic" value="true"/>
         <property key="labeling/fontLetterSpacing" value="0"/>
         <property key="labeling/fontLimitPixelSize" value="false"/>
@@ -1588,7 +1510,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/quadOffset" value="4"/>
         <property key="labeling/repeatDistance" value="0"/>
         <property key="labeling/repeatDistanceMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/repeatDistanceUnit" value="1"/>
+        <property key="labeling/repeatDistanceUnit" value="2"/>
         <property key="labeling/reverseDirectionSymbol" value="false"/>
         <property key="labeling/rightDirectionSymbol" value=">"/>
         <property key="labeling/scaleMax" value="10000000"/>
@@ -1714,75 +1636,18 @@ def my_form_open(dialog, layer, feature):
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="2" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
       <annotationform>.</annotationform>
       <aliases>
-        <alias field="OBJECTID_1" index="0" name=""/>
-        <alias field="OBJECTID" index="1" name=""/>
-        <alias field="MODIFIEDBY" index="2" name=""/>
-        <alias field="MODIFIEDON" index="3" name=""/>
-        <alias field="MODIFIEDUS" index="4" name=""/>
-        <alias field="INSTANCEID" index="5" name=""/>
-        <alias field="ROADIDENTI" index="6" name=""/>
-        <alias field="NAME" index="7" name=""/>
-        <alias field="COMMONNAME" index="8" name=""/>
-        <alias field="MGMTAREACO" index="9" name=""/>
-        <alias field="UNITCODE" index="10" name=""/>
-        <alias field="ROADSTATUS" index="11" name=""/>
-        <alias field="ROADLENGTH" index="12" name=""/>
-        <alias field="ROADTENURE" index="13" name=""/>
-        <alias field="ROADTYPECO" index="14" name=""/>
-        <alias field="AGENCY_ID" index="15" name=""/>
-        <alias field="ORG_UNIT_N" index="16" name=""/>
-        <alias field="WATERSHED_" index="17" name=""/>
-        <alias field="ROAD_ID" index="18" name=""/>
-        <alias field="SECTION_ID" index="19" name=""/>
-        <alias field="ROAD_NAME" index="20" name=""/>
-        <alias field="FOREST_FIL" index="21" name=""/>
-        <alias field="CUTTING_PE" index="22" name=""/>
-        <alias field="ROAD_SKEY" index="23" name=""/>
-        <alias field="COMMENTS" index="24" name=""/>
-        <alias field="DOCUMENTKE" index="25" name=""/>
-        <alias field="CREATEDBY" index="26" name=""/>
-        <alias field="CREATEDON" index="27" name=""/>
-        <alias field="CREATEDUSI" index="28" name=""/>
-        <alias field="SHAPE_Leng" index="29" name=""/>
-        <alias field="Shape_Le_1" index="30" name=""/>
+        <alias field="NAME" index="0" name=""/>
+        <alias field="LBL_REPEAT" index="1" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;LBL_OFFSET&quot;" sortOrder="0">
         <columns>
-          <column width="-1" hidden="0" type="field" name="OBJECTID_1"/>
-          <column width="-1" hidden="0" type="field" name="OBJECTID"/>
-          <column width="-1" hidden="0" type="field" name="MODIFIEDBY"/>
-          <column width="-1" hidden="0" type="field" name="MODIFIEDON"/>
-          <column width="-1" hidden="0" type="field" name="MODIFIEDUS"/>
-          <column width="-1" hidden="0" type="field" name="INSTANCEID"/>
-          <column width="-1" hidden="0" type="field" name="ROADIDENTI"/>
-          <column width="-1" hidden="0" type="field" name="NAME"/>
-          <column width="-1" hidden="0" type="field" name="COMMONNAME"/>
-          <column width="-1" hidden="0" type="field" name="MGMTAREACO"/>
-          <column width="-1" hidden="0" type="field" name="UNITCODE"/>
-          <column width="-1" hidden="0" type="field" name="ROADSTATUS"/>
-          <column width="-1" hidden="0" type="field" name="ROADLENGTH"/>
-          <column width="-1" hidden="0" type="field" name="ROADTENURE"/>
-          <column width="-1" hidden="0" type="field" name="ROADTYPECO"/>
-          <column width="-1" hidden="0" type="field" name="AGENCY_ID"/>
-          <column width="-1" hidden="0" type="field" name="ORG_UNIT_N"/>
-          <column width="-1" hidden="0" type="field" name="WATERSHED_"/>
-          <column width="-1" hidden="0" type="field" name="ROAD_ID"/>
-          <column width="-1" hidden="0" type="field" name="SECTION_ID"/>
-          <column width="-1" hidden="0" type="field" name="ROAD_NAME"/>
-          <column width="-1" hidden="0" type="field" name="FOREST_FIL"/>
-          <column width="-1" hidden="0" type="field" name="CUTTING_PE"/>
-          <column width="-1" hidden="0" type="field" name="ROAD_SKEY"/>
-          <column width="-1" hidden="0" type="field" name="COMMENTS"/>
-          <column width="-1" hidden="0" type="field" name="DOCUMENTKE"/>
-          <column width="-1" hidden="0" type="field" name="CREATEDBY"/>
-          <column width="-1" hidden="0" type="field" name="CREATEDON"/>
-          <column width="-1" hidden="0" type="field" name="CREATEDUSI"/>
-          <column width="-1" hidden="0" type="field" name="SHAPE_Leng"/>
-          <column width="-1" hidden="0" type="field" name="Shape_Le_1"/>
           <column width="-1" hidden="1" type="actions"/>
+          <column width="-1" hidden="0" type="field" name="NAME"/>
+          <column width="-1" hidden="0" type="field" name="LBL_REPEAT"/>
+          <column width="-1" hidden="0" type="field" name="LBL_OFFSET"/>
         </columns>
       </attributetableconfig>
       <editform>.</editform>
@@ -1809,6 +1674,12 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
       <widgets>
+        <widget name="ROADIDENTI">
+          <config>
+            <option key="IsMultiline" value="false"/>
+            <option key="UseHtml" value="false"/>
+          </config>
+        </widget>
         <widget name="orig_ogc_fid">
           <config>
             <option key="IsMultiline" value="false"/>
@@ -1821,37 +1692,8 @@ def my_form_open(dialog, layer, feature):
         <fieldstyles/>
       </conditionalstyles>
       <defaults>
-        <default field="OBJECTID_1" expression=""/>
-        <default field="OBJECTID" expression=""/>
-        <default field="MODIFIEDBY" expression=""/>
-        <default field="MODIFIEDON" expression=""/>
-        <default field="MODIFIEDUS" expression=""/>
-        <default field="INSTANCEID" expression=""/>
-        <default field="ROADIDENTI" expression=""/>
         <default field="NAME" expression=""/>
-        <default field="COMMONNAME" expression=""/>
-        <default field="MGMTAREACO" expression=""/>
-        <default field="UNITCODE" expression=""/>
-        <default field="ROADSTATUS" expression=""/>
-        <default field="ROADLENGTH" expression=""/>
-        <default field="ROADTENURE" expression=""/>
-        <default field="ROADTYPECO" expression=""/>
-        <default field="AGENCY_ID" expression=""/>
-        <default field="ORG_UNIT_N" expression=""/>
-        <default field="WATERSHED_" expression=""/>
-        <default field="ROAD_ID" expression=""/>
-        <default field="SECTION_ID" expression=""/>
-        <default field="ROAD_NAME" expression=""/>
-        <default field="FOREST_FIL" expression=""/>
-        <default field="CUTTING_PE" expression=""/>
-        <default field="ROAD_SKEY" expression=""/>
-        <default field="COMMENTS" expression=""/>
-        <default field="DOCUMENTKE" expression=""/>
-        <default field="CREATEDBY" expression=""/>
-        <default field="CREATEDON" expression=""/>
-        <default field="CREATEDUSI" expression=""/>
-        <default field="SHAPE_Leng" expression=""/>
-        <default field="Shape_Le_1" expression=""/>
+        <default field="LBL_REPEAT" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "NAME", '&lt;NULL>' )</previewExpression>
     </maplayer>
@@ -1909,6 +1751,7 @@ def my_form_open(dialog, layer, feature):
           <rule filter="&quot;TYPE&quot; = 'Lodge'" key="{d6bbcafe-1fce-4a96-990e-f2c8a97a2d9c}" symbol="6" label="Lodge"/>
           <rule scalemaxdenom="10000" filter="&quot;TYPE&quot; = 'Biathlon'" key="{80122c3b-234d-47e8-b55a-fbc7a046fc4b}" symbol="7" scalemindenom="1" label="Biathlon"/>
           <rule filter="&quot;TYPE&quot; = 'Dog Trail Marker'" key="{1c46d7a5-f715-447a-b1ee-1d87d2f494d3}" symbol="8" label="Dog Trails"/>
+          <rule filter="&quot;TYPE&quot; = 'Tunnel'" key="{f807cb1f-66a6-4682-a852-c7a0e6b1f1ca}" symbol="9" label="Tunnel"/>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
@@ -2113,11 +1956,42 @@ def my_form_open(dialog, layer, feature):
               <prop k="vertical_anchor_point" v="1"/>
             </layer>
           </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="9">
+            <layer pass="0" class="FilledMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="0,0,255,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="circle"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <symbol alpha="1" clip_to_extent="1" type="fill" name="@9@0">
+                <layer pass="0" class="SimpleFill" locked="0">
+                  <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="color" v="0,0,255,255"/>
+                  <prop k="joinstyle" v="bevel"/>
+                  <prop k="offset" v="0,0"/>
+                  <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="offset_unit" v="MM"/>
+                  <prop k="outline_color" v="0,0,0,255"/>
+                  <prop k="outline_style" v="no"/>
+                  <prop k="outline_width" v="0.26"/>
+                  <prop k="outline_width_unit" v="MM"/>
+                  <prop k="style" v="no"/>
+                </layer>
+              </symbol>
+            </layer>
+          </symbol>
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{b8d78115-c867-487d-b9e4-b554bd500e0b}">
-          <rule description="Trail Junctions North" filter="&quot;TYPE&quot; = 'Trail Junction North'" key="{f3885e45-9316-4430-a109-f9cb2823f839}">
+        <rules key="{4d665ed9-3655-4c8c-89c9-fc882569d36a}">
+          <rule description="Trail Junctions North" filter="&quot;TYPE&quot; = 'Trail Junction North'" key="{fb8594fa-1941-4f0b-9a30-2ebd133c4370}">
             <settings>
               <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="NAME" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2135,7 +2009,7 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule description="Trail Junction South" filter="&quot;TYPE&quot; = 'Trail Junction South'" key="{d6a62249-6725-43bc-98cf-ea70e9ac58b5}">
+          <rule description="Trail Junction South" filter="&quot;TYPE&quot; = 'Trail Junction South'" key="{224b4cc3-108d-42af-ba23-5aa851ce6a1d}">
             <settings>
               <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="NAME" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2151,7 +2025,7 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule description="Viewpoints" filter="&quot;TYPE&quot; = 'Viewpoint'" key="{2bab7333-58cd-45ac-94c5-26cbd1b24a2d}">
+          <rule description="Viewpoints" filter="&quot;TYPE&quot; = 'Viewpoint'" key="{5aac6aef-effd-4fb0-9528-91ef2ead6339}">
             <settings>
               <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="7.5" fieldName="" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2165,7 +2039,7 @@ def my_form_open(dialog, layer, feature):
               <data-defined/>
             </settings>
           </rule>
-          <rule description="Biathlon" filter="&quot;TYPE&quot; = 'Biathlon'" key="{10f7aba4-1914-4a56-8746-a849654c0bf1}">
+          <rule description="Biathlon" filter="&quot;TYPE&quot; = 'Biathlon'" key="{c28e2c90-a842-4369-a9c7-49533ea3db0c}">
             <settings>
               <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="NAME" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -2177,6 +2051,22 @@ def my_form_open(dialog, layer, feature):
               <placement repeatDistanceUnit="1" placement="1" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="0" xOffset="-5" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="10" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
               <rendering fontMinPixelSize="3" scaleMax="10000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="1" scaleVisibility="1" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
               <data-defined/>
+            </settings>
+          </rule>
+          <rule description="Tunnel" filter="&quot;TYPE&quot; = 'Tunnel'" key="{5d2baf3e-e714-4b13-9166-16e2c52989ab}">
+            <settings>
+              <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="NAME" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
+                <substitutions/>
+              </text-style>
+              <text-format placeDirectionSymbol="0" multilineAlign="2" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
+              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="0" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
+              <background shapeSizeUnits="1" shapeType="0" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="255,255,255,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
+              <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
+              <placement repeatDistanceUnit="1" placement="1" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="0" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="10" centroidInside="0" dist="4" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="6" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
+              <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
+              <data-defined>
+                <OffsetXY expr="" field="DISP_OFF" active="true" useExpr="false"/>
+              </data-defined>
             </settings>
           </rule>
         </rules>
