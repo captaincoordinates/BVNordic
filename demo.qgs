@@ -33,10 +33,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>610584.16956185456365347</xmin>
-      <ymin>6064532.53007938619703054</ymin>
-      <xmax>617076.82757383421994746</xmax>
-      <ymax>6069690.96727798972278833</ymax>
+      <xmin>609631.40487263980321586</xmin>
+      <ymin>6065872.46559560857713223</ymin>
+      <xmax>614682.89886102825403214</xmax>
+      <ymax>6068451.68419491127133369</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -59,12 +59,15 @@
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_2018_smooth20181204230349737"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Label20181204213708128"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="WaterPoly_201820181106201327005"/>
+      <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_201820181215193556411"/>
+      <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Wetzinkwa_Loop20181215193836215"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Inset_Extent20181203211236169"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Inset_Extent_315620181203214745058"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Other_Roads_201820181106201326968"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Trails_copy20181124112151598"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:26909" srcDatumTransform="-1" destDatumTransform="-1" layerid="5m_Contour_Clip_Simplified20181127205312605"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_copy20181106204310841"/>
+      <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Wetzinkwa___Loop20181215193643474"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="LodgeArea_201820181106201326918"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="Label20181204213446177"/>
       <layer_coordinate_transform destAuthId="EPSG:3156" srcAuthId="EPSG:3156" srcDatumTransform="-1" destDatumTransform="-1" layerid="POI_2018_View20181204230233714"/>
@@ -118,7 +121,7 @@
       </filegroup>
     </legendlayer>
   </legend>
-  <Composer title="Print Candidate" visible="1">
+  <Composer title="Print Candidate" visible="0">
     <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{f14591f3-4239-4fe7-a150-c560be19875c}" alignmentSnap="1" printResolution="300" paperWidth="432" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="1" generateWorldFile="0" paperHeight="279" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
@@ -2536,14 +2539,14 @@ def my_form_open(dialog, layer, feature):
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{afdb174f-739c-4bfd-b97f-a7c201892ea9}">
-          <rule description="Easy, outside inset" filter="&quot;Difficulty&quot; = 'Easy' AND (NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR INSET_HINT != 'Yes') AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{abb51dac-173f-456e-8689-673f172cf51b}">
+        <rules key="{b85fc612-b64a-4118-9406-7912b1675eeb}">
+          <rule description="Easy, outside inset" filter="&quot;Difficulty&quot; = 'Easy' AND (NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR INSET_HINT != 'Yes') AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{8250f868-4938-446c-a177-5bdd9834ef8a}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
-              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
+              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="20" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="3" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="51,160,44,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
               <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="10" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
@@ -2553,13 +2556,13 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule description="Intermediate, outside inset" filter="&quot;Difficulty&quot; = 'Intermediate' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{b3aaf8b3-cbbc-46bb-9e83-59fe0814c4dc}">
+          <rule description="Intermediate, outside inset" filter="&quot;Difficulty&quot; = 'Intermediate' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{046fb41e-4e17-4a89-81bf-9a4609b8f4d6}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
-              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
+              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="20" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="1" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="31,120,180,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
               <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
@@ -2569,13 +2572,13 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule description="Advanced, outside inset" filter="&quot;Difficulty&quot; = 'Advanced' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{91c69645-3c22-4000-8123-b3c3582a99e9}">
+          <rule description="Advanced, outside inset" filter="&quot;Difficulty&quot; = 'Advanced' AND NOT within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) AND if(&quot;INSET_HINT&quot; IS NULL, 'No', &quot;INSET_HINT&quot;) = 'No'" key="{4114f149-5a98-4993-ae64-7c9037aa8fc5}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
-              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
+              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="20" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="0" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="0,0,0,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
               <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
@@ -2585,13 +2588,13 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule description="Easy, inside inset" filter="&quot;Difficulty&quot; = 'Easy' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{70c76d6b-2723-4188-ab81-32606abd1681}">
+          <rule description="Easy, inside inset" filter="&quot;Difficulty&quot; = 'Easy' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{e54930d9-ff4d-4b4a-a969-117ca08d0c54}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
-              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
+              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="20" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="3" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="51,160,44,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
               <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="10" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
@@ -2601,13 +2604,13 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule description="Intermediate, inside inset" filter="&quot;Difficulty&quot; = 'Intermediate' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{4b689ee6-75d1-4314-9237-bf1744b7e924}">
+          <rule description="Intermediate, inside inset" filter="&quot;Difficulty&quot; = 'Intermediate' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{263403f0-f28b-4443-a3fa-e25d129c480e}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
-              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
+              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="20" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="1" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="31,120,180,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
               <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
@@ -2617,13 +2620,13 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule description="Advanced, inside inset" filter="&quot;Difficulty&quot; = 'Advanced' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{892b3577-640a-4750-b34b-d8f29c481a7d}">
+          <rule description="Advanced, inside inset" filter="&quot;Difficulty&quot; = 'Advanced' AND (within($geometry, geometry(get_feature('Inset Extent', 'id', 0))) OR &quot;INSET_HINT&quot; = 'Yes')" key="{1a936a64-31de-433e-80d8-92292de1ea36}">
             <settings>
               <text-style fontItalic="1" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="if( &quot;TRAIL_NAME&quot;  is null or &quot;DISP_DIST&quot; is null, &quot;TRAIL_NAME&quot;, concat(&quot;TRAIL_NAME&quot;, '|', &quot;DISP_DIST&quot;, 'km'))" namedStyle="Italic" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
               </text-style>
               <text-format placeDirectionSymbol="0" multilineAlign="1" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="|" reverseDirectionSymbol="0"/>
-              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="0" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
+              <text-buffer bufferSize="1" bufferSizeMapUnitScale="0,0,0,0,0,0" bufferColor="255,255,255,255" bufferDraw="1" bufferBlendMode="0" bufferTransp="20" bufferSizeInMapUnits="0" bufferNoFill="0" bufferJoinStyle="128"/>
               <background shapeSizeUnits="1" shapeType="0" shapeSVGFile="" shapeOffsetX="0" shapeOffsetY="0" shapeBlendMode="0" shapeFillColor="0,0,0,255" shapeTransparency="0" shapeSizeMapUnitScale="0,0,0,0,0,0" shapeSizeType="0" shapeJoinStyle="64" shapeDraw="0" shapeBorderWidthUnits="1" shapeSizeX="0" shapeSizeY="0" shapeOffsetMapUnitScale="0,0,0,0,0,0" shapeRadiiX="0" shapeRadiiY="0" shapeOffsetUnits="1" shapeRotation="0" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeRotationType="0" shapeBorderWidthMapUnitScale="0,0,0,0,0,0" shapeRadiiMapUnitScale="0,0,0,0,0,0" shapeRadiiUnits="1"/>
               <shadow shadowOffsetMapUnitScale="0,0,0,0,0,0" shadowOffsetGlobal="1" shadowRadiusUnits="1" shadowTransparency="30" shadowColor="0,0,0,255" shadowUnder="0" shadowScale="100" shadowOffsetDist="1" shadowDraw="0" shadowOffsetAngle="135" shadowRadius="1.5" shadowRadiusMapUnitScale="0,0,0,0,0,0" shadowBlendMode="6" shadowRadiusAlphaOnly="0" shadowOffsetUnits="1"/>
               <placement repeatDistanceUnit="2" placement="2" maxCurvedCharAngleIn="25" repeatDistance="0" distInMapUnits="0" labelOffsetInMapUnits="1" xOffset="0" distMapUnitScale="0,0,0,0,0,0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" preserveRotation="1" repeatDistanceMapUnitScale="0,0,0,0,0,0" centroidWhole="0" priority="5" yOffset="0" offsetType="0" placementFlags="9" centroidInside="0" dist="0" angleOffset="0" maxCurvedCharAngleOut="-25" fitInPolygonOnly="0" quadOffset="4" labelOffsetMapUnitScale="0,0,0,0,0,0"/>
@@ -2846,7 +2849,7 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;TRAIL_NAME&quot;" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;LENGTH&quot;" sortOrder="0">
         <columns>
           <column width="-1" hidden="1" type="actions"/>
           <column width="-1" hidden="0" type="field" name="LIGHTS"/>
