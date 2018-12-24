@@ -67,10 +67,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>611344.88484502374194562</xmin>
-      <ymin>6065667.89299551118165255</ymin>
-      <xmax>616811.60224884911440313</xmax>
-      <ymax>6068627.8396651977673173</ymax>
+      <xmin>611967.73270290659274906</xmin>
+      <ymin>6065631.77534384466707706</ymin>
+      <xmax>615693.26443278219085187</xmax>
+      <ymax>6068591.72201353125274181</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -297,6 +297,9 @@
         </rules>
       </labeling>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "LAYER", '&lt;NULL>' )</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property value="false" key="labeling/addDirectionSymbol"/>
         <property value="0" key="labeling/angleOffset"/>
@@ -462,77 +465,7 @@
         <checkConfiguration/>
       </geometryOptions>
       <fieldConfiguration>
-        <field name="LAYER">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="GM_TYPE">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="DGN_LEVEL">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="Label_20m">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="CalC">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="Shape_Leng">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
         <field name="ELEVATION">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="id">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -544,49 +477,23 @@
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias name="" index="0" field="LAYER"/>
-        <alias name="" index="1" field="GM_TYPE"/>
-        <alias name="" index="2" field="DGN_LEVEL"/>
-        <alias name="" index="3" field="Label_20m"/>
-        <alias name="" index="4" field="CalC"/>
-        <alias name="" index="5" field="Shape_Leng"/>
-        <alias name="" index="6" field="ELEVATION"/>
-        <alias name="" index="7" field="id"/>
+        <alias name="" index="0" field="ELEVATION"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <defaults>
-        <default applyOnUpdate="0" field="LAYER" expression=""/>
-        <default applyOnUpdate="0" field="GM_TYPE" expression=""/>
-        <default applyOnUpdate="0" field="DGN_LEVEL" expression=""/>
-        <default applyOnUpdate="0" field="Label_20m" expression=""/>
-        <default applyOnUpdate="0" field="CalC" expression=""/>
-        <default applyOnUpdate="0" field="Shape_Leng" expression=""/>
         <default applyOnUpdate="0" field="ELEVATION" expression=""/>
-        <default applyOnUpdate="0" field="id" expression=""/>
       </defaults>
       <constraints>
-        <constraint exp_strength="0" field="LAYER" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="GM_TYPE" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="DGN_LEVEL" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="Label_20m" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="CalC" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="Shape_Leng" notnull_strength="0" constraints="0" unique_strength="0"/>
         <constraint exp_strength="0" field="ELEVATION" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="id" notnull_strength="0" constraints="0" unique_strength="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint exp="" desc="" field="LAYER"/>
-        <constraint exp="" desc="" field="GM_TYPE"/>
-        <constraint exp="" desc="" field="DGN_LEVEL"/>
-        <constraint exp="" desc="" field="Label_20m"/>
-        <constraint exp="" desc="" field="CalC"/>
-        <constraint exp="" desc="" field="Shape_Leng"/>
         <constraint exp="" desc="" field="ELEVATION"/>
-        <constraint exp="" desc="" field="id"/>
       </constraintExpressions>
       <expressionfields/>
-      <attributeactions/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
       <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="&quot;ELEVATION&quot;">
         <columns>
           <column type="field" name="LAYER" width="-1" hidden="0"/>
@@ -726,6 +633,9 @@ def my_form_open(dialog, layer, feature):
         <sizescale/>
       </renderer-v2>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>"id"</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -914,6 +824,9 @@ def my_form_open(dialog, layer, feature):
         <sizescale/>
       </renderer-v2>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "Id", '&lt;NULL>' )</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -1132,6 +1045,9 @@ def my_form_open(dialog, layer, feature):
         </settings>
       </labeling>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "NAME", '&lt;NULL>' )</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -1804,6 +1720,9 @@ def my_form_open(dialog, layer, feature):
         </rules>
       </labeling>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "Trail_name", '&lt;NULL>' )</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property value="false" key="labeling/addDirectionSymbol"/>
         <property value="0" key="labeling/angleOffset"/>
@@ -2167,11 +2086,11 @@ def my_form_open(dialog, layer, feature):
       </flags>
       <renderer-v2 type="RuleRenderer" symbollevels="0" forceraster="0" enableorderby="1">
         <rules key="{0bd9e16b-93e0-47dc-a7f5-6c076de0a4bf}">
-          <rule filter=" &quot;LIGHTS&quot; = 'Yes'" symbol="0" label="Lit Trails" key="{bf580258-381f-44a9-b290-338676957f4c}"/>
-          <rule filter="&quot;Difficulty&quot; = 'Easy' OR &quot;Difficulty&quot; IS NULL" symbol="1" label="Easy" key="{b4baac2d-ed5c-4f74-8e33-ad5af30718f4}"/>
-          <rule filter="&quot;Difficulty&quot; = 'Intermediate'" symbol="2" label="Intermediate" key="{2ded8d03-26a5-45f4-b9e2-bc6207cd39f9}"/>
-          <rule filter="&quot;Difficulty&quot; = 'Advanced'" symbol="3" label="Advanced" key="{3410c758-720d-4816-b9a0-d345b72b91d2}"/>
-          <rule filter="&quot;DOG_FRIEND&quot; = 'Yes'" symbol="4" label="Dogs One Way" key="{1a562757-2fd7-4349-b140-6cdd232c4b85}"/>
+          <rule filter=" &quot;LIGHTS&quot; = 1" symbol="0" label="Lit Trails" key="{bf580258-381f-44a9-b290-338676957f4c}"/>
+          <rule filter="&quot;Difficulty&quot; IN (0,1)" symbol="1" label="Easy" key="{b4baac2d-ed5c-4f74-8e33-ad5af30718f4}"/>
+          <rule filter="&quot;Difficulty&quot; = 2" symbol="2" label="Intermediate" key="{2ded8d03-26a5-45f4-b9e2-bc6207cd39f9}"/>
+          <rule filter="&quot;Difficulty&quot; = 3" symbol="3" label="Advanced" key="{3410c758-720d-4816-b9a0-d345b72b91d2}"/>
+          <rule filter="&quot;DOG_FRIEND&quot; = 1" symbol="4" label="Dogs One Way" key="{1a562757-2fd7-4349-b140-6cdd232c4b85}"/>
         </rules>
         <symbols>
           <symbol type="line" name="0" alpha="1" clip_to_extent="1">
@@ -2357,8 +2276,8 @@ def my_form_open(dialog, layer, feature):
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{017c5001-3073-46f6-84c3-d8f454c1fc37}">
-          <rule key="{af018574-778c-4531-ac53-6cd5a6341514}" description="All Trails">
+        <rules key="{95c505ab-81e0-4d99-b18b-bab1a0f20381}">
+          <rule key="{06d1bcfb-2e49-49eb-b969-238a9b7c6343}" description="All Trails">
             <settings>
               <text-style isExpression="1" fontFamily="MS Shell Dlg 2" fontWordSpacing="0" blendMode="0" fontStrikeout="0" namedStyle="Regular" fontSizeUnit="Point" useSubstitutions="0" fontSize="7.75" fontLetterSpacing="0" textColor="0,0,0,255" fontUnderline="0" multilineHeight="1" fontWeight="50" textOpacity="1" fontCapitals="0" fieldName="case&#xd;&#xa;&#x9;when &quot;LBL_SCHEME&quot; = 0 then&#x9;-- no label&#xd;&#xa;&#x9;&#x9;null&#xd;&#xa;&#x9;when &quot;LBL_SCHEME&quot; = 1 then&#x9;-- trail name&#xd;&#xa;&#x9;&#x9;&quot;TRAIL_NAME&quot;&#xd;&#xa;&#x9;when &quot;LBL_SCHEME&quot; = 2 then&#x9;-- trail name, new line, distance&#xd;&#xa;&#x9;&#x9;concat(&quot;TRAIL_NAME&quot;, '|', max(round($length / 1000, 1), 0.1), 'km')&#xd;&#xa;&#x9;when &quot;LBL_SCHEME&quot; = 3 then&#x9;-- trail name, (abbreviation), new line, distance&#xd;&#xa;&#x9;&#x9;concat(&quot;TRAIL_NAME&quot;, ' (', regexp_replace(regexp_replace(&quot;TRAIL_NAME&quot;, '\\B[a-z]', ''), '\\s', ''), ')', '|', max(round($length / 1000, 1), 0.1), 'km')&#xd;&#xa;&#x9;when &quot;LBL_SCHEME&quot; = 4 then&#x9;-- abbreviation, new line, distance&#xd;&#xa;&#x9;&#x9;concat(regexp_replace(regexp_replace(&quot;TRAIL_NAME&quot;, '\\B[a-z]', ''), '\\s', ''), '|', max(round($length / 1000, 1), 0.1), 'km')&#xd;&#xa;&#x9;when &quot;LBL_SCHEME&quot; = 5 then&#x9;-- distance&#xd;&#xa;&#x9;&#x9;concat(max(round($length / 1000, 1), 0.1), 'km')&#xd;&#xa;&#x9;when &quot;LBL_SCHEME&quot; = 6 then&#x9;-- new line, distance&#xd;&#xa;&#x9;&#x9;concat('|', max(round($length / 1000, 1), 0.1), 'km')&#xd;&#xa;&#x9;when &quot;LBL_SCHEME&quot; = 7 then&#x9;-- trail name, distance [no new line]&#xd;&#xa;&#x9;&#x9;concat(&quot;TRAIL_NAME&quot;, ' ', max(round($length / 1000, 1), 0.1), 'km')&#xd;&#xa;end" previewBkgrdColor="#ffffff" fontItalic="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0">
                 <text-buffer bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferDraw="1" bufferOpacity="0.8" bufferJoinStyle="128" bufferColor="255,255,255,255" bufferNoFill="0" bufferSize="1" bufferSizeUnits="MM" bufferBlendMode="0"/>
@@ -2375,12 +2294,12 @@ def my_form_open(dialog, layer, feature):
                   <Option type="Map" name="properties">
                     <Option type="Map" name="MaximumScale">
                       <Option type="bool" value="true" name="active"/>
-                      <Option type="QString" value="if(&#xd;&#xa;&#x9;within(&#xd;&#xa;&#x9;&#x9;$geometry,&#xd;&#xa;&#x9;&#x9;geometry(&#xd;&#xa;&#x9;&#x9;&#x9;get_feature('Inset Extent', 'id', 0)&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;) OR &quot;INSET_HINT&quot; = 'Yes',&#xd;&#xa;&#x9;0,&#xd;&#xa;&#x9;10000&#xd;&#xa;)" name="expression"/>
+                      <Option type="QString" value="if(&#xd;&#xa;&#x9;within(&#xd;&#xa;&#x9;&#x9;$geometry,&#xd;&#xa;&#x9;&#x9;geometry(&#xd;&#xa;&#x9;&#x9;&#x9;get_feature('Inset Extent', 'id', 0)&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;) OR &quot;INSET_HINT&quot; = 1,&#xd;&#xa;&#x9;0,&#xd;&#xa;&#x9;10000&#xd;&#xa;)" name="expression"/>
                       <Option type="int" value="3" name="type"/>
                     </Option>
                     <Option type="Map" name="MinimumScale">
                       <Option type="bool" value="true" name="active"/>
-                      <Option type="QString" value="if(&#xd;&#xa;&#x9;within(&#xd;&#xa;&#x9;&#x9;$geometry,&#xd;&#xa;&#x9;&#x9;geometry(&#xd;&#xa;&#x9;&#x9;&#x9;get_feature('Inset Extent', 'id', 0)&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;) OR &quot;INSET_HINT&quot; = 'Yes',&#xd;&#xa;&#x9;10000,&#xd;&#xa;&#x9;0&#xd;&#xa;)" name="expression"/>
+                      <Option type="QString" value="if(&#xd;&#xa;&#x9;within(&#xd;&#xa;&#x9;&#x9;$geometry,&#xd;&#xa;&#x9;&#x9;geometry(&#xd;&#xa;&#x9;&#x9;&#x9;get_feature('Inset Extent', 'id', 0)&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;) OR &quot;INSET_HINT&quot; = 1,&#xd;&#xa;&#x9;10000,&#xd;&#xa;&#x9;0&#xd;&#xa;)" name="expression"/>
                       <Option type="int" value="3" name="type"/>
                     </Option>
                     <Option type="Map" name="RepeatDistance">
@@ -2569,47 +2488,7 @@ def my_form_open(dialog, layer, feature):
         <checkConfiguration/>
       </geometryOptions>
       <fieldConfiguration>
-        <field name="LIGHTS">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="DOG_FRIEND">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="DIFFICULTY">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
         <field name="TRAIL_NAME">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="INSET_HINT">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -2626,40 +2505,68 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
+        <field name="DOG_FRIEND">
+          <editWidget type="Range">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="LIGHTS">
+          <editWidget type="Range">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="DIFFICULTY">
+          <editWidget type="Range">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="INSET_HINT">
+          <editWidget type="Range">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
       </fieldConfiguration>
       <aliases>
-        <alias name="" index="0" field="LIGHTS"/>
-        <alias name="" index="1" field="DOG_FRIEND"/>
-        <alias name="" index="2" field="DIFFICULTY"/>
-        <alias name="" index="3" field="TRAIL_NAME"/>
-        <alias name="" index="4" field="INSET_HINT"/>
-        <alias name="" index="5" field="LBL_SCHEME"/>
+        <alias name="" index="0" field="TRAIL_NAME"/>
+        <alias name="" index="1" field="LBL_SCHEME"/>
+        <alias name="" index="2" field="DOG_FRIEND"/>
+        <alias name="" index="3" field="LIGHTS"/>
+        <alias name="" index="4" field="DIFFICULTY"/>
+        <alias name="" index="5" field="INSET_HINT"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <defaults>
-        <default applyOnUpdate="0" field="LIGHTS" expression=""/>
-        <default applyOnUpdate="0" field="DOG_FRIEND" expression=""/>
-        <default applyOnUpdate="0" field="DIFFICULTY" expression=""/>
         <default applyOnUpdate="0" field="TRAIL_NAME" expression=""/>
-        <default applyOnUpdate="0" field="INSET_HINT" expression=""/>
         <default applyOnUpdate="0" field="LBL_SCHEME" expression=""/>
+        <default applyOnUpdate="0" field="DOG_FRIEND" expression=""/>
+        <default applyOnUpdate="0" field="LIGHTS" expression=""/>
+        <default applyOnUpdate="0" field="DIFFICULTY" expression=""/>
+        <default applyOnUpdate="0" field="INSET_HINT" expression=""/>
       </defaults>
       <constraints>
-        <constraint exp_strength="0" field="LIGHTS" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="DOG_FRIEND" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="DIFFICULTY" notnull_strength="0" constraints="0" unique_strength="0"/>
         <constraint exp_strength="0" field="TRAIL_NAME" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="INSET_HINT" notnull_strength="0" constraints="0" unique_strength="0"/>
         <constraint exp_strength="0" field="LBL_SCHEME" notnull_strength="0" constraints="0" unique_strength="0"/>
+        <constraint exp_strength="0" field="DOG_FRIEND" notnull_strength="0" constraints="0" unique_strength="0"/>
+        <constraint exp_strength="0" field="LIGHTS" notnull_strength="0" constraints="0" unique_strength="0"/>
+        <constraint exp_strength="0" field="DIFFICULTY" notnull_strength="0" constraints="0" unique_strength="0"/>
+        <constraint exp_strength="0" field="INSET_HINT" notnull_strength="0" constraints="0" unique_strength="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint exp="" desc="" field="LIGHTS"/>
-        <constraint exp="" desc="" field="DOG_FRIEND"/>
-        <constraint exp="" desc="" field="DIFFICULTY"/>
         <constraint exp="" desc="" field="TRAIL_NAME"/>
-        <constraint exp="" desc="" field="INSET_HINT"/>
         <constraint exp="" desc="" field="LBL_SCHEME"/>
+        <constraint exp="" desc="" field="DOG_FRIEND"/>
+        <constraint exp="" desc="" field="LIGHTS"/>
+        <constraint exp="" desc="" field="DIFFICULTY"/>
+        <constraint exp="" desc="" field="INSET_HINT"/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
@@ -2668,12 +2575,12 @@ def my_form_open(dialog, layer, feature):
       <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="&quot;TRAIL_NAME&quot;">
         <columns>
           <column type="actions" width="-1" hidden="1"/>
+          <column type="field" name="TRAIL_NAME" width="182" hidden="0"/>
+          <column type="field" name="LBL_SCHEME" width="-1" hidden="0"/>
+          <column type="field" name="DOG_FRIEND" width="-1" hidden="0"/>
           <column type="field" name="LIGHTS" width="-1" hidden="0"/>
           <column type="field" name="DIFFICULTY" width="-1" hidden="0"/>
-          <column type="field" name="TRAIL_NAME" width="182" hidden="0"/>
-          <column type="field" name="DOG_FRIEND" width="103" hidden="0"/>
           <column type="field" name="INSET_HINT" width="-1" hidden="0"/>
-          <column type="field" name="LBL_SCHEME" width="-1" hidden="0"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -2862,6 +2769,9 @@ def my_form_open(dialog, layer, feature):
         </settings>
       </labeling>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "NAME", '&lt;NULL>' )</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -2889,177 +2799,7 @@ def my_form_open(dialog, layer, feature):
         <checkConfiguration/>
       </geometryOptions>
       <fieldConfiguration>
-        <field name="OBJECTID">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="TYPE">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="CLASS">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="CLASS_YEAR">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="SURVEYOR">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="METHOD">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="CONTRACTOR">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="COMMENTS">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="SUPPRESS">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="OWNERSHIP">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="LICENSE">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="CUT_PERMIT">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="BLOCK">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
         <field name="NAME">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="SUBCLASS">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="CUTB_SEQ_N">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="Shape_Leng">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="QString" value="0" name="IsMultiline"/>
-                <Option type="QString" value="0" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="Shape_Area">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -3071,89 +2811,23 @@ def my_form_open(dialog, layer, feature):
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias name="" index="0" field="OBJECTID"/>
-        <alias name="" index="1" field="TYPE"/>
-        <alias name="" index="2" field="CLASS"/>
-        <alias name="" index="3" field="CLASS_YEAR"/>
-        <alias name="" index="4" field="SURVEYOR"/>
-        <alias name="" index="5" field="METHOD"/>
-        <alias name="" index="6" field="CONTRACTOR"/>
-        <alias name="" index="7" field="COMMENTS"/>
-        <alias name="" index="8" field="SUPPRESS"/>
-        <alias name="" index="9" field="OWNERSHIP"/>
-        <alias name="" index="10" field="LICENSE"/>
-        <alias name="" index="11" field="CUT_PERMIT"/>
-        <alias name="" index="12" field="BLOCK"/>
-        <alias name="" index="13" field="NAME"/>
-        <alias name="" index="14" field="SUBCLASS"/>
-        <alias name="" index="15" field="CUTB_SEQ_N"/>
-        <alias name="" index="16" field="Shape_Leng"/>
-        <alias name="" index="17" field="Shape_Area"/>
+        <alias name="" index="0" field="NAME"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <defaults>
-        <default applyOnUpdate="0" field="OBJECTID" expression=""/>
-        <default applyOnUpdate="0" field="TYPE" expression=""/>
-        <default applyOnUpdate="0" field="CLASS" expression=""/>
-        <default applyOnUpdate="0" field="CLASS_YEAR" expression=""/>
-        <default applyOnUpdate="0" field="SURVEYOR" expression=""/>
-        <default applyOnUpdate="0" field="METHOD" expression=""/>
-        <default applyOnUpdate="0" field="CONTRACTOR" expression=""/>
-        <default applyOnUpdate="0" field="COMMENTS" expression=""/>
-        <default applyOnUpdate="0" field="SUPPRESS" expression=""/>
-        <default applyOnUpdate="0" field="OWNERSHIP" expression=""/>
-        <default applyOnUpdate="0" field="LICENSE" expression=""/>
-        <default applyOnUpdate="0" field="CUT_PERMIT" expression=""/>
-        <default applyOnUpdate="0" field="BLOCK" expression=""/>
         <default applyOnUpdate="0" field="NAME" expression=""/>
-        <default applyOnUpdate="0" field="SUBCLASS" expression=""/>
-        <default applyOnUpdate="0" field="CUTB_SEQ_N" expression=""/>
-        <default applyOnUpdate="0" field="Shape_Leng" expression=""/>
-        <default applyOnUpdate="0" field="Shape_Area" expression=""/>
       </defaults>
       <constraints>
-        <constraint exp_strength="0" field="OBJECTID" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="TYPE" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="CLASS" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="CLASS_YEAR" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="SURVEYOR" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="METHOD" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="CONTRACTOR" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="COMMENTS" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="SUPPRESS" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="OWNERSHIP" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="LICENSE" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="CUT_PERMIT" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="BLOCK" notnull_strength="0" constraints="0" unique_strength="0"/>
         <constraint exp_strength="0" field="NAME" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="SUBCLASS" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="CUTB_SEQ_N" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="Shape_Leng" notnull_strength="0" constraints="0" unique_strength="0"/>
-        <constraint exp_strength="0" field="Shape_Area" notnull_strength="0" constraints="0" unique_strength="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint exp="" desc="" field="OBJECTID"/>
-        <constraint exp="" desc="" field="TYPE"/>
-        <constraint exp="" desc="" field="CLASS"/>
-        <constraint exp="" desc="" field="CLASS_YEAR"/>
-        <constraint exp="" desc="" field="SURVEYOR"/>
-        <constraint exp="" desc="" field="METHOD"/>
-        <constraint exp="" desc="" field="CONTRACTOR"/>
-        <constraint exp="" desc="" field="COMMENTS"/>
-        <constraint exp="" desc="" field="SUPPRESS"/>
-        <constraint exp="" desc="" field="OWNERSHIP"/>
-        <constraint exp="" desc="" field="LICENSE"/>
-        <constraint exp="" desc="" field="CUT_PERMIT"/>
-        <constraint exp="" desc="" field="BLOCK"/>
         <constraint exp="" desc="" field="NAME"/>
-        <constraint exp="" desc="" field="SUBCLASS"/>
-        <constraint exp="" desc="" field="CUTB_SEQ_N"/>
-        <constraint exp="" desc="" field="Shape_Leng"/>
-        <constraint exp="" desc="" field="Shape_Area"/>
       </constraintExpressions>
       <expressionfields/>
-      <attributeactions/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
       <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
         <columns>
           <column type="field" name="OBJECTID" width="-1" hidden="0"/>
