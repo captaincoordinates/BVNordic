@@ -46,6 +46,9 @@
     <layer-tree-layer checked="Qt::Checked" source="file:///C:/Users/Tom/Source/BVNordic/main-data/trail_names.csv?type=csv&amp;detectTypes=yes&amp;geomType=none&amp;subsetIndex=no&amp;watchFile=no" name="trail_names" providerKey="delimitedtext" expanded="1" id="trail_names_bd79f4ad_1428_430d_921c_9b5769bab6f0">
       <customproperties/>
     </layer-tree-layer>
+    <layer-tree-layer checked="Qt::Checked" source="file:///C:/Users/Tom/Source/BVNordic/main-data/poi_type.csv?type=csv&amp;detectTypes=yes&amp;geomType=none&amp;subsetIndex=no&amp;watchFile=no" name="poi_type" providerKey="delimitedtext" expanded="1" id="poi_type_8aada263_d2a1_4306_bfb0_3697044b4f38">
+      <customproperties/>
+    </layer-tree-layer>
     <custom-order enabled="0">
       <item>LodgeArea_201820181106201326918</item>
       <item>Other_Roads_201820181106201326968</item>
@@ -56,6 +59,7 @@
       <item>Inset_Extent_315620181203214745058</item>
       <item>race_routes_joined_9a6bacbd_97b4_4fa4_aa7f_c8186be4467f</item>
       <item>trail_names_bd79f4ad_1428_430d_921c_9b5769bab6f0</item>
+      <item>poi_type_8aada263_d2a1_4306_bfb0_3697044b4f38</item>
     </custom-order>
   </layer-tree-group>
   <snapping-settings mode="1" tolerance="1" enabled="0" unit="2" intersection-snapping="0" type="2">
@@ -140,6 +144,11 @@
     <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="trail_names" open="true">
       <filegroup hidden="false" open="true">
         <legendlayerfile visible="1" isInOverview="0" layerid="trail_names_bd79f4ad_1428_430d_921c_9b5769bab6f0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="poi_type" open="true">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile visible="1" isInOverview="0" layerid="poi_type_8aada263_d2a1_4306_bfb0_3697044b4f38"/>
       </filegroup>
     </legendlayer>
   </legend>
@@ -1318,7 +1327,13 @@ def my_form_open(dialog, layer, feature):
         </extent>
       </resourceMetadata>
       <provider encoding="UTF-8">ogr</provider>
-      <vectorjoins/>
+      <vectorjoins>
+        <join customPrefix="" targetFieldName="TYPE_ID" dynamicForm="0" editable="0" upsertOnEdit="0" cascadedDelete="0" joinLayerId="poi_type_8aada263_d2a1_4306_bfb0_3697044b4f38" joinFieldName="TYPE_ID" hasCustomPrefix="1" memoryCache="1">
+          <joinFieldsSubset>
+            <field name="TYPE"/>
+          </joinFieldsSubset>
+        </join>
+      </vectorjoins>
       <layerDependencies/>
       <dataDependencies/>
       <legend type="default-vector"/>
@@ -1772,8 +1787,8 @@ def my_form_open(dialog, layer, feature):
         </symbols>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{3a97eddd-460c-4267-aee6-557c88c5aa12}">
-          <rule description="Trail Junctions North" filter="&quot;TYPE&quot; = 'Trail Junction North'" key="{aef2ec47-ff70-4c7e-a1ce-68911b4dca1b}">
+        <rules key="{1d08c6b0-bdfa-47fd-82e9-c93c4a8c3cb1}">
+          <rule description="Trail Junctions North" filter="&quot;TYPE&quot; = 'Trail Junction North'" key="{4573dc2d-327e-41b3-b4d6-f71514257e86}">
             <settings>
               <text-style multilineHeight="1" fontItalic="0" fontUnderline="0" previewBkgrdColor="#ffffff" fontSizeUnit="Point" fontCapitals="0" textOpacity="1" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fieldName="NAME" fontWeight="50" fontLetterSpacing="0" blendMode="0" fontFamily="MS Shell Dlg 2" isExpression="0" fontStrikeout="0" namedStyle="Regular" textColor="0,0,0,255" fontSize="7.5" useSubstitutions="0" fontWordSpacing="0">
                 <text-buffer bufferJoinStyle="128" bufferSize="1" bufferSizeUnits="MM" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferBlendMode="0" bufferNoFill="1" bufferDraw="0" bufferColor="255,255,255,255" bufferOpacity="0.4"/>
@@ -1809,7 +1824,7 @@ def my_form_open(dialog, layer, feature):
               </dd_properties>
             </settings>
           </rule>
-          <rule description="Trail Junction South" filter="&quot;TYPE&quot; = 'Trail Junction South'" key="{d286ff9a-07e3-4e9f-9782-745c67d408a5}">
+          <rule description="Trail Junction South" filter="&quot;TYPE&quot; = 'Trail Junction South'" key="{ca16ec31-e200-422b-8827-0952f06680d6}">
             <settings>
               <text-style multilineHeight="1" fontItalic="0" fontUnderline="0" previewBkgrdColor="#ffffff" fontSizeUnit="Point" fontCapitals="0" textOpacity="1" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fieldName="NAME" fontWeight="50" fontLetterSpacing="0" blendMode="0" fontFamily="MS Shell Dlg 2" isExpression="0" fontStrikeout="0" namedStyle="Normal" textColor="0,0,0,255" fontSize="7.5" useSubstitutions="0" fontWordSpacing="0">
                 <text-buffer bufferJoinStyle="128" bufferSize="1" bufferSizeUnits="MM" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferBlendMode="0" bufferNoFill="0" bufferDraw="0" bufferColor="0,0,0,255" bufferOpacity="0.4"/>
@@ -1835,7 +1850,7 @@ def my_form_open(dialog, layer, feature):
               </dd_properties>
             </settings>
           </rule>
-          <rule description="Viewpoints" filter="&quot;TYPE&quot; = 'Viewpoint'" key="{c79e264d-0a0c-4b1c-9c7a-56493aa21db6}">
+          <rule description="Viewpoints" filter="&quot;TYPE&quot; = 'Viewpoint'" key="{b18868e1-ee66-4426-99d8-0a2b71b3e739}">
             <settings>
               <text-style multilineHeight="1" fontItalic="0" fontUnderline="0" previewBkgrdColor="#ffffff" fontSizeUnit="Point" fontCapitals="0" textOpacity="1" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fieldName="" fontWeight="50" fontLetterSpacing="0" blendMode="0" fontFamily="MS Shell Dlg 2" isExpression="1" fontStrikeout="0" namedStyle="Regular" textColor="0,0,0,255" fontSize="7.5" useSubstitutions="0" fontWordSpacing="0">
                 <text-buffer bufferJoinStyle="128" bufferSize="1" bufferSizeUnits="MM" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferBlendMode="0" bufferNoFill="0" bufferDraw="0" bufferColor="255,255,255,255" bufferOpacity="1"/>
@@ -1855,7 +1870,7 @@ def my_form_open(dialog, layer, feature):
               </dd_properties>
             </settings>
           </rule>
-          <rule description="Biathlon" filter="&quot;TYPE&quot; = 'Biathlon'" key="{340f402a-f13f-4f1d-86b1-44b1c9641f46}">
+          <rule description="Biathlon" filter="&quot;TYPE&quot; = 'Biathlon'" key="{ff811db7-f112-423e-ad76-d50068c051d0}">
             <settings>
               <text-style multilineHeight="1" fontItalic="0" fontUnderline="0" previewBkgrdColor="#ffffff" fontSizeUnit="Point" fontCapitals="0" textOpacity="1" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fieldName="NAME" fontWeight="50" fontLetterSpacing="0" blendMode="0" fontFamily="MS Shell Dlg 2" isExpression="0" fontStrikeout="0" namedStyle="Normal" textColor="0,0,0,255" fontSize="8" useSubstitutions="0" fontWordSpacing="0">
                 <text-buffer bufferJoinStyle="128" bufferSize="1" bufferSizeUnits="MM" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferBlendMode="0" bufferNoFill="0" bufferDraw="1" bufferColor="255,255,255,255" bufferOpacity="0.7"/>
@@ -1875,7 +1890,7 @@ def my_form_open(dialog, layer, feature):
               </dd_properties>
             </settings>
           </rule>
-          <rule description="Tunnel" filter="&quot;TYPE&quot; = 'Tunnel'" key="{7fda6678-a1ee-4251-928e-935ad1e73028}">
+          <rule description="Tunnel" filter="&quot;TYPE&quot; = 'Tunnel'" key="{fc03f84c-dd9c-4f29-a228-ae24455ecf87}">
             <settings>
               <text-style multilineHeight="1" fontItalic="0" fontUnderline="0" previewBkgrdColor="#ffffff" fontSizeUnit="Point" fontCapitals="0" textOpacity="1" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fieldName="NAME" fontWeight="50" fontLetterSpacing="0" blendMode="0" fontFamily="MS Shell Dlg 2" isExpression="0" fontStrikeout="0" namedStyle="Normal" textColor="0,0,0,255" fontSize="8" useSubstitutions="0" fontWordSpacing="0">
                 <text-buffer bufferJoinStyle="128" bufferSize="1" bufferSizeUnits="MM" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferBlendMode="0" bufferNoFill="0" bufferDraw="0" bufferColor="255,255,255,255" bufferOpacity="1"/>
@@ -1904,7 +1919,9 @@ def my_form_open(dialog, layer, feature):
         </rules>
       </labeling>
       <customproperties>
-        <property key="dualview/previewExpressions" value="COALESCE( &quot;Trail_name&quot;, '&lt;NULL>' )"/>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "Trail_name", '&lt;NULL>' )</value>
+        </property>
         <property key="embeddedWidgets/count" value="0"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
         <property key="labeling/angleOffset" value="0"/>
@@ -2069,16 +2086,6 @@ def my_form_open(dialog, layer, feature):
         <checkConfiguration/>
       </geometryOptions>
       <fieldConfiguration>
-        <field name="TYPE">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option name="IsMultiline" type="QString" value="0"/>
-                <Option name="UseHtml" type="QString" value="0"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
         <field name="NAME">
           <editWidget type="TextEdit">
             <config>
@@ -2099,39 +2106,61 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
+        <field name="TYPE_ID">
+          <editWidget type="Range">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="TYPE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option name="IsMultiline" type="QString" value="0"/>
+                <Option name="UseHtml" type="QString" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
       </fieldConfiguration>
       <aliases>
-        <alias name="" index="0" field="TYPE"/>
-        <alias name="" index="1" field="NAME"/>
-        <alias name="" index="2" field="DISP_OFF"/>
+        <alias name="" index="0" field="NAME"/>
+        <alias name="" index="1" field="DISP_OFF"/>
+        <alias name="" index="2" field="TYPE_ID"/>
+        <alias name="" index="3" field="TYPE"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <defaults>
-        <default expression="" applyOnUpdate="0" field="TYPE"/>
         <default expression="" applyOnUpdate="0" field="NAME"/>
         <default expression="" applyOnUpdate="0" field="DISP_OFF"/>
+        <default expression="" applyOnUpdate="0" field="TYPE_ID"/>
+        <default expression="" applyOnUpdate="0" field="TYPE"/>
       </defaults>
       <constraints>
-        <constraint constraints="0" notnull_strength="0" field="TYPE" unique_strength="0" exp_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="NAME" unique_strength="0" exp_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="DISP_OFF" unique_strength="0" exp_strength="0"/>
+        <constraint constraints="0" notnull_strength="0" field="TYPE_ID" unique_strength="0" exp_strength="0"/>
+        <constraint constraints="0" notnull_strength="0" field="TYPE" unique_strength="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint desc="" exp="" field="TYPE"/>
         <constraint desc="" exp="" field="NAME"/>
         <constraint desc="" exp="" field="DISP_OFF"/>
+        <constraint desc="" exp="" field="TYPE_ID"/>
+        <constraint desc="" exp="" field="TYPE"/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
         <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
       </attributeactions>
-      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="1" sortExpression="&quot;TYPE&quot;">
+      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="&quot;TYPE&quot;">
         <columns>
-          <column name="TYPE" hidden="0" type="field" width="202"/>
           <column hidden="1" type="actions" width="-1"/>
           <column name="NAME" hidden="0" type="field" width="225"/>
           <column name="DISP_OFF" hidden="0" type="field" width="-1"/>
+          <column name="TYPE_ID" hidden="0" type="field" width="-1"/>
+          <column name="TYPE" hidden="0" type="field" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -2164,12 +2193,16 @@ def my_form_open(dialog, layer, feature):
       <editable>
         <field editable="1" name="DISP_OFF"/>
         <field editable="1" name="NAME"/>
-        <field editable="1" name="TYPE"/>
+        <field editable="0" name="TYPE"/>
+        <field editable="1" name="TYPE_ID"/>
+        <field editable="1" name="TYPE_old"/>
       </editable>
       <labelOnTop>
         <field name="DISP_OFF" labelOnTop="0"/>
         <field name="NAME" labelOnTop="0"/>
         <field name="TYPE" labelOnTop="0"/>
+        <field name="TYPE_ID" labelOnTop="0"/>
+        <field name="TYPE_old" labelOnTop="0"/>
       </labelOnTop>
       <widgets>
         <widget name="Trail_ID">
@@ -3091,6 +3124,127 @@ def my_form_open(dialog, layer, feature):
       <previewExpression>COALESCE( "NAME", '&lt;NULL>' )</previewExpression>
       <mapTip></mapTip>
     </maplayer>
+    <maplayer autoRefreshEnabled="0" readOnly="0" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" styleCategories="AllStyleCategories" geometry="No geometry" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" type="vector" minScale="1e+08" maxScale="0">
+      <id>poi_type_8aada263_d2a1_4306_bfb0_3697044b4f38</id>
+      <datasource>file:./main-data/poi_type.csv?type=csv&amp;detectTypes=yes&amp;geomType=none&amp;subsetIndex=no&amp;watchFile=no</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>poi_type</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4></proj4>
+          <srsid>0</srsid>
+          <srid>0</srid>
+          <authid></authid>
+          <description></description>
+          <projectionacronym></projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="UTF-8">delimitedtext</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <customproperties/>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration>
+        <field name="TYPE_ID">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="TYPE">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias name="" index="0" field="TYPE_ID"/>
+        <alias name="" index="1" field="TYPE"/>
+      </aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <defaults>
+        <default expression="" applyOnUpdate="0" field="TYPE_ID"/>
+        <default expression="" applyOnUpdate="0" field="TYPE"/>
+      </defaults>
+      <constraints>
+        <constraint constraints="0" notnull_strength="0" field="TYPE_ID" unique_strength="0" exp_strength="0"/>
+        <constraint constraints="0" notnull_strength="0" field="TYPE" unique_strength="0" exp_strength="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint desc="" exp="" field="TYPE_ID"/>
+        <constraint desc="" exp="" field="TYPE"/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+      </attributeactions>
+      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
+        <columns/>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <widgets/>
+      <previewExpression></previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
     <maplayer simplifyMaxScale="1" autoRefreshEnabled="0" readOnly="0" simplifyDrawingHints="1" simplifyAlgorithm="0" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" styleCategories="AllStyleCategories" geometry="Line" labelsEnabled="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" type="vector" minScale="1e+08" simplifyLocal="1" maxScale="0" simplifyDrawingTol="1">
       <extent>
         <xmin>611690.28060000017285347</xmin>
@@ -3523,6 +3677,7 @@ def my_form_open(dialog, layer, feature):
     <layer id="Inset_Extent_315620181203214745058"/>
     <layer id="race_routes_joined_9a6bacbd_97b4_4fa4_aa7f_c8186be4467f"/>
     <layer id="trail_names_bd79f4ad_1428_430d_921c_9b5769bab6f0"/>
+    <layer id="poi_type_8aada263_d2a1_4306_bfb0_3697044b4f38"/>
   </layerorder>
   <properties>
     <WMSPrecision type="QString">8</WMSPrecision>
