@@ -1,4 +1,3 @@
-- join to track names
 - join to poi type
 - connect soup icons
 - fix layout name logic
