@@ -1,48 +1,7 @@
-Outstanding Changes
-x add dog icon to dog trails
-x add lodge icon
-x add viewpoint at valley map
-x tidy and add legend to map for POI and trails grouped by colours
-x add trail marker (square, diamond, circle) with colour to the names of the trails
-x add all names to the map and if possible distances as this may be more relevant than numbers
-	x not doing as unable to display many names when zoomed-out. Will use trail IDs with full names in legend for the full map, can use trail names in area maps as they're more zoomed-in
-x smooth the sharp corners on the trails 14,15 and 22
-	x decided this is not a good idea
-x experiment with LiDAR / DEM data and provide some examples
-x incorporate new .gpx tracks
-	x updated Wild Dog
-x attempt to get trail junctions displaying without making the map too crowded
-x experiment with different page sizes for printing, see how this effects the outcome
-x improve display of inset outline
-x reduce crowding in middle of map and just show those junctions / trail markers in inset
-- trail names / numbers
-	dimensions (cm)
-	13h x 12w
-	17.5h x 9.2w
-	27.6h x 5.8w
-x attempt to clean up L junction area
-
-From Steve:
-x make minor contour lines more obvious
-x improve visibility of junction letters
-	x black lettering instead of white
-	x put in boxes
-	x match junction letter signs colouring
-x trail name updates
-	x harvest connector -> forest demo
-x move trail label 10 south
-x dog trails
-	x rename to Dogs One Way
-	x bolden arrows
-	x change dog icon
-x add viewpoints (waiting on Steve for GPS data)
-x change D junction to F
-x lit trails highlighting thinner
-x add biathlon
-x add junction L to the junction that is left of K and right of L1
-
-
-Check in print
-- dog size
-- biathlon label
-- contour visibility
+- join to track names
+- join to poi type
+- connect soup icons
+- fix layout name logic
+- write descriptions for layouts
+- check if layout items can be referenced in map
+- write readme (turn on certain layers / styling rules for different kinds of map)
