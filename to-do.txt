@@ -1,4 +1,4 @@
-- connect soup icons
+- connect soup icons, issues with layout scales
 - fix layout name logic
 - write descriptions for layouts
 - check if layout items can be referenced in map
