@@ -1,2 +1,3 @@
 *.qgs~
 output/**/*
+**/.DS_Store
