@@ -1,4 +1,4 @@
-from osgeo/gdal:ubuntu-small-3.1.0
+FROM osgeo/gdal:ubuntu-small-3.1.0
 
 RUN apt-get -y update \
     && apt-get install -y git \
@@ -7,4 +7,3 @@ RUN apt-get -y update \
 RUN mkdir /source
 WORKDIR /source
 RUN git clone --recursive https://github.com/pnorman/ogr2osm
-

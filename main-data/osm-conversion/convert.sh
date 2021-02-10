@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 IMAGE_NAME=bvnordic/osm-convert
 TMP_DIR=/data/osm-conversion/tmpdata
 TMP_JOINED=$TMP_DIR/joined.geojson
