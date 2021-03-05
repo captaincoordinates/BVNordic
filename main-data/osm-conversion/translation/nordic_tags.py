@@ -21,5 +21,7 @@ def filterTags(attrs):
             if int(attrs.get("difficulty", 0)) in key
         ][0],
         f"{piste_prefix}oneway": {0: "no", 1: "yes"}[int(attrs.get("dog_friend", 0))],
+        f"dog": {0: "no", 1: "yes"}[int(attrs.get("dog_friend", 0))],
+        f"lit": {0: "no", 1: "yes"}[int(attrs.get("lights", 0))],
         f"{piste_prefix}grooming": "classic;skating",
     }
