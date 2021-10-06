@@ -4,6 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update --fix-missing \
   && apt-get install -y --no-install-recommends \
   xvfb \
+  xauth \
   gnupg \
   software-properties-common \
   wget \
@@ -21,8 +22,15 @@ RUN apt-get update --fix-missing \
 #   postgresql-client \
 #   python3-pip \
   python-qgis \
-  qgis \
+  qgis-server \
   && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update --fix-missing \
+  && apt-get install -y xorg
+
+RUN apt-get update --fix-missing \
+  && apt-get install -y xserver-xorg-video-dummy x11-apps
+
 # RUN a2enmod fcgid
 # RUN mkdir -p /var/run/apache2
 
