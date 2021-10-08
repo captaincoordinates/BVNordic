@@ -1,6 +1,8 @@
 *.qgs~
 output/**/*
 **/.DS_Store
-main-data/osm-conversion/tmpdata/**
+osm-conversion/tmpdata/**
 **/*.pyc
 !.gitkeep
+**/*.gpkg-shm
+**/*.gpkg-wal
