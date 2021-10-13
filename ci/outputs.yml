@@ -1,0 +1,28 @@
+main:
+  common_layers:
+    - POI
+    - Lodge Area
+    - Trails
+    - Water Poly
+    - Other Roads
+    - 5m Contours
+  special_configs:
+    - name: Tour de Soup
+      layers:
+        - Soup Stations
+      layouts:
+        - ^Print \- Tour de Soup$
+    - name: Races
+      layers:
+        - Race Routes
+      layouts:
+        - ^Race.*
+stadium:
+  common_layers:
+    - Stadium Routes
+    - Feed Stations
+    - Finish Line
+    - Fencing
+    - Opacity Cover
+    - Google Satellite
+  special_configs: []

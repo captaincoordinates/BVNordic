@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update --fix-missing \

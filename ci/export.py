@@ -1,27 +1,58 @@
 """
-Call with `docker build -t exporter ci && docker run --rm -v $PWD:/export -v ~/Desktop/pdf:/output -e PDF_OUTPUT_PATH=/output/map.pdf exporter`
-Generated output at ~/Desktop/pdf/map.pdf
+Call with `docker build -t exporter ci && docker run --rm -v $PWD:/export -v ~/Desktop:/output -e OUTPUT_BASE=/output exporter`
 """
 
 from os import environ
-from os.path import expanduser, join
+from os.path import join
 from qgis.core import QgsApplication, QgsLayoutExporter, QgsProject
-from uuid import uuid4
+from yaml import safe_load
+from re import search
 
-layout_name = environ.get("PDF_LAYOUT_NAME", "Print")
-filename = environ.get("PDF_OUTPUT_PATH", join(expanduser("~"), f"{uuid4()}.pdf"))
+PROJECT_KEY = "PROJECT"
+OUTPUT_BASE_KEY = "OUTPUT_BASE"
+
+if PROJECT_KEY not in environ:
+    raise Exception(f"{PROJECT_KEY} must be provided")
+
+if OUTPUT_BASE_KEY not in environ:
+    raise Exception(f"{OUTPUT_BASE_KEY} must be provided")
+
+project_name = environ[PROJECT_KEY]
+with open("/export/ci/outputs.yml", "r") as config_file:
+    try:
+        config = safe_load(config_file)[project_name]
+    except KeyError as e:
+        raise Exception(f"Project {environ[PROJECT_KEY]} does not exist in config")
+        
 
 QgsApplication.setPrefixPath("/usr/bin/qgis", True)
 qgs = QgsApplication([], False)
 qgs.initQgis()
 project = QgsProject.instance()
-project.read("./main.qgs")
+project.read(f"{environ.get(PROJECT_KEY)}.qgs")
+output_base = environ.get(OUTPUT_BASE_KEY)
+layout_manager = project.layoutManager()
 
-layoutmanager = project.layoutManager()
-layout_item = layoutmanager.layoutByName(layout_name)
-export = QgsLayoutExporter(layout_item)
-settings = QgsLayoutExporter.PdfExportSettings()
-settings.dpi = 96
-export.exportToPdf(filename, settings)
+common_layers = config["common_layers"]
+
+for layout in layout_manager.layouts():
+    layout_name = layout.name()
+    visible_layers = common_layers.copy()
+
+    for special_config in config["special_configs"]:
+        for special_layout in special_config["layouts"]:
+            if search(special_layout, layout_name):
+                visible_layers.extend(special_config["layers"])
+
+    for layer_id, layer in project.mapLayers().items():
+        show = False
+        if layer.name() in visible_layers:
+            show = True
+        project.layerTreeRoot().findLayer(layer_id).setItemVisibilityChecked(show)
+
+    item = layout_manager.layoutByName(layout_name)
+    export = QgsLayoutExporter(item)
+    export.exportToImage(join(output_base, f"{project_name}-{layout_name}.png"), QgsLayoutExporter.ImageExportSettings())
+    export.exportToPdf(join(output_base, f"{project_name}-{layout_name}.pdf"), QgsLayoutExporter.PdfExportSettings())
 
 qgs.exitQgis()
