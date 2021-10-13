@@ -7,6 +7,7 @@ from os.path import join
 from qgis.core import QgsApplication, QgsLayoutExporter, QgsProject
 from yaml import safe_load
 from re import search
+from pathlib import Path
 
 PROJECT_KEY = "PROJECT"
 OUTPUT_BASE_KEY = "OUTPUT_BASE"
@@ -30,7 +31,8 @@ qgs = QgsApplication([], False)
 qgs.initQgis()
 project = QgsProject.instance()
 project.read(f"{environ.get(PROJECT_KEY)}.qgs")
-output_base = environ.get(OUTPUT_BASE_KEY)
+output_base = join(environ.get(OUTPUT_BASE_KEY), project_name)
+Path(output_base).mkdir(exist_ok=True)
 layout_manager = project.layoutManager()
 
 common_layers = config["common_layers"]
@@ -52,7 +54,7 @@ for layout in layout_manager.layouts():
 
     item = layout_manager.layoutByName(layout_name)
     export = QgsLayoutExporter(item)
-    export.exportToImage(join(output_base, f"{project_name}-{layout_name}.png"), QgsLayoutExporter.ImageExportSettings())
-    export.exportToPdf(join(output_base, f"{project_name}-{layout_name}.pdf"), QgsLayoutExporter.PdfExportSettings())
+    export.exportToImage(join(output_base, f"{layout_name}.png"), QgsLayoutExporter.ImageExportSettings())
+    export.exportToPdf(join(output_base, f"{layout_name}.pdf"), QgsLayoutExporter.PdfExportSettings())
 
 qgs.exitQgis()
