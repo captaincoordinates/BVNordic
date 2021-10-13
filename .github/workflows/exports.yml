@@ -10,6 +10,7 @@ jobs:
     name: Generate PDFs
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: Generator
       run: |
         mkdir -p output
