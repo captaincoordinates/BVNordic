@@ -1,0 +1,17 @@
+name: Export PDFs
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  generate:
+    name: Generate PDFs
+    runs-on: ubuntu-latest
+    steps:
+    - name: Generator
+      run: |
+        mkdir -p output
+        docker build -t exporter ci
+        docker run --rm -v $PWD:/export -v output:/output -e OUTPUT_BASE=/output exporter
