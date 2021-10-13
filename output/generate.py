@@ -1,7 +1,3 @@
-"""
-Call with `docker build -t exporter ci && docker run --rm -v $PWD:/export -v ~/Desktop:/output -e OUTPUT_BASE=/output exporter`
-"""
-
 from os import environ
 from os.path import join
 from qgis.core import QgsApplication, QgsLayoutExporter, QgsProject
@@ -19,7 +15,7 @@ if OUTPUT_BASE_KEY not in environ:
     raise Exception(f"{OUTPUT_BASE_KEY} must be provided")
 
 project_name = environ[PROJECT_KEY]
-with open("/export/ci/outputs.yml", "r") as config_file:
+with open("/export/output/outputs.yml", "r") as config_file:
     try:
         config = safe_load(config_file)[project_name]
     except KeyError as e:

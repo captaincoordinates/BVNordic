@@ -15,12 +15,8 @@ RUN add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main"
 
 RUN apt-get update --fix-missing \
   && apt-get install -y --no-install-recommends \
-  ca-certificates \
   python-qgis \
   qgis-server \
   xauth \
   xvfb \
   && rm -rf /var/lib/apt/lists/*
-
-# assumes bind mount from ci directory to /export
-CMD ["/export/ci/run.sh"]
