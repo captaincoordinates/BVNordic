@@ -15,7 +15,7 @@ jobs:
       id: dir_create
       run: |
         . scripts/create-dir.sh
-        ::set-output name=EXPORT_DIR::$(echo ${EXPORT_DIR})
+        echo ::set-output name=EXPORT_DIR::$(echo ${EXPORT_DIR})
     - name: Layout Generator
       run: |
         OUTPUT_BASE=/export/${{ steps.dir_create.outputs.EXPORT_DIR }} scripts/generate.sh
