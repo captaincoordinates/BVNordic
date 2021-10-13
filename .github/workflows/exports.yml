@@ -7,12 +7,15 @@ on:
 
 jobs:
   generate:
-    name: Generate PDFs
+    name: Generate Outputs
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Generator
+    - name: Directory Creator
+      id: dir_create
       run: |
-        mkdir -p output
-        docker build -t exporter ci
-        docker run --rm -v $PWD:/export -v output:/output -e OUTPUT_BASE=/output exporter
+        . scripts/create-dir.sh
+        ::set-output name=EXPORT_DIR::$(echo ${EXPORT_DIR})
+    - name: Layout Generator
+      run: |
+        OUTPUT_BASE=/export/${{ steps.dir_create.outputs.EXPORT_DIR }} scripts/generate.sh
