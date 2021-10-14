@@ -41,9 +41,6 @@ jobs:
       run: |
         mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
         OUTPUT_BASE=${{ steps.read_to_var.outputs.CONTAINER_OUTPUT_DIR }} scripts/generate.sh
-    - name: content-tester
-      run: |
-        ls -AlhR ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
     - name: Retain Generated Layouts
       uses: actions/upload-artifact@v2
       with:
@@ -71,5 +68,5 @@ jobs:
         uses: Jodebu/upload-to-drive@master
         with:
           target: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
-          credentials: secrets.GDRIVE_UPLOAD_SERVICE_ACCT_KEY
+          credentials: ${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_KEY }}
           folder: 1asRtVzDgiL__LobxbZUTHZx-sNEDMGg6
