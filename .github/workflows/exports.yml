@@ -6,16 +6,42 @@ on:
       - '**'
 
 jobs:
-  generate:
-    name: Generate Outputs
+  directory:
+    name: Define Output Directory
+    runs-on: ubuntu-latest
+    steps:
+      - name: execute
+        run: |
+          . scripts/directory.sh
+          echo ${LOCAL_DIR} > local.dir
+          echo ${CONTAINER_DIR} > container.dir
+          echo "### LOCAL"
+          cat local.dir
+          echo "### CONTAINER"
+          cat container.dir
+          echo "### CURRENT"
+          pwd
+      - name: Retain Directory Data (Container)
+        uses: actions/upload-artifact@v2
+        with:
+          name: dirs
+          path: '*.dir'
+
+  layouts:
+    name: Generate Layouts
+    needs: directory
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Directory Creator
-      id: dir_create
-      run: |
-        . scripts/create-dir.sh
-        echo ::set-output name=EXPORT_DIR::$(echo ${EXPORT_DIR})
+    - name: Retrieve Directory Data (Container)
+      uses: actions/download-artifact@v2
+      with:
+        name: dirs
     - name: Layout Generator
       run: |
-        OUTPUT_BASE=/export/${{ steps.dir_create.outputs.EXPORT_DIR }} scripts/generate.sh
+        echo "### LOCAL"
+        cat local.dir
+        echo "### CONTAINER"
+        cat container.dir
+        mkdir -p $(head -n 1 local.dir)
+        OUTPUT_BASE=$(head -n 1 container.dir) scripts/generate.sh
