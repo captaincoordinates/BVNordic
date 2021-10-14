@@ -71,12 +71,9 @@ jobs:
         id: read_to_var
         run: |
           echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
-      - name: debugger
-        run: |
-          ls -Alh
       - name: Upload to Google Drive
-        uses: Jodebu/upload-to-drive@master
+        uses: team-tumbleweed/gdrive-upload-action@main
         with:
-          target: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+          filename: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
           credentials: ${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_KEY }}
-          folder: 1asRtVzDgiL__LobxbZUTHZx-sNEDMGg6
+          folderId: 1asRtVzDgiL__LobxbZUTHZx-sNEDMGg6
