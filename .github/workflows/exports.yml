@@ -10,6 +10,7 @@ jobs:
     name: Define Output Directory
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: execute
         run: |
           . scripts/directory.sh
