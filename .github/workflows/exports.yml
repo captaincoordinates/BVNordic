@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: execute
+      - name: Define
         run: |
           . scripts/directory.sh
+          echo ${UNIQUE_DIR} > unique.dir
           echo ${LOCAL_OUTPUT_DIR} > local-output.dir
           echo ${CONTAINER_OUTPUT_DIR} > container-output.dir
       - name: Retain Directory Data
@@ -32,7 +33,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: dirs
-    - name: Read to var
+    - name: Read to Var
       id: read_to_var
       run: |
         echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
@@ -60,13 +61,17 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: outputs
-      - name: Read to var
+      - name: Read to Var
         id: read_to_var
         run: |
+          echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
           echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
+      - name: debugger
+        run: |
+          ls -Alh
       - name: Upload to Google Drive
         uses: Jodebu/upload-to-drive@master
         with:
-          target: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
+          target: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}
           credentials: ${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_KEY }}
           folder: 1asRtVzDgiL__LobxbZUTHZx-sNEDMGg6
