@@ -32,15 +32,20 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: dirs
+    - name: Read to var
+      id: read_to_var
+      run: |
+        echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
+        echo "::set-output name=CONTAINER_OUTPUT_DIR::$(head -n 1 container-output.dir)"
     - name: Layout Generator
       run: |
-        mkdir -p $(head -n 1 local-output.dir)
-        OUTPUT_BASE=$(head -n 1 container-output.dir) scripts/generate.sh
+        mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
+        OUTPUT_BASE=${{ steps.read_to_var.outputs.CONTAINER_OUTPUT_DIR }} scripts/generate.sh
     - name: Retain Generated Layouts
       uses: actions/upload-artifact@v2
       with:
         name: outputs
-        path: $(head -n 1 local-output.dir)/**/*
+        path: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/
 
   upload:
     name: Upload Layouts
@@ -55,9 +60,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: outputs
+      - name: Read to var
+        id: read_to_var
+        run: |
+          echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
       - name: Upload to Google Drive
         uses: Jodebu/upload-to-drive@master
         with:
-          target: $(head -n 1 local-output.dir)
+          target: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
           credentials: secrets.GDRIVE_UPLOAD_SERVICE_ACCT_KEY
           folder: 1asRtVzDgiL__LobxbZUTHZx-sNEDMGg6
