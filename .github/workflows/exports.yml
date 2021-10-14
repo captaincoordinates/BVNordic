@@ -14,15 +14,9 @@ jobs:
       - name: execute
         run: |
           . scripts/directory.sh
-          echo ${LOCAL_DIR} > local.dir
-          echo ${CONTAINER_DIR} > container.dir
-          echo "### LOCAL"
-          cat local.dir
-          echo "### CONTAINER"
-          cat container.dir
-          echo "### CURRENT"
-          pwd
-      - name: Retain Directory Data (Container)
+          echo ${LOCAL_OUTPUT_DIR} > local-output.dir
+          echo ${CONTAINER_OUTPUT_DIR} > container-output.dir
+      - name: Retain Directory Data
         uses: actions/upload-artifact@v2
         with:
           name: dirs
@@ -34,15 +28,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Retrieve Directory Data (Container)
+    - name: Retrieve Directory Data
       uses: actions/download-artifact@v2
       with:
         name: dirs
     - name: Layout Generator
       run: |
-        echo "### LOCAL"
-        cat local.dir
-        echo "### CONTAINER"
-        cat container.dir
-        mkdir -p $(head -n 1 local.dir)
-        OUTPUT_BASE=$(head -n 1 container.dir) scripts/generate.sh
+        mkdir -p $(head -n 1 local-output.dir)
+        OUTPUT_BASE=$(head -n 1 container-output.dir) scripts/generate.sh
+    - name: Retain Generated Layouts
+      uses: actions/upload-artifact@v2
+      with:
+        name: outputs
+        path: $(head -n 1 local-output.dir)/**/*
+
+  upload:
+    name: Upload Layouts
+    needs: layouts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve Directory Data
+        uses: actions/download-artifact@v2
+        with:
+          name: dirs
+      - name: Retrieve Generated Layouts
+        uses: actions/download-artifact@v2
+        with:
+          name: outputs
+      - name: Upload to Google Drive
+        uses: Jodebu/upload-to-drive@master
+        with:
+          target: $(head -n 1 local-output.dir)
+          credentials: secrets.GDRIVE_UPLOAD_SERVICE_ACCT_KEY
+          folder: 1asRtVzDgiL__LobxbZUTHZx-sNEDMGg6
