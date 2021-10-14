@@ -1,4 +1,4 @@
-name: Export PDFs
+name: Generate and Persist Outputs
 
 on:
   push:
@@ -46,7 +46,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: outputs
-        path: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/
+        path: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
 
   upload:
     name: Upload Layouts
