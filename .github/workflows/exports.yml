@@ -41,6 +41,9 @@ jobs:
       run: |
         mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
         OUTPUT_BASE=${{ steps.read_to_var.outputs.CONTAINER_OUTPUT_DIR }} scripts/generate.sh
+    - name: content-tester
+      run: |
+        ls -AlhR ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
     - name: Retain Generated Layouts
       uses: actions/upload-artifact@v2
       with:
