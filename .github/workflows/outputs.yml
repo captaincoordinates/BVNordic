@@ -16,8 +16,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: Define
         run: |
+          echo "script start"
           . scripts/directory.sh
+          echo "script end"
+          env
+          echo "redirect"
           echo ${ UNIQUE_DIR } > unique.dir
+          cat unique.dir
           echo ${ LOCAL_OUTPUT_DIR } > local-output.dir
           echo ${ CONTAINER_OUTPUT_DIR } > container-output.dir
           mkdir -p ${ LOCAL_OUTPUT_DIR }
