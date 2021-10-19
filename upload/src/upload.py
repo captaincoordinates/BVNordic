@@ -39,7 +39,7 @@ def create_folder(service, name: str, parent_id: str = None) -> DataObject:
     if parent_id is not None:
         folder_metadata = {**folder_metadata, "parents": [parent_id]}
     folder = service.files().create(body=folder_metadata, fields="*").execute()
-    LOGGER.info(f"making folder {folder['id']} public")
+    LOGGER.debug(f"making folder {folder['id']} public")
     make_public_readable(service, folder["id"])
     return DataObject(id=folder["id"])
 
@@ -56,6 +56,7 @@ def get_or_create_folder(service, name: str) -> DataObject:
     if len(folder_search) == 0:
         return create_folder(service, safe_name)
     else:
+        LOGGER.debug(f"found folder {safe_name}")
         return DataObject(id=folder_search[0]["id"])
 
 
@@ -79,7 +80,7 @@ def create_or_update_latest(
             )
             .execute()["id"]
         )
-        LOGGER.info(f"making {remote_file_id} public")
+        LOGGER.debug(f"making {remote_file_id} public")
         make_public_readable(service, remote_file_id)
     else:
         LOGGER.info(f"updating {safe_name} with {file_path}")
@@ -159,6 +160,8 @@ if __name__ == "__main__":
         default=False,
     )
     args = vars(parser.parse_args())
+
+    LOGGER.info(f"{__name__} called with {args}")
 
     configure_logging()
     upload_folder(

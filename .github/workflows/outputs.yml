@@ -75,6 +75,7 @@ jobs:
       - name: Unpack Bundle
         run: |
           unzip -d ${{ steps.read_to_var.outputs.UNIQUE_DIR }} ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+          ls -Alhr 
       - name: Upload to Google Drive
         run: |
           scripts/upload.sh True
