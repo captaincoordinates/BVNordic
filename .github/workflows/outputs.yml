@@ -7,9 +7,6 @@ on:
 
 jobs:
   directory:
-    defaults:
-      run:
-        shell: bash
     name: Define Output Directory
     runs-on: ubuntu-latest
     steps:
@@ -17,10 +14,10 @@ jobs:
       - name: Define
         run: |
           . scripts/directory.sh
-          echo ${{ env.UNIQUE_DIR }} > unique.dir
-          echo ${{ env.LOCAL_OUTPUT_DIR }} > local-output.dir
-          echo ${{ env.CONTAINER_OUTPUT_DIR }} > container-output.dir
-          mkdir -p ${{ env.LOCAL_OUTPUT_DIR }}
+          echo ${ UNIQUE_DIR } > unique.dir
+          echo ${ LOCAL_OUTPUT_DIR } > local-output.dir
+          echo ${ CONTAINER_OUTPUT_DIR } > container-output.dir
+          mkdir -p ${ LOCAL_OUTPUT_DIR }
       - name: Retain Directory Data
         uses: actions/upload-artifact@v2
         with:
@@ -28,9 +25,6 @@ jobs:
           path: '*.dir'
 
   layouts:
-    defaults:
-      run:
-        shell: bash
     name: Generate Layouts
     needs: directory
     runs-on: ubuntu-latest
@@ -60,9 +54,6 @@ jobs:
         path: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
 
   upload:
-    defaults:
-      run:
-        shell: bash
     name: Upload Layouts
     needs: layouts
     runs-on: ubuntu-latest
