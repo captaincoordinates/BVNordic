@@ -77,7 +77,7 @@ jobs:
           unzip -d output/build/${{ steps.read_to_var.outputs.UNIQUE_DIR }} ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
       - name: Upload to Google Drive
         run: |
-          scripts/upload.sh True
+          scripts/upload.sh --update_latest
         env:
           GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_INFO }}
           UPLOAD_FOLDER_NAME: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}

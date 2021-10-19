@@ -1,7 +1,7 @@
 import re
 from argparse import ArgumentParser
 from logging import getLogger
-from os import pardir, path, walk
+from os import linesep, pardir, path, walk
 from typing import Final  # type: ignore
 
 from googleapiclient.http import MediaFileUpload
@@ -18,7 +18,6 @@ UPLOAD_FOLDER_ROOT_KEY: Final = "UPLOAD_FOLDER_ROOT"
 
 
 def make_public_readable(service, id) -> None:
-    # add *@bvnordic.ca with manage permission
     service.permissions().create(
         fileId=id,
         body={
@@ -30,7 +29,9 @@ def make_public_readable(service, id) -> None:
     ).execute()
 
 
-def create_folder(service, name: str, parent_id: str = None) -> DataObject:
+def create_folder(
+    service, name: str, parent_id: str = None, assign_manager: bool = False
+) -> DataObject:
     LOGGER.info(f"creating folder {name}, parent: {parent_id}")
     folder_metadata = {
         "name": name,
@@ -41,10 +42,23 @@ def create_folder(service, name: str, parent_id: str = None) -> DataObject:
     folder = service.files().create(body=folder_metadata, fields="*").execute()
     LOGGER.debug(f"making folder {folder['id']} public")
     make_public_readable(service, folder["id"])
+    if assign_manager:
+        service.permissions().create(
+            fileId=folder["id"],
+            body={
+                "role": "writer",
+                "type": "domain",
+                "domain": "bvnordic.ca",
+                "allowFileDiscovery": True,
+            },
+            fields="*",
+        ).execute()
     return DataObject(id=folder["id"])
 
 
-def get_or_create_folder(service, name: str) -> DataObject:
+def get_or_create_folder(
+    service, name: str, parent_id: str = None, assign_manager: bool = False
+) -> DataObject:
     safe_name: Final = re.sub("'", "_", name)
     LOGGER.info(f"searching for folder {safe_name}")
     folder_search: Final = (
@@ -54,7 +68,7 @@ def get_or_create_folder(service, name: str) -> DataObject:
         .get("files")
     )
     if len(folder_search) == 0:
-        return create_folder(service, safe_name)
+        return create_folder(service, safe_name, parent_id, assign_manager)
     else:
         LOGGER.debug(f"found folder {safe_name}")
         return DataObject(id=folder_search[0]["id"])
@@ -92,7 +106,9 @@ def create_or_update_latest(
 
 def upload_folder(service, folder_name: str, root_path: str, update_latest: bool) -> None:
     LOGGER.info(f"uploading folder {folder_name}")
-    remote_root_folder: Final = get_or_create_folder(service, ROOT_FOLDER_NAME)
+    remote_root_folder: Final = get_or_create_folder(
+        service, ROOT_FOLDER_NAME, None, True
+    )
     upload_path: Final = path.join(root_path, folder_name)
 
     with open(path.join(path.dirname(__file__), "latests.yml"), "r") as config_file:
@@ -126,24 +142,29 @@ def upload_folder(service, folder_name: str, root_path: str, update_latest: bool
                 )
                 .execute()["id"]
             )
-            LOGGER.info(f"making file {remote_file_id} public")
+            LOGGER.debug(f"making file {remote_file_id} public")
             make_public_readable(service, remote_file_id)
 
             local_unique_path = path.join(path.basename(root), file)
-            if update_latest and local_unique_path in latests:
-                LOGGER.info(f"updating latest ({local_unique_path})")
-                create_or_update_latest(
-                    service,
-                    f"latest-{file}",
-                    path.join(root, file),
-                    remote_root_folder.id,
-                )
+            if local_unique_path in latests:
+                if update_latest:
+                    LOGGER.info(f"updating latest ({local_unique_path})")
+                    create_or_update_latest(
+                        service,
+                        f"latest-{file}",
+                        path.join(root, file),
+                        remote_root_folder.id,
+                    )
+                else:
+                    LOGGER.debug(f"not updating latest ({local_unique_path})")
 
-    LOGGER.info("")
-    LOGGER.info(f"https://drive.google.com/drive/folders/{remote_root_folder.id}")
+    LOGGER.info(
+        f"{linesep}https://drive.google.com/drive/folders/{remote_root_folder.id}"
+    )
 
 
 if __name__ == "__main__":
+    configure_logging()
     parser = ArgumentParser()
     parser.add_argument(
         "upload_folder_name", type=str, help="Name of the folder to be uploaded"
@@ -154,16 +175,14 @@ if __name__ == "__main__":
         help="Path for the parent of the folder to be uploaded",
     )
     parser.add_argument(
-        "update_latest",
-        type=bool,
+        "--update_latest",
+        dest="update_latest",
+        action="store_true",
         help="If this upload should be considered the latest content",
-        default=False,
     )
+    parser.set_defaults(update_latest=False)
     args = vars(parser.parse_args())
-
-    configure_logging()
     LOGGER.info(f"{__name__} called with {args}")
-
     upload_folder(
         create_service(),
         args["upload_folder_name"],

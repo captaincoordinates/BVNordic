@@ -1,3 +1,4 @@
+from argparse import ArgumentParser
 from logging import getLogger
 from typing import Final  # type: ignore
 
@@ -8,10 +9,10 @@ from .util import configure_logging
 LOGGER: Final = getLogger(__file__)
 
 
-def clean_all(service, exclude_root: bool = True):
+def clean_all(service, include_root: bool = True):
     for item in service.files().list(fields="*").execute().get("files", []):
         id, name = item["id"], item["name"]
-        if not exclude_root or name != ROOT_FOLDER_NAME:
+        if include_root or name != ROOT_FOLDER_NAME:
             LOGGER.info(f"deleting {name} ({id})")
             try:
                 service.files().delete(fields="*", fileId=id).execute()
@@ -23,5 +24,14 @@ def clean_all(service, exclude_root: bool = True):
 
 if __name__ == "__main__":
     configure_logging()
-    service: Final = create_service()
-    clean_all(service)
+    parser = ArgumentParser()
+    parser.add_argument(
+        "--include_root",
+        dest="include_root",
+        action="store_true",
+        help="Delete root directory",
+    )
+    parser.set_defaults(include_root=False)
+    args = vars(parser.parse_args())
+    LOGGER.info(f"{__name__} called with {args}")
+    clean_all(create_service(), args["include_root"])
