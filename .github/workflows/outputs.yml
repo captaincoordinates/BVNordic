@@ -71,8 +71,10 @@ jobs:
         run: |
           echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
       - name: Upload to Google Drive
-        uses: team-tumbleweed/gdrive-upload-action@main
-        with:
-          filename: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
-          credentials: ${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_KEY }}
-          folderId: 1asRtVzDgiL__LobxbZUTHZx-sNEDMGg6
+        run: |
+          # Debugging directory layout
+          ls -Alhr
+
+          GDRIVE_UPLOAD_SERVICE_ACCT_INFO=${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_INFO }} \
+          UPLOAD_FOLDER_NAME=${{ steps.read_to_var.outputs.UNIQUE_DIR }} \
+          scripts/upload.sh True
