@@ -16,7 +16,6 @@ jobs:
           . scripts/directory.sh
           echo $UNIQUE_DIR > unique.dir
           echo $LOCAL_OUTPUT_DIR > local-output.dir
-          # echo $CONTAINER_OUTPUT_DIR > container-output.dir
       - name: Retain Directory Data
         uses: actions/upload-artifact@v2
         with:
@@ -38,7 +37,6 @@ jobs:
       run: |
         echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
         echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
-        # echo "::set-output name=CONTAINER_OUTPUT_DIR::$(head -n 1 container-output.dir)"
     - name: Create Output Directory
       run: |
         mkdir -p $LOCAL_OUTPUT_DIR
