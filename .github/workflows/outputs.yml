@@ -71,11 +71,12 @@ jobs:
         id: read_to_var
         run: |
           echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
+      - name: Unpack Bundle
+        run: |
+          unzip -d ${{ steps.read_to_var.outputs.UNIQUE_DIR }} ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
       - name: Upload to Google Drive
         run: |
-          unzip ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
-          # Debugging directory layout
-          ls -Alhr
-          GDRIVE_UPLOAD_SERVICE_ACCT_INFO=${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_INFO }} \
-          UPLOAD_FOLDER_NAME=${{ steps.read_to_var.outputs.UNIQUE_DIR }} \
           scripts/upload.sh True
+        env:
+          GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_INFO }}
+          UPLOAD_FOLDER_NAME: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}
