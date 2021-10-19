@@ -1,9 +1,10 @@
 from os import environ
 from os.path import join
+from pathlib import Path
+from re import search
+
 from qgis.core import QgsApplication, QgsLayoutExporter, QgsProject
 from yaml import safe_load
-from re import search
-from pathlib import Path
 
 PROJECT_KEY = "PROJECT"
 OUTPUT_BASE_KEY = "OUTPUT_BASE"
@@ -18,9 +19,9 @@ project_name = environ[PROJECT_KEY]
 with open("/export/output/outputs.yml", "r") as config_file:
     try:
         config = safe_load(config_file)[project_name]
-    except KeyError as e:
+    except KeyError:
         raise Exception(f"Project {environ[PROJECT_KEY]} does not exist in config")
-        
+
 
 QgsApplication.setPrefixPath("/usr/bin/qgis", True)
 qgs = QgsApplication([], False)
@@ -50,7 +51,11 @@ for layout in layout_manager.layouts():
 
     item = layout_manager.layoutByName(layout_name)
     export = QgsLayoutExporter(item)
-    export.exportToImage(join(output_base, f"{layout_name}.png"), QgsLayoutExporter.ImageExportSettings())
-    export.exportToPdf(join(output_base, f"{layout_name}.pdf"), QgsLayoutExporter.PdfExportSettings())
+    export.exportToImage(
+        join(output_base, f"{layout_name}.png"), QgsLayoutExporter.ImageExportSettings()
+    )
+    export.exportToPdf(
+        join(output_base, f"{layout_name}.pdf"), QgsLayoutExporter.PdfExportSettings()
+    )
 
 qgs.exitQgis()

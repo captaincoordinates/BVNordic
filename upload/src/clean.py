@@ -1,11 +1,12 @@
-from .util import configure_logging
-from .service import create_service
-from typing import Final
-from .settings import ROOT_FOLDER_NAME
-
 from logging import getLogger
+from typing import Final  # type: ignore
+
+from .service import create_service
+from .settings import ROOT_FOLDER_NAME
+from .util import configure_logging
 
 LOGGER: Final = getLogger(__file__)
+
 
 def clean_all(service, exclude_root: bool = True):
     for item in service.files().list(fields="*").execute().get("files", []):
@@ -18,6 +19,7 @@ def clean_all(service, exclude_root: bool = True):
                 LOGGER.warning(f"unable to delete: {e}")
         else:
             LOGGER.info(f"skipping {name} ({id})")
+
 
 if __name__ == "__main__":
     configure_logging()
