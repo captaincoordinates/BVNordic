@@ -5,12 +5,11 @@ on:
     branches:
       - '**'
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   directory:
+    defaults:
+      run:
+        shell: bash
     name: Define Output Directory
     runs-on: ubuntu-latest
     steps:
@@ -29,6 +28,9 @@ jobs:
           path: '*.dir'
 
   layouts:
+    defaults:
+      run:
+        shell: bash
     name: Generate Layouts
     needs: directory
     runs-on: ubuntu-latest
@@ -58,6 +60,9 @@ jobs:
         path: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
 
   upload:
+    defaults:
+      run:
+        shell: bash
     name: Upload Layouts
     needs: layouts
     runs-on: ubuntu-latest
