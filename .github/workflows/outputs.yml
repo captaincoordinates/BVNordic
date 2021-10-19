@@ -39,7 +39,7 @@ jobs:
         echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
     - name: Create Output Directory
       run: |
-        mkdir -p $LOCAL_OUTPUT_DIR
+        mkdir -p $(head -n 1 local-output.dir)
     - name: Layout Generator
       run: |
         # debugging
