@@ -5,6 +5,10 @@ on:
     branches:
       - '**'
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   directory:
     name: Define Output Directory
