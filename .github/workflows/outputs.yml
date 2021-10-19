@@ -74,8 +74,7 @@ jobs:
           echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
       - name: Unpack Bundle
         run: |
-          unzip -d ${{ steps.read_to_var.outputs.UNIQUE_DIR }} ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
-          ls -AlhR
+          unzip -d output/build/${{ steps.read_to_var.outputs.UNIQUE_DIR }} ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
       - name: Upload to Google Drive
         run: |
           scripts/upload.sh True
