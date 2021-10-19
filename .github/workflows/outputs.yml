@@ -14,10 +14,10 @@ jobs:
       - name: Define
         run: |
           . scripts/directory.sh
-          echo ${ UNIQUE_DIR } > unique.dir
-          echo ${ LOCAL_OUTPUT_DIR } > local-output.dir
-          echo ${ CONTAINER_OUTPUT_DIR } > container-output.dir
-          mkdir -p ${ LOCAL_OUTPUT_DIR }
+          echo $UNIQUE_DIR > unique.dir
+          echo $LOCAL_OUTPUT_DIR > local-output.dir
+          echo $CONTAINER_OUTPUT_DIR > container-output.dir
+          mkdir -p $LOCAL_OUTPUT_DIR
       - name: Retain Directory Data
         uses: actions/upload-artifact@v2
         with:
