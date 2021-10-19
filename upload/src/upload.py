@@ -161,9 +161,9 @@ if __name__ == "__main__":
     )
     args = vars(parser.parse_args())
 
+    configure_logging()
     LOGGER.info(f"{__name__} called with {args}")
 
-    configure_logging()
     upload_folder(
         create_service(),
         args["upload_folder_name"],
