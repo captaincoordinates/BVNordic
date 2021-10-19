@@ -42,8 +42,6 @@ jobs:
         mkdir -p $(head -n 1 local-output.dir)
     - name: Layout Generator
       run: |
-        # debugging
-        ls -Alhr
         OUTPUT_BASE=${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }} scripts/generate.sh
     - name: Bundle Generated Layouts
       uses: papeloto/action-zip@v1
@@ -75,9 +73,9 @@ jobs:
           echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
       - name: Upload to Google Drive
         run: |
+          unzip ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
           # Debugging directory layout
           ls -Alhr
-
           GDRIVE_UPLOAD_SERVICE_ACCT_INFO=${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_INFO }} \
           UPLOAD_FOLDER_NAME=${{ steps.read_to_var.outputs.UNIQUE_DIR }} \
           scripts/upload.sh True
