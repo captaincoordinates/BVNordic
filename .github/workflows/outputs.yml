@@ -41,6 +41,8 @@ jobs:
         echo "::set-output name=CONTAINER_OUTPUT_DIR::$(head -n 1 container-output.dir)"
     - name: Layout Generator
       run: |
+        # debugging
+        ls -Alhr
         OUTPUT_BASE=${{ steps.read_to_var.outputs.CONTAINER_OUTPUT_DIR }} scripts/generate.sh
     - name: Bundle Generated Layouts
       uses: papeloto/action-zip@v1
