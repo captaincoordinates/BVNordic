@@ -6,7 +6,7 @@
 .autoenv*.zsh
 .vscode
 osm-conversion/tmpdata/**
-output/build/*
+output/*
 # Service Account auth key
 upload/mapping-ci-key.json
 !**/*.gitkeep
