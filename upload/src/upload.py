@@ -27,16 +27,6 @@ def set_permissions(service, id) -> None:
         },
         fields="*",
     ).execute()
-    service.permissions().create(
-        fileId=id,
-        body={
-            "role": "writer",
-            "type": "domain",
-            "domain": "bvnordic.ca",
-            "allowFileDiscovery": True,
-        },
-        fields="*",
-    ).execute()
 
 
 def create_folder(service, name: str, parent_id: str = None) -> DataObject:
