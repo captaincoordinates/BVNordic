@@ -67,12 +67,7 @@ for layout in layout_manager.layouts():
     if layout_name in thumbnails_by_layout:
         size = thumbnails_by_layout[layout_name]["size"]
         thumbnail = Image.open(join(output_base, f"{layout_name}.png"))
-        thumbnail.thumbnail(
-            (
-                size,
-                size,
-            )
-        )
+        thumbnail.thumbnail((size, size))
         thumbnail.save(join(output_base, f"{layout_name}-thumbnail.png"))
 
 qgs.exitQgis()
