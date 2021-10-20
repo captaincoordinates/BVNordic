@@ -2,7 +2,7 @@
 
 QGIS project file and associated data to generate various georeferenced PDFs used by the Nordic Centre.
 
-[![Generate and Persist Outputs](https://github.com/Bulkley-Valley-Cross-Country-Ski-Club/mapping/actions/workflows/outputs.yml/badge.svg)](https://github.com/Bulkley-Valley-Cross-Country-Ski-Club/mapping/actions/workflows/outputs.yml)
+[![Generate and Persist Outputs](https://github.com/Bulkley-Valley-Cross-Country-Ski-Club/mapping/actions/workflows/outputs.yml/badge.svg?branch=master)](https://github.com/Bulkley-Valley-Cross-Country-Ski-Club/mapping/actions/workflows/outputs.yml)
 
 ## CI/CD
 Pushes to the `master` branch will trigger an export of all QGIS Layouts and upload to a public-readable Google Drive account.
