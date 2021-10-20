@@ -17,6 +17,9 @@ main:
         - Race Routes
       layouts:
         - ^Race.*
+  thumbnails:
+    - layout: Print
+      size: 300
 stadium:
   common_layers:
     - Stadium Routes

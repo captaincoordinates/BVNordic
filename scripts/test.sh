@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 pushd $(dirname $0)/..
 
 GITHUB_SHA="test-$(uuidgen)" . scripts/directory.sh

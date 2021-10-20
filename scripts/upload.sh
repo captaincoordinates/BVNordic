@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 pushd $(dirname $0)/..
 
 docker build -t uploader upload

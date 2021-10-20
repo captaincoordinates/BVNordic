@@ -3,6 +3,7 @@ from os.path import join
 from pathlib import Path
 from re import search
 
+from PIL import Image
 from qgis.core import QgsApplication, QgsLayoutExporter, QgsProject
 from yaml import safe_load
 
@@ -33,6 +34,11 @@ Path(output_base).mkdir(exist_ok=True)
 layout_manager = project.layoutManager()
 
 common_layers = config["common_layers"]
+thumbnails_by_layout = (
+    {thumbnail["layout"]: thumbnail for thumbnail in config["thumbnails"]}
+    if "thumbnails" in config
+    else dict()
+)
 
 for layout in layout_manager.layouts():
     layout_name = layout.name()
@@ -57,5 +63,15 @@ for layout in layout_manager.layouts():
     export.exportToPdf(
         join(output_base, f"{layout_name}.pdf"), QgsLayoutExporter.PdfExportSettings()
     )
+
+    if layout_name in thumbnails_by_layout:
+        thumbnail = Image.open(join(output_base, f"{layout_name}.png"))
+        thumbnail.thumbnail(
+            (
+                thumbnails_by_layout[layout_name]["size"],
+                thumbnails_by_layout[layout_name]["size"],
+            )
+        )
+        thumbnail.save(join(output_base, f"{layout_name}-thumbnail.png"))
 
 qgs.exitQgis()
