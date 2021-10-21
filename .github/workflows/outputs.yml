@@ -1,0 +1,83 @@
+name: Generate and Persist Outputs
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  directory:
+    name: Define Output Directory
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Define
+        run: |
+          . scripts/directory.sh
+          echo $UNIQUE_DIR > unique.dir
+          echo $LOCAL_OUTPUT_DIR > local-output.dir
+      - name: Retain Directory Data
+        uses: actions/upload-artifact@v2
+        with:
+          name: dirs
+          path: '*.dir'
+
+  layouts:
+    name: Generate Layouts
+    needs: directory
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Retrieve Directory Data
+      uses: actions/download-artifact@v2
+      with:
+        name: dirs
+    - name: Read to Var
+      id: read_to_var
+      run: |
+        echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
+        echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
+    - name: Create Output Directory
+      run: |
+        mkdir -p $(head -n 1 local-output.dir)
+    - name: Layout Generator
+      run: |
+        OUTPUT_BASE=${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }} scripts/generate.sh
+    - name: Bundle Generated Layouts
+      uses: papeloto/action-zip@v1
+      with:
+        files: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/
+        dest: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+    - name: Retain Bundle
+      uses: actions/upload-artifact@v2
+      with:
+        name: outputs
+        path: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+
+  upload:
+    name: Upload Layouts
+    needs: layouts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Retrieve Directory Data
+        uses: actions/download-artifact@v2
+        with:
+          name: dirs
+      - name: Retrieve Bundle
+        uses: actions/download-artifact@v2
+        with:
+          name: outputs
+      - name: Read to Var
+        id: read_to_var
+        run: |
+          echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
+      - name: Unpack Bundle
+        run: |
+          unzip -d output/build/${{ steps.read_to_var.outputs.UNIQUE_DIR }} ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+      - name: Upload to Google Drive
+        run: |
+          scripts/upload.sh --update_latest
+        env:
+          GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_INFO }}
+          UPLOAD_FOLDER_NAME: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}
