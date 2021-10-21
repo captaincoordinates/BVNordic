@@ -1,6 +1,30 @@
 #!/bin/bash
 
-cd $(dirname $0)/..
+set -e
 
-PROJECT=main xvfb-run -s '+extension GLX -screen 0 1920x1080x24' python3 layout/generate.py
-PROJECT=stadium xvfb-run -s '+extension GLX -screen 0 1920x1080x24' python3 layout/generate.py
+pushd $(dirname $0)/..
+
+COMMAND="python3 layout/generate.py"
+
+if [ -z ${1+x} ]; then
+    # no commit hash provided
+    COMMAND="$COMMAND --png --pdf"
+else
+    # commit hash provided
+    tar -cf /snapshot.tar /export
+    mkdir /snapshot
+    tar -xf /snapshot.tar -C /snapshot
+    pushd /snapshot/export
+    ls -Alh
+    git reset --hard HEAD
+    git checkout .
+    git -c advice.detachedHead=false checkout $1
+    ls -Alh
+    COMMAND="$COMMAND --png"
+fi
+
+pwd
+ls -Alh layout
+
+PROJECT=main xvfb-run -s '+extension GLX -screen 0 1920x1080x24' $COMMAND
+PROJECT=stadium xvfb-run -s '+extension GLX -screen 0 1920x1080x24' $COMMAND
