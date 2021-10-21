@@ -27,36 +27,66 @@ jobs:
     needs: directory
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Retrieve Directory Data
-      uses: actions/download-artifact@v2
-      with:
-        name: dirs
-    - name: Read to Var
-      id: read_to_var
-      run: |
-        echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
-        echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
-    - name: Create Output Directory
-      run: |
-        mkdir -p $(head -n 1 local-output.dir)
-    - name: Layout Generator
-      run: |
-        OUTPUT_BASE=${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }} scripts/generate.sh
-    - name: Bundle Generated Layouts
-      uses: papeloto/action-zip@v1
-      with:
-        files: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/
-        dest: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
-    - name: Retain Bundle
-      uses: actions/upload-artifact@v2
-      with:
-        name: outputs
-        path: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+      - uses: actions/checkout@v2
+      - name: Retrieve Directory Data
+        uses: actions/download-artifact@v2
+        with:
+          name: dirs
+      - name: Read to Var
+        id: read_to_var
+        run: |
+          echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
+          echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
+      - name: Create Output Directory
+        run: |
+          mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
+      - name: Layout Generator
+        run: |
+          scripts/generate.sh
+        env:
+          OUTPUT_BASE: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
+      - name: Bundle Generated Layouts
+        uses: papeloto/action-zip@v1
+        with:
+          files: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/
+          dest: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+      - name: Retain Bundle
+        uses: actions/upload-artifact@v2
+        with:
+          name: outputs
+          path: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+
+  osm:
+    name: Export OSM Data
+    needs: directory
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Retrieve Directory Data
+        uses: actions/download-artifact@v2
+        with:
+          name: dirs
+      - name: Read to Var
+        id: read_to_var
+        run: |
+          echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
+      - name: Create Output Directory
+        run: |
+          mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
+      - name: Export OSM
+        run: |
+          scripts/osm.sh
+        env:
+          LOCAL_OUTPUT_DIR: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
+      - name: Retain OSM Data
+        uses: actions/upload-artifact@v2
+        with:
+          name: osm
+          path: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/bvnordic.osm
 
   upload:
-    name: Upload Layouts
-    needs: layouts
+    name: Upload
+    needs: [layouts, osm]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -68,13 +98,21 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: outputs
+      - name: Retrieve OSM
+        uses: actions/download-artifact@v2
+        with:
+          name: osm
       - name: Read to Var
         id: read_to_var
         run: |
+          echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
           echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
       - name: Unpack Bundle
         run: |
-          unzip -d output/build/${{ steps.read_to_var.outputs.UNIQUE_DIR }} ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+          unzip -d ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }} ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+      - name: Move OSM
+        run: |
+          mv bvnordic.osm ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/
       - name: Upload to Google Drive
         run: |
           scripts/upload.sh --update_latest

@@ -17,7 +17,7 @@ if OUTPUT_BASE_KEY not in environ:
     raise Exception(f"{OUTPUT_BASE_KEY} must be provided")
 
 project_name = environ[PROJECT_KEY]
-with open("/export/output/outputs.yml", "r") as config_file:
+with open("/export/layout/outputs.yml", "r") as config_file:
     try:
         config = safe_load(config_file)[project_name]
     except KeyError:

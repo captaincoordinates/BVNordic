@@ -128,7 +128,9 @@ def upload_folder(service, folder_name: str, root_path: str, update_latest: bool
             LOGGER.debug(f"making file {remote_file_id} public")
             set_permissions(service, remote_file_id)
 
-            local_unique_path = path.join(path.basename(root), file)
+            local_unique_path = path.join(
+                path.basename(root.replace(upload_path, "")), file
+            )
             if local_unique_path in latests:
                 if update_latest:
                     LOGGER.info(f"updating latest ({local_unique_path})")
