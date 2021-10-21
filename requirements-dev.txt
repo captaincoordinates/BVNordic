@@ -1,0 +1,6 @@
+pre-commit==2.12.1
+safety==1.10.3
+isort==5.8.0
+black==21.5b1
+flake8==3.9.2
+mypy==0.910
