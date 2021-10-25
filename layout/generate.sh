@@ -23,8 +23,5 @@ else
     COMMAND="$COMMAND --png"
 fi
 
-pwd
-ls -Alh layout
-
 PROJECT=main xvfb-run -s '+extension GLX -screen 0 1920x1080x24' $COMMAND
 PROJECT=stadium xvfb-run -s '+extension GLX -screen 0 1920x1080x24' $COMMAND
