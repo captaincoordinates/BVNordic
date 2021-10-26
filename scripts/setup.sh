@@ -2,4 +2,5 @@
 
 pip install -r requirements-dev.txt
 pip install -r upload/requirements.txt
+pip install -r compare/requirements.txt
 pre-commit install

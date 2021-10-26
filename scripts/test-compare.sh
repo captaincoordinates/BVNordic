@@ -32,3 +32,13 @@ python -m src.compare $1 $2 $COMPARE_DIR
 popd
 rm -rf $OUTPUT_BASE/$1
 rm -rf $OUTPUT_BASE/$2
+
+# upload.sh in current form may be layout-specific with --update_latest parameter. This concept is not relevant for comparisons
+if [ "$UPLOAD" == "1" ]; then
+    UPLOAD_ROOT=$PWD/output
+    COMPARE_ROOT="compare-$1-$2"
+    pushd upload
+    echo "python -m src.upload $COMPARE_ROOT $UPLOAD_ROOT"
+    GDRIVE_UPLOAD_SERVICE_ACCT_INFO=$GDRIVE_PR_UPLOAD_SERVICE_ACCT_INFO python -m src.upload $COMPARE_ROOT $UPLOAD_ROOT
+    popd
+fi

@@ -8,5 +8,5 @@
 osm-conversion/tmpdata/**
 output/*
 # Service Account auth key
-upload/mapping-ci-key.json
+upload/*-key.json
 !**/*.gitkeep

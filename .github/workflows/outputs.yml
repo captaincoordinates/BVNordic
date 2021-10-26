@@ -117,5 +117,5 @@ jobs:
         run: |
           scripts/upload.sh --update_latest
         env:
-          GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_INFO }}
+          GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_CI_UPLOAD_SERVICE_ACCT_INFO }}
           UPLOAD_FOLDER_NAME: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}
