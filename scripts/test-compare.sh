@@ -26,3 +26,9 @@ mkdir -p $OUTPUT_BASE/$1
 mkdir -p $OUTPUT_BASE/$2
 docker run --rm -v $PWD:/export -e OUTPUT_BASE=/export/$OUTPUT_BASE/$1 exporter /export/layout/generate.sh $1
 docker run --rm -v $PWD:/export -e OUTPUT_BASE=/export/$OUTPUT_BASE/$2 exporter /export/layout/generate.sh $2
+COMPARE_DIR=$PWD/$OUTPUT_BASE
+pushd compare
+python -m src.compare $1 $2 $COMPARE_DIR
+popd
+rm -rf $OUTPUT_BASE/$1
+rm -rf $OUTPUT_BASE/$2

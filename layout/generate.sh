@@ -15,11 +15,9 @@ else
     mkdir /snapshot
     tar -xf /snapshot.tar -C /snapshot
     pushd /snapshot/export
-    ls -Alh
     git reset --hard HEAD
     git checkout .
     git -c advice.detachedHead=false checkout $1
-    ls -Alh
     COMMAND="$COMMAND --png"
 fi
 

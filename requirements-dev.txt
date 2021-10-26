@@ -6,3 +6,4 @@ flake8==3.9.2
 mypy==0.910
 scikit-image==0.18.3
 opencv-python==4.5.4.58
+moviepy==1.0.3
