@@ -38,7 +38,6 @@ if [ "$UPLOAD" == "1" ]; then
     UPLOAD_ROOT=$PWD/output
     COMPARE_ROOT="compare-$1-$2"
     pushd upload
-    echo "python -m src.upload $COMPARE_ROOT $UPLOAD_ROOT"
     GDRIVE_UPLOAD_SERVICE_ACCT_INFO=$GDRIVE_PR_UPLOAD_SERVICE_ACCT_INFO python -m src.upload $COMPARE_ROOT $UPLOAD_ROOT
     popd
 fi
