@@ -6,10 +6,67 @@ on:
       - '**'
 
 jobs:
-  directory:
+  define_shas:
     name: Debug Env Content
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Print all
-        run: env
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Execute Python
+        run: |
+          python -m src.from_pr ${{ env.GITHUB_REPOSITORY }} ${{ env.GITHUB_REF }}
+        working-directory: compare
+      - name: Retain SHAs
+        uses: actions/upload-artifact@v2
+        with:
+          name: shas
+          path: compare/pr_shas.txt
+
+  compare:
+    name: Initiate Image Comparison
+    needs: define_shas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Retrieve SHAs
+        uses: actions/download-artifact@v2
+        with:
+          name: shas
+      - name: Read to Var
+        id: read_to_var
+        run: |
+          echo "::set-output name=PR_SHA1::$(head -n 1 pr_shas.txt)"
+          echo "::set-output name=PR_SHA2::$(head -n 2 pr_shas.txt | tail -n 1)"
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Python Dependencies
+        run: |
+          pip install -r compare/requirements.txt
+      - name: Initiate Comparison
+        run: |
+          scripts/test-compare.sh ${{ steps.read_to_var.outputs.PR_SHA1 }} ${{ steps.read_to_var.outputs.PR_SHA2 }}
+
+  update_pr:
+    name: Update PR
+    needs: compare
+    runs_on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Retrieve SHAs
+        uses: actions/download-artifact@v2
+        with:
+          name: shas
+      - name: Read to Var
+        id: read_to_var
+        run: |
+          echo "::set-output name=PR_SHA1::$(head -n 1 pr_shas.txt)"
+          echo "::set-output name=PR_SHA2::$(head -n 2 pr_shas.txt | tail -n 1)"
+      - name: Debug Drive Link
+        run: |
+          # echo "https://drive.google.com/drive/search?q=parent:${{  }}%20compare-${{  }}-${{  }}"
+          echo "WIP"
