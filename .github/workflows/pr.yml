@@ -54,7 +54,7 @@ jobs:
   update_pr:
     name: Update PR
     needs: compare
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Retrieve SHAs
