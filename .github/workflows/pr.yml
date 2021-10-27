@@ -15,6 +15,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
+      - name: Python Dependencies
+        run: |
+          pip install requests
       - name: Execute Python
         run: |
           python -m src.from_pr ${{ env.GITHUB_REPOSITORY }} ${{ env.GITHUB_REF }}
