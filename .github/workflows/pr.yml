@@ -1,0 +1,15 @@
+name: Supporting Data for PRs
+
+on:
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  directory:
+    name: Debug Env Content
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Print all
+        run: env
