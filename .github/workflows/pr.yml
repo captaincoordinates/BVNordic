@@ -7,7 +7,7 @@ on:
 
 jobs:
   define_shas:
-    name: Debug Env Content
+    name: Define SHAs for Compare
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
