@@ -68,5 +68,4 @@ jobs:
           echo "::set-output name=PR_SHA2::$(head -n 2 pr_shas.txt | tail -n 1)"
       - name: Debug Drive Link
         run: |
-          # echo "https://drive.google.com/drive/search?q=parent:${{  }}%20compare-${{  }}-${{  }}"
           echo "WIP"
