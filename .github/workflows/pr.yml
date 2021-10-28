@@ -22,8 +22,6 @@ jobs:
         run: |
           echo "first"
           echo ${{ env.GITHUB_REPOSITORY }}, ${{ env.GITHUB_REF }}
-          echo "second"
-          echo ${{ GITHUB_REPOSITORY }}, ${{ GITHUB_REF }}
           echo "third"
           echo $GITHUB_REPOSITORY, $GITHUB_REF
           echo "fourth"
