@@ -2,8 +2,6 @@
 
 pushd $(dirname $0)/..
 
-git pull
-
 echo "attempting to compare '$1' with '$2'"
 
 git merge-base --is-ancestor 54775c7ad5850ca4b33b7f2f806095f2e04255f1 $1
