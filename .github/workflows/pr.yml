@@ -28,7 +28,7 @@ jobs:
           echo ${GITHUB_REPOSITORY}, ${GITHUB_REF}
           echo "fifth"
           echo ${env.GITHUB_REPOSITORY}, ${env.GITHUB_REF}
-          python -m src.from_pr ${{ GITHUB_REPOSITORY }} ${{ GITHUB_REF }}
+          python -m src.from_pr ${{ env.GITHUB_REPOSITORY }} ${{ env.GITHUB_REF }}
         working-directory: compare
       - name: Retain SHAs
         uses: actions/upload-artifact@v2
