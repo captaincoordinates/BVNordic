@@ -18,7 +18,7 @@ def get_shas(repo: str, pr_ref: str) -> Tuple[str, str]:
     response = requests.get(f"https://api.github.com/repos/{repo}/pulls/{pr_id}")
     if response.status_code == HTTPStatus.OK:
         data = response.json()
-        return (str(data["head"]["sha"]), str(data["base"]["sha"]))
+        return (str(data["base"]["sha"]), str(data["head"]["sha"]))
     else:
         raise Exception(
             f"PR {pr_id} is not known (HTTP {response.status_code}: {response.text})"
