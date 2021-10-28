@@ -50,10 +50,9 @@ jobs:
       - name: Python Dependencies
         run: |
           pip install -r compare/requirements.txt
-      - name: Fix Git
+      - name: Debug Git
         run: |
-          git pull
-          git checkout $GITHUB_HEAD_REF
+          git --version
       - name: Initiate Comparison
         run: |
           scripts/test-compare.sh ${{ steps.read_to_var.outputs.PR_SHA1 }} ${{ steps.read_to_var.outputs.PR_SHA2 }}
