@@ -34,6 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # required to check out older versions for comparison
       - name: Retrieve SHAs
         uses: actions/download-artifact@v2
         with:
@@ -50,11 +52,6 @@ jobs:
       - name: Python Dependencies
         run: |
           pip install -r compare/requirements.txt
-      # - name: Debug Git
-      #   run: |
-      #     git --version
-      #     git branch
-      #     git --no-pager log
       - name: Initiate Comparison
         run: |
           scripts/test-compare.sh ${{ steps.read_to_var.outputs.PR_SHA1 }} ${{ steps.read_to_var.outputs.PR_SHA2 }}
