@@ -50,11 +50,11 @@ jobs:
       - name: Python Dependencies
         run: |
           pip install -r compare/requirements.txt
-      - name: Debug Git
-        run: |
-          git --version
-          git branch
-          git --no-pager log
+      # - name: Debug Git
+      #   run: |
+      #     git --version
+      #     git branch
+      #     git --no-pager log
       - name: Initiate Comparison
         run: |
           scripts/test-compare.sh ${{ steps.read_to_var.outputs.PR_SHA1 }} ${{ steps.read_to_var.outputs.PR_SHA2 }}

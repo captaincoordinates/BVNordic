@@ -4,21 +4,21 @@ pushd $(dirname $0)/..
 
 echo "attempting to compare '$1' with '$2'"
 
-git merge-base --is-ancestor 54775c7ad5850ca4b33b7f2f806095f2e04255f1 $1
-SUPPORTS_COMPARISON=$?
+# git merge-base --is-ancestor 54775c7ad5850ca4b33b7f2f806095f2e04255f1 $1
+# SUPPORTS_COMPARISON=$?
 
-git merge-base --is-ancestor $1 $2
-CORRECT_ORDER=$?
+# git merge-base --is-ancestor $1 $2
+# CORRECT_ORDER=$?
 
-if [ $SUPPORTS_COMPARISON -ne 0 ] ; then
-    echo "$1 is too old to support comparison"
-    exit 1
-fi
+# if [ $SUPPORTS_COMPARISON -ne 0 ] ; then
+#     echo "$1 is too old to support comparison"
+#     exit 1
+# fi
 
-if [ $CORRECT_ORDER -ne 0 ]; then
-    echo "$1 is not an ancestor of $2, comparison not possible"
-    exit 1
-fi
+# if [ $CORRECT_ORDER -ne 0 ]; then
+#     echo "$1 is not an ancestor of $2, comparison not possible"
+#     exit 1
+# fi
 
 docker build -t exporter layout
 OUTPUT_BASE=output/compare-$1-$2
