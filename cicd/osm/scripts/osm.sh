@@ -2,7 +2,17 @@
 
 set -e
 
-pushd $(dirname $0)/..
+for ARGUMENT in "$@"
+do
+    KEY=$(echo $ARGUMENT | cut -f1 -d=)
+    VALUE=$(echo $ARGUMENT | cut -f2 -d=)   
+    case "$KEY" in
+            local_output_dir) LOCAL_OUTPUT_DIR=${VALUE} ;;
+            *)   
+    esac    
+done
+
+pushd $(dirname $0)/../../..
 
 IMAGE_NAME=bvnordic/osm-convert
 OUT_DIR=/data/$LOCAL_OUTPUT_DIR

@@ -1,0 +1,37 @@
+<br />
+{% if UNCHANGED|length > 0 %}
+    <h2>Unchanged</h2>
+    <ul>
+    {% for entry in UNCHANGED %}
+        <li>{{ entry.layout }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <!-- No unchanged content -->
+{% endif %}
+
+{% if ADDED|length > 0 %}
+    <h2>Added</h2>
+
+{% else %}
+    <!-- No added content -->
+{% endif %}
+
+{% if REMOVED|length > 0 %}
+    <h2>Removed</h2>
+
+{% else %}
+    <!-- No removed content -->
+{% endif %}
+
+{% if CHANGED|length > 0 %}
+    <h2>Changed</h2>
+    <ul>
+    {% for entry in CHANGED %}
+        <h4>{{ entry.layout }}</h4>
+        <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
+    {% endfor %}
+    </ul>
+{% else %}
+    <!-- No changed content -->
+{% endif %}

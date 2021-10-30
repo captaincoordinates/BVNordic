@@ -13,7 +13,7 @@ done
 
 echo "attempting to compare '$BEFORE' with '$AFTER'"
 
-git merge-base --is-ancestor 54775c7ad5850ca4b33b7f2f806095f2e04255f1 $BEFORE
+git merge-base --is-ancestor 6d83605ae2c2dbf1610441b5c816f942198ae747 $BEFORE
 SUPPORTS_COMPARISON=$?
 
 git merge-base --is-ancestor $BEFORE $AFTER

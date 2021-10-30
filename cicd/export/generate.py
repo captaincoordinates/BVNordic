@@ -10,6 +10,7 @@ from qgis.core import QgsApplication, QgsLayoutExporter, QgsProject
 from yaml import safe_load
 
 LOGGER: Final = getLogger(__file__)
+MAX_IMAGE_DIMENSION: Final = 1600
 
 
 def execute(  # noqa: C901
@@ -60,17 +61,24 @@ def execute(  # noqa: C901
         export = QgsLayoutExporter(item)
 
         if png:
+            png_path = path.join(output_dir, f"{layout_name}.png")
+            LOGGER.info(f"Exporting {layout_name} PNG")
             export.exportToImage(
-                path.join(output_dir, f"{layout_name}.png"),
+                png_path,
                 QgsLayoutExporter.ImageExportSettings(),
             )
+            large_image = Image.open(png_path)
+            large_image.thumbnail((MAX_IMAGE_DIMENSION, MAX_IMAGE_DIMENSION))
+            large_image.save(png_path)
+
             if layout_name in thumbnails_by_layout:
                 size = thumbnails_by_layout[layout_name]["size"]
-                thumbnail = Image.open(path.join(output_dir, f"{layout_name}.png"))
+                thumbnail = Image.open(png_path)
                 thumbnail.thumbnail((size, size))
                 thumbnail.save(path.join(output_dir, f"{layout_name}-thumbnail.png"))
 
         if pdf:
+            LOGGER.info(f"Exporting {layout_name} PDF")
             export.exportToPdf(
                 path.join(output_dir, f"{layout_name}.pdf"),
                 QgsLayoutExporter.PdfExportSettings(),

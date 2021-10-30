@@ -9,5 +9,5 @@ osm-conversion/tmpdata/**
 output/*
 # Service Account auth key
 upload/*-key.json
-compare/pr_shas.txt
+cicd/compare/pr/shas-*.txt
 !**/*.gitkeep

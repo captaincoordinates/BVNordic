@@ -21,10 +21,10 @@ if [ -z ${REVISION+x} ]; then
 fi
 
 FORMATS=""
-if [ -z ${PNG+x} ]; then
+if [ "$PNG" == "1" ]; then
     FORMATS="$FORMATS --png"
 fi
-if [ -z ${PDF+x} ]; then
+if [ "$PDF" == "1" ]; then
     FORMATS="$FORMATS --pdf"
 fi
 

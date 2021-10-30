@@ -10,7 +10,7 @@ from shutil import copyfile
 from typing import Dict, Final, List, Tuple  # type: ignore
 
 import cv2
-from moviepy.video.io.ImageSequenceClip import ImageSequenceClip
+import imageio
 from skimage.metrics import structural_similarity
 
 from cicd.compare.change_type import ChangeType
@@ -139,15 +139,18 @@ class _change_detection_executor:
         after_result = path.join(
             local_result_dir, f"after-{local_path_parts[1]}{IMAGE_EXT}"
         )
-        mp4_result = path.join(local_result_dir, f"{local_path_parts[1]}.mp4")
+        gif_result = path.join(local_result_dir, f"{local_path_parts[1]}.gif")
 
         cv2.imwrite(before_result, before)
         cv2.imwrite(after_result, after)
 
-        # imageio.mimsave(gif_path, [ imageio.imread(filename)
-        # for filename in [before_path, filled_path, after_path] ], duration=1.5)
-        clip = ImageSequenceClip([before_result, after_result], fps=1)
-        clip.write_videofile(mp4_result)
+        imageio.mimsave(
+            gif_result,
+            [imageio.imread(filename) for filename in [before_result, after_result]],
+            duration=1.5,
+        )
+        # clip = ImageSequenceClip([before_result, after_result], fps=1)
+        # clip.write_videofile(mp4_result)
 
         remove(before_result)
         remove(after_result)
