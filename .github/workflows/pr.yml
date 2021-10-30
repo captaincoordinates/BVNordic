@@ -55,6 +55,11 @@ jobs:
       - name: Initiate Comparison
         run: |
           scripts/test-compare.sh ${{ steps.read_to_var.outputs.PR_SHA1 }} ${{ steps.read_to_var.outputs.PR_SHA2 }}
+      - name: Retain Changes
+        uses: actions/upload-artifact@v2
+        with:
+          name: changes
+          path: compare/pr_shas.txt
 
   update_pr:
     name: Update PR

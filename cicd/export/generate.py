@@ -1,36 +1,37 @@
 from argparse import ArgumentParser
-from os import environ
-from os.path import join
+from logging import getLogger
+from os import path
 from pathlib import Path
 from re import search
+from typing import Final  # type: ignore
 
 from PIL import Image
 from qgis.core import QgsApplication, QgsLayoutExporter, QgsProject
 from yaml import safe_load
 
-PROJECT_KEY = "PROJECT"
-OUTPUT_BASE_KEY = "OUTPUT_BASE"
+LOGGER: Final = getLogger(__file__)
 
 
-def execute(png: bool, pdf: bool) -> None:  # noqa: C901
+def execute(  # noqa: C901
+    project_name: str, output_base: str, png: bool, pdf: bool
+) -> None:
 
     if not (png or pdf):
         return
 
-    project_name = environ[PROJECT_KEY]
-    with open("/export/layout/outputs.yml", "r") as config_file:
+    with open(path.join(path.dirname(__file__), "outputs.yml"), "r") as config_file:
         try:
             config = safe_load(config_file)[project_name]
         except KeyError:
-            raise Exception(f"Project {environ[PROJECT_KEY]} does not exist in config")
+            raise Exception(f"Project {project_name} does not exist in config")
 
     QgsApplication.setPrefixPath("/usr/bin/qgis", True)
     qgs = QgsApplication([], False)
     qgs.initQgis()
     project = QgsProject.instance()
-    project.read(f"{environ.get(PROJECT_KEY)}.qgs")
-    output_base = join(environ.get(OUTPUT_BASE_KEY), project_name)
-    Path(output_base).mkdir(exist_ok=True)
+    project.read(f"{project_name}.qgs")
+    output_dir = path.join(output_base, project_name)
+    Path(output_dir).mkdir(exist_ok=True)
     layout_manager = project.layoutManager()
 
     common_layers = config["common_layers"]
@@ -60,18 +61,18 @@ def execute(png: bool, pdf: bool) -> None:  # noqa: C901
 
         if png:
             export.exportToImage(
-                join(output_base, f"{layout_name}.png"),
+                path.join(output_dir, f"{layout_name}.png"),
                 QgsLayoutExporter.ImageExportSettings(),
             )
             if layout_name in thumbnails_by_layout:
                 size = thumbnails_by_layout[layout_name]["size"]
-                thumbnail = Image.open(join(output_base, f"{layout_name}.png"))
+                thumbnail = Image.open(path.join(output_dir, f"{layout_name}.png"))
                 thumbnail.thumbnail((size, size))
-                thumbnail.save(join(output_base, f"{layout_name}-thumbnail.png"))
+                thumbnail.save(path.join(output_dir, f"{layout_name}-thumbnail.png"))
 
         if pdf:
             export.exportToPdf(
-                join(output_base, f"{layout_name}.pdf"),
+                path.join(output_dir, f"{layout_name}.pdf"),
                 QgsLayoutExporter.PdfExportSettings(),
             )
 
@@ -79,14 +80,13 @@ def execute(png: bool, pdf: bool) -> None:  # noqa: C901
 
 
 if __name__ == "__main__":
-
-    if PROJECT_KEY not in environ:
-        raise Exception(f"{PROJECT_KEY} must be provided")
-
-    if OUTPUT_BASE_KEY not in environ:
-        raise Exception(f"{OUTPUT_BASE_KEY} must be provided")
-
     parser = ArgumentParser()
+    parser.add_argument(
+        "project_name", type=str, help="Name of the QGIS project to export"
+    )
+    parser.add_argument(
+        "output_base", type=str, help="Directory in which to generate output"
+    )
     parser.add_argument(
         "--png",
         dest="png",
@@ -102,4 +102,5 @@ if __name__ == "__main__":
     parser.set_defaults(png=False)
     parser.set_defaults(pdf=False)
     args = vars(parser.parse_args())
-    execute(args["png"], args["pdf"])
+    LOGGER.info(f"{__file__} called with {args}")
+    execute(args["project_name"], args["output_base"], args["png"], args["pdf"])
