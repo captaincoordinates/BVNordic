@@ -46,6 +46,8 @@ jobs:
           path: cicd/compare/pr/shas.txt
 
   create_dirs:
+    name: Create Required Directories
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Retrieve SHAs
