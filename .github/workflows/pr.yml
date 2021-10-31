@@ -12,16 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-    - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.9
-    - name: Python Dependencies
-      run: |
-        pip install -r cicd/compare/requirements-pr.txt
-    - name: Execute Python
-      run: |
-        python -m cicd.compare.pr.show_pending $GITHUB_REPOSITORY $GITHUB_REF
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Python Dependencies
+        run: |
+          pip install -r cicd/compare/requirements-pr.txt
+      - name: Execute Python
+        run: |
+          python -m cicd.compare.pr.show_pending $GITHUB_REPOSITORY $GITHUB_REF
 
   define_shas:
     name: Define SHAs for Compare
