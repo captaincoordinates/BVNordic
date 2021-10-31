@@ -1,4 +1,4 @@
-name: Supporting Data for PRs
+name: Visual diff for PRs
 
 on:
   pull_request:
