@@ -152,6 +152,13 @@ jobs:
         run: |
           rm -rf output
           unzip -d output output.zip
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Python Dependencies
+        run: |
+          pip install -r cicd/upload/requirements.txt
       - name: Upload to Google Drive
         run: |
           python -m cicd.upload.upload ${{ steps.read_to_var_dirs.outputs.COMPARE_DIR }} $PWD/output
