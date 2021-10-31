@@ -90,6 +90,9 @@ jobs:
         run: |
           echo "::set-output name=PR_SHA1::$(head -n 1 shas.txt)"
           echo "::set-output name=PR_SHA2::$(head -n 2 shas.txt | tail -n 1)"
+      - name: Validate Comparison
+        run: |
+          cicd/compare/scripts/check_comparable.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
       - name: Retrieve Dirs
         uses: actions/download-artifact@v2
         with:
@@ -103,6 +106,11 @@ jobs:
         run: |
           mkdir -p ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }}
           mkdir -p ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
+      - name: Generate Exports
+        run: |
+          docker build -t exporter cicd/export/docker
+          docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }} revision=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} png=1
+          docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }} revision=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} png=1
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -110,14 +118,9 @@ jobs:
       - name: Python Dependencies
         run: |
           pip install -r cicd/compare/requirements-detect.txt
-      - name: Validate Comparison
+      - name: Detect Changes
         run: |
-          cicd/compare/scripts/check_comparable.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
-      - name: Generate Exports
-        run: |
-          docker build -t exporter cicd/export/docker
-          docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }} revision=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} png=1
-          docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }} revision=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} png=1
+          python -m cicd.compare.detect_changes ${{ steps.read_to_var_shas.outputs.PR_SHA1 }} ${{ steps.read_to_var_shas.outputs.PR_SHA2 }} $PWD/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}
       - name: Bundle Changes
         uses: papeloto/action-zip@v1
         with:
