@@ -17,9 +17,9 @@ pushd $(dirname $0)/../../..
 IMAGE_NAME=bvnordic/osm-convert
 OUT_DIR=/data/$LOCAL_OUTPUT_DIR
 TMP_JOINED=$OUT_DIR/joined.geojson
-TRANSLATIONS_DIR=/data/osm-conversion/translation
+TRANSLATIONS_DIR=/data/cicd/osm/translation
 
-docker build -t $IMAGE_NAME osm-conversion
+docker build -t $IMAGE_NAME cicd/osm/docker
 
 docker run --rm -w /data -v $PWD:/data $IMAGE_NAME ogr2ogr -sql "SELECT t.geom, t.dog_friend AS dog_friend, t.lights AS lights, t.difficulty AS difficulty, tn.trail_name AS name FROM trails t JOIN trail_names tn ON t.trail_id = tn.trail_id" $TMP_JOINED main-data.gpkg
 

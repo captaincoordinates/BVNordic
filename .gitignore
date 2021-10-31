@@ -5,9 +5,9 @@
 **/*.gpkg-wal
 .autoenv*.zsh
 .vscode
-osm-conversion/tmpdata/**
+cicd/osm/tmpdata/**
 output/*
 # Service Account auth key
-upload/*-key.json
+cicd/upload/*-key.json
 cicd/compare/pr/shas-*.txt
 !**/*.gitkeep
