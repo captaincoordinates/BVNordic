@@ -150,6 +150,7 @@ jobs:
           name: changes
       - name: Unpack Bundle
         run: |
+          rm -rf output/*
           unzip -d output output.zip
       - name: Upload to Google Drive
         run: |
