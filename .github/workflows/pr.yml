@@ -22,6 +22,8 @@ jobs:
       - name: Execute Python
         run: |
           python -m cicd.compare.pr.show_pending $GITHUB_REPOSITORY $GITHUB_REF
+        env:
+          PAT_GITHUB_API: ${{ secrets.PAT_GITHUB_API }}
 
   define_shas:
     name: Define SHAs for Compare
@@ -113,15 +115,48 @@ jobs:
           docker build -t exporter cicd/export/docker
           docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }} revision=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} png=1
           docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }} revision=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} png=1
+      - name: Bundle Changes
+        uses: papeloto/action-zip@v1
+        with:
+          files: output
+          dest: output.zip
       - name: Retain Changes
         uses: actions/upload-artifact@v2
         with:
           name: changes
-          path: ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}
+          path: output.zip
+
+  upload:
+    name: Upload
+    needs: compare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Retrieve Dirs
+        uses: actions/download-artifact@v2
+        with:
+          name: dirs
+      - name: Read to Var
+        id: read_to_var_dirs
+        run: |
+          echo "::set-output name=COMPARE_DIR::$(head -n 1 compare.dir)"
+          echo "::set-output name=OUTPUT_BASE::$(head -n 1 output-base.dir)"
+      - name: Retrieve Bundle
+        uses: actions/download-artifact@v2
+        with:
+          name: changes
+      - name: Unpack Bundle
+        run: |
+          unzip -d output output.zip
+      - name: Upload to Google Drive
+        run: |
+          python -m cicd.upload.upload ${{ steps.read_to_var_dirs.outputs.COMPARE_DIR }} $PWD/output
+        env:
+          GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_PR_UPLOAD_SERVICE_ACCT_INFO }}
 
   update_pr:
     name: Update PR
-    needs: compare
+    needs: upload
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -143,7 +178,9 @@ jobs:
           python-version: 3.9
       - name: Python Dependencies
         run: |
-          pip install -r cicd/compare/requirements-changes.txt
+          pip install -r cicd/compare/requirements-pr.txt
       - name: Execute Python
         run: |
           python -m cicd.compare.pr.show_changes $GITHUB_REPOSITORY $GITHUB_REF ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/result/changes.json ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/uploads.json
+        env:
+          PAT_GITHUB_API: ${{ secrets.PAT_GITHUB_API }}
