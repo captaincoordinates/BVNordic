@@ -6,6 +6,23 @@ on:
       - '**'
 
 jobs:
+
+  pr_pending:
+    name: Show PR Pending
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Python Dependencies
+      run: |
+        pip install -r cicd/compare/requirements-pr.txt
+    - name: Execute Python
+      run: |
+        python -m cicd.compare.pr.show_pending $GITHUB_REPOSITORY $GITHUB_REF
+
   define_shas:
     name: Define SHAs for Compare
     runs-on: ubuntu-latest
@@ -17,19 +34,42 @@ jobs:
           python-version: 3.9
       - name: Python Dependencies
         run: |
-          pip install requests
+          pip install -r cicd/compare/requirements-pr.txt
       - name: Execute Python
         run: |
-          python -m src.from_pr $GITHUB_REPOSITORY $GITHUB_REF
+          python -m cicd.compare.pr.get_shas $GITHUB_REPOSITORY $GITHUB_REF
         working-directory: compare
       - name: Retain SHAs
         uses: actions/upload-artifact@v2
         with:
           name: shas
-          path: compare/pr_shas.txt
+          path: cicd/compare/pr/shas.txt
+
+  create_dirs:
+    steps:
+      - uses: actions/checkout@v2
+      - name: Retrieve SHAs
+        uses: actions/download-artifact@v2
+        with:
+          name: shas
+      - name: Read to Var
+        id: read_to_var_shas
+        run: |
+          echo "::set-output name=PR_SHA1::$(head -n 1 shas.txt)"
+          echo "::set-output name=PR_SHA2::$(head -n 2 shas.txt | tail -n 1)"
+      - name: Create Directories
+        run: |
+          . cicd/compare/scripts/create_directories.sh before=${{ steps.read_to_var.outputs.PR_SHA1 }} after=${{ steps.read_to_var.outputs.PR_SHA2 }}
+          echo $COMPARE_DIR > compare.dir
+          echo $OUTPUT_BASE > output-base.dir
+      - name: Retain Directory Data
+        uses: actions/upload-artifact@v2
+        with:
+          name: dirs
+          path: '*.dir'
 
   compare:
-    name: Initiate Image Comparison
+    name: Perform Image Comparison
     needs: define_shas
     runs-on: ubuntu-latest
     steps:
@@ -41,25 +81,39 @@ jobs:
         with:
           name: shas
       - name: Read to Var
-        id: read_to_var
+        id: read_to_var_shas
         run: |
-          echo "::set-output name=PR_SHA1::$(head -n 1 pr_shas.txt)"
-          echo "::set-output name=PR_SHA2::$(head -n 2 pr_shas.txt | tail -n 1)"
+          echo "::set-output name=PR_SHA1::$(head -n 1 shas.txt)"
+          echo "::set-output name=PR_SHA2::$(head -n 2 shas.txt | tail -n 1)"
+      - name: Retrieve Dirs
+        uses: actions/download-artifact@v2
+        with:
+          name: dirs
+      - name: Read to Var
+        id: read_to_var_dirs
+        run: |
+          echo "::set-output name=COMPARE_DIR::$(head -n 1 compare.dir)"
+          echo "::set-output name=OUTPUT_BASE::$(head -n 1 output-base.dir)"
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
       - name: Python Dependencies
         run: |
-          pip install -r compare/requirements.txt
-      - name: Initiate Comparison
+          pip install -r cicd/compare/requirements-detect.txt
+      - name: Validate Comparison
         run: |
-          scripts/test-compare.sh ${{ steps.read_to_var.outputs.PR_SHA1 }} ${{ steps.read_to_var.outputs.PR_SHA2 }}
+          cicd/compare/scripts/check_comparable.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
+      - name: Generate Exports
+        run: |
+          docker build -t exporter cicd/export/docker
+          docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }} revision=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} png=1
+          docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }} revision=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} png=1
       - name: Retain Changes
         uses: actions/upload-artifact@v2
         with:
           name: changes
-          path: compare/pr_shas.txt
+          path: ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}
 
   update_pr:
     name: Update PR
@@ -67,15 +121,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Retrieve SHAs
+      - name: Read to Var
+        id: read_to_var_dirs
+        run: |
+          echo "::set-output name=COMPARE_DIR::$(head -n 1 compare.dir)"
+          echo "::set-output name=OUTPUT_BASE::$(head -n 1 output-base.dir)"
+      - name: Retrieve Changes
         uses: actions/download-artifact@v2
         with:
-          name: shas
-      - name: Read to Var
-        id: read_to_var
+          name: changes
+      - name: debug dir content
         run: |
-          echo "::set-output name=PR_SHA1::$(head -n 1 pr_shas.txt)"
-          echo "::set-output name=PR_SHA2::$(head -n 2 pr_shas.txt | tail -n 1)"
-      - name: Debug Drive Link
+          ls -AlhR
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Python Dependencies
         run: |
-          echo "WIP"
+          pip install -r cicd/compare/requirements-changes.txt
+      - name: Execute Python
+        run: |
+          python -m cicd.compare.pr.show_changes $GITHUB_REPOSITORY $GITHUB_REF ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/result/changes.json ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/uploads.json

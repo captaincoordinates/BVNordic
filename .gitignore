@@ -9,5 +9,5 @@ cicd/osm/tmpdata/**
 output/*
 # Service Account auth key
 cicd/upload/*-key.json
-cicd/compare/pr/shas-*.txt
+cicd/compare/pr/shas.txt
 !**/*.gitkeep

@@ -24,5 +24,5 @@ if __name__ == "__main__":
     pr_id = get_pr_id_from_ref(args["pr_ref"])
     shas = get_shas(args["repo"], pr_id)
 
-    with open(path.join(path.dirname(__file__), f"shas-{pr_id}.txt"), "w") as shas_file:
+    with open(path.join(path.dirname(__file__), "shas.txt"), "w") as shas_file:
         shas_file.writelines(linesep.join(shas))
