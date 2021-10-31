@@ -171,6 +171,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Retrieve Dirs
+        uses: actions/download-artifact@v2
+        with:
+          name: dirs
       - name: Read to Var
         id: read_to_var_dirs
         run: |
