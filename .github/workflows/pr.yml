@@ -38,6 +38,12 @@ jobs:
       - name: Python Dependencies
         run: |
           pip install -r cicd/compare/requirements-pr.txt
+      - name: debug workflow
+        run: |
+          ls -AlhR
+          python --version
+          python3 --version
+          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY, GITHUB_REF: $GITHUB_REF"
       - name: Execute Python
         run: |
           python -m cicd.compare.pr.get_shas $GITHUB_REPOSITORY $GITHUB_REF
