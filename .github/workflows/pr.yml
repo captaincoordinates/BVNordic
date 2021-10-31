@@ -25,6 +25,7 @@ jobs:
 
   define_shas:
     name: Define SHAs for Compare
+    needs: pr_pending
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -47,6 +48,7 @@ jobs:
 
   create_dirs:
     name: Create Required Directories
+    needs: define_shas
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -72,7 +74,7 @@ jobs:
 
   compare:
     name: Perform Image Comparison
-    needs: define_shas
+    needs: create_dirs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
