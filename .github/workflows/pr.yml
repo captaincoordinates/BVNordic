@@ -64,7 +64,7 @@ jobs:
           echo "::set-output name=PR_SHA2::$(head -n 2 shas.txt | tail -n 1)"
       - name: Create Directories
         run: |
-          . cicd/compare/scripts/create_directories.sh before=${{ steps.read_to_var.outputs.PR_SHA1 }} after=${{ steps.read_to_var.outputs.PR_SHA2 }}
+          . cicd/compare/scripts/create_directories.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
           echo $COMPARE_DIR > compare.dir
           echo $OUTPUT_BASE > output-base.dir
       - name: Retain Directory Data
