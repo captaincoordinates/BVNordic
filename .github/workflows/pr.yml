@@ -99,6 +99,10 @@ jobs:
         run: |
           echo "::set-output name=COMPARE_DIR::$(head -n 1 compare.dir)"
           echo "::set-output name=OUTPUT_BASE::$(head -n 1 output-base.dir)"
+      - name: Create Directories
+        run: |
+          mkdir -p ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }}
+          mkdir -p ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
