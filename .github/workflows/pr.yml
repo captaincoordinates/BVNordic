@@ -47,9 +47,30 @@ jobs:
           name: shas
           path: cicd/compare/pr/shas.txt
 
+  validate:
+    name: Validate Comparison
+    needs: define_shas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # required to check out older versions for comparison
+      - name: Retrieve SHAs
+        uses: actions/download-artifact@v2
+        with:
+          name: shas
+      - name: Read to Var
+        id: read_to_var
+        run: |
+          echo "::set-output name=PR_SHA1::$(head -n 1 shas.txt)"
+          echo "::set-output name=PR_SHA2::$(head -n 2 shas.txt | tail -n 1)"
+      - name: Validate Comparison
+        run: |
+          cicd/compare/scripts/check_comparable.sh before=${{ steps.read_to_var.outputs.PR_SHA1 }} after=${{ steps.read_to_var.outputs.PR_SHA2 }}
+
   create_dirs:
     name: Create Required Directories
-    needs: define_shas
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -90,9 +111,6 @@ jobs:
         run: |
           echo "::set-output name=PR_SHA1::$(head -n 1 shas.txt)"
           echo "::set-output name=PR_SHA2::$(head -n 2 shas.txt | tail -n 1)"
-      - name: Validate Comparison
-        run: |
-          cicd/compare/scripts/check_comparable.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
       - name: Retrieve Dirs
         uses: actions/download-artifact@v2
         with:
