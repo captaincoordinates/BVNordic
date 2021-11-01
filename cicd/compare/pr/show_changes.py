@@ -36,8 +36,13 @@ def show_changes(repo: str, pr_id: int, changes_file: str, uploads_file: str) ->
         ]
         for change_type, layouts in changes.items()
     }
-    pr_new = f"{pr_new}{get_rendered_html('changes', template_data)}"
-    update_pr(repo, pr_id, "".join([line.strip() for line in pr_new.splitlines()]))
+    rendered = "".join(
+        [
+            line.strip()
+            for line in get_rendered_html("changes", template_data).splitlines()
+        ]
+    )
+    update_pr(repo, pr_id, f"{pr_new}{rendered}")
 
 
 if __name__ == "__main__":
