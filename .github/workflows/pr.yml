@@ -197,6 +197,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: changes
+      - name: Unpack Bundle
+        run: |
+          rm -rf output
+          unzip -d output output.zip
       - name: debug dir content
         run: |
           ls -AlhR
