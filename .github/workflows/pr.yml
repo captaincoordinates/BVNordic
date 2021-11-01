@@ -136,10 +136,10 @@ jobs:
         with:
           files: output
           dest: output.zip
-      - name: Retain Changes
+      - name: Retain Output
         uses: actions/upload-artifact@v2
         with:
-          name: changes
+          name: output
           path: output.zip
 
   upload:
@@ -160,7 +160,7 @@ jobs:
       - name: Retrieve Bundle
         uses: actions/download-artifact@v2
         with:
-          name: changes
+          name: output
       - name: Unpack Bundle
         run: |
           rm -rf output
@@ -177,6 +177,16 @@ jobs:
           python -m cicd.upload.upload ${{ steps.read_to_var_dirs.outputs.COMPARE_DIR }} $PWD/output
         env:
           GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_PR_UPLOAD_SERVICE_ACCT_INFO }}
+      - name: Bundle Changes
+        uses: papeloto/action-zip@v1
+        with:
+          files: output
+          dest: upload.zip
+      - name: Retain Output
+        uses: actions/upload-artifact@v2
+        with:
+          name: upload
+          path: upload.zip
 
   update_pr:
     name: Update PR
@@ -196,11 +206,11 @@ jobs:
       - name: Retrieve Changes
         uses: actions/download-artifact@v2
         with:
-          name: changes
+          name: upload
       - name: Unpack Bundle
         run: |
           rm -rf output
-          unzip -d output output.zip
+          unzip -d output upload.zip
       - name: debug dir content
         run: |
           ls -AlhR
