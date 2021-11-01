@@ -15,8 +15,10 @@ def show_pending(repo: str, pr_id: int) -> None:
     pr_new = pr["body"] or ""
     if re.search(AUTO_CONTENT_REGEX, pr_new):
         pr_new = re.sub(AUTO_CONTENT_REGEX, "", pr_new)
-    pr_new = f"{pr_new}{get_rendered_html('pending')}"
-    update_pr(repo, pr_id, "".join([line.strip() for line in pr_new.splitlines()]))
+    rendered = "".join(
+        [line.strip() for line in get_rendered_html("pending").splitlines()]
+    )
+    update_pr(repo, pr_id, f"{pr_new}{rendered}")
 
 
 if __name__ == "__main__":
