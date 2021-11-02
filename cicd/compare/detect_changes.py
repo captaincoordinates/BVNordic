@@ -115,6 +115,7 @@ class _change_detection_executor:
         before_gray = cv2.cvtColor(before, cv2.COLOR_BGR2GRAY)
         after_gray = cv2.cvtColor(after, cv2.COLOR_BGR2GRAY)
         (score, diff) = structural_similarity(before_gray, after_gray, full=True)
+        LOGGER.info(f"structural similarity for {local_path}: {score}")
         if score == 1:
             return (local_path, ChangeType.UNCHANGED)
 
