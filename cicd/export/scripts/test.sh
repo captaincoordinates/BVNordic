@@ -20,7 +20,7 @@ UPLOAD_IF_MISSING=0
 if [ "$CI" == "true" ]; then
     UPLOAD_IF_MISSING=1
 fi
-cicd/scripts/pull_or_build.sh repo=tomfumb image=qgis-exporter build_dir=cicd/export/docker upload_if_missing=$UPLOAD_IF_MISSING
+cicd/scripts/pull_or_build.sh repo=tomfumb image=qgis-exporter sha=2cfe5aacf2605ebc68021e54ec668e3b5d9e87cc2437a9bce4246980cb89ce8f build_dir=cicd/export/docker upload_if_missing=$UPLOAD_IF_MISSING
 docker run --rm -v $PWD:/code tomfumb/qgis-exporter /code/cicd/export/docker/generate_head.sh output_base=/code/$LOCAL_OUTPUT_DIR png=1 pdf=1
 
 cicd/osm/scripts/export.sh local_output_dir=$LOCAL_OUTPUT_DIR

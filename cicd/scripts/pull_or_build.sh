@@ -7,16 +7,18 @@ do
     case "$KEY" in
             repo)              REPO=${VALUE} ;;
             image)             IMAGE=${VALUE} ;;
+            sha)               SHA=${VALUE} ;;
             build_dir)         BUILD_DIR=${VALUE} ;;
             upload_if_missing) UPLOAD_IF_MISSING=${VALUE} ;;
             *)   
     esac    
 done
 
-if docker pull $REPO/$IMAGE; then
-    echo "$REPO/$IMAGE successfully pulled from registry"
+DESIRED_IMAGE=$REPO/$IMAGE@sha256:$SHA
+if docker pull $DESIRED_IMAGE; then
+    echo "$DESIRED_IMAGE successfully pulled from registry"
 else
-    echo "$REPO/$IMAGE not available in registry, building from $BUILD_DIR"
+    echo "$DESIRED_IMAGE not available in registry, building from $BUILD_DIR"
     docker build -t $REPO/$IMAGE $BUILD_DIR
     EXIT_CODE=$?    # not important enough to fail a build if the remainder fails
     if [ "$UPLOAD_IF_MISSING" == "1" ]; then
