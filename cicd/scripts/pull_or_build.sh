@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 for ARGUMENT in "$@"
 do
     KEY=$(echo $ARGUMENT | cut -f1 -d=)
@@ -20,6 +18,7 @@ if docker pull $REPO/$IMAGE; then
 else
     echo "$REPO/$IMAGE not available in registry, building from $BUILD_DIR"
     docker build -t $REPO/$IMAGE $BUILD_DIR
+    EXIT_CODE=$?    # not important enough to fail a build if the remainder fails
     if [ "$UPLOAD_IF_MISSING" == "1" ]; then
         echo "logging in to Docker Hub"
         echo $PAT_DOCKER_HUB | docker login --username $REPO --password-stdin
@@ -29,3 +28,5 @@ else
         docker logout
     fi
 fi
+
+exit $EXIT_CODE
