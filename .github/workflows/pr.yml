@@ -6,116 +6,42 @@ on:
       - '**'
 
 jobs:
-
-  pr_pending:
-    name: Show PR Pending
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Python Dependencies
-        run: |
-          pip install -r cicd/compare/requirements-pr.txt
-      - name: Execute Python
-        run: |
-          python -m cicd.compare.pr.show_pending $GITHUB_REPOSITORY $GITHUB_REF
-        env:
-          PAT_GITHUB_API: ${{ secrets.PAT_GITHUB_API }}
-
-  define_shas:
-    name: Define SHAs for Compare
-    needs: pr_pending
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Python Dependencies
-        run: |
-          pip install -r cicd/compare/requirements-pr.txt
-      - name: Execute Python
-        run: |
-          python -m cicd.compare.pr.get_shas $GITHUB_REPOSITORY $GITHUB_REF
-      - name: Retain SHAs
-        uses: actions/upload-artifact@v2
-        with:
-          name: shas
-          path: cicd/compare/pr/shas.txt
-
-  validate:
-    name: Validate Comparison
-    needs: define_shas
+  visual_diff:
+    name: Update PR with visual diff
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # required to check out older versions for comparison
-      - name: Retrieve SHAs
-        uses: actions/download-artifact@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
         with:
-          name: shas
-      - name: Read to Var
-        id: read_to_var
+          python-version: 3.9
+      - name: Python Dependencies (PR)
         run: |
-          echo "::set-output name=PR_SHA1::$(head -n 1 shas.txt)"
-          echo "::set-output name=PR_SHA2::$(head -n 2 shas.txt | tail -n 1)"
-      - name: Validate Comparison
+          pip install -r cicd/compare/requirements-pr.txt
+      - name: Show Pending on PR
         run: |
-          cicd/compare/scripts/check_comparable.sh before=${{ steps.read_to_var.outputs.PR_SHA1 }} after=${{ steps.read_to_var.outputs.PR_SHA2 }}
-
-  create_dirs:
-    name: Create Required Directories
-    needs: validate
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Retrieve SHAs
-        uses: actions/download-artifact@v2
-        with:
-          name: shas
-      - name: Read to Var
+          python -m cicd.compare.pr.show_pending $GITHUB_REPOSITORY $GITHUB_REF
+        env:
+          PAT_GITHUB_API: ${{ secrets.PAT_GITHUB_API }}
+      - name: Get SHAs
+        run: |
+          python -m cicd.compare.pr.get_shas $GITHUB_REPOSITORY $GITHUB_REF
+      - name: Read to Var (SHAs)
         id: read_to_var_shas
         run: |
-          echo "::set-output name=PR_SHA1::$(head -n 1 shas.txt)"
-          echo "::set-output name=PR_SHA2::$(head -n 2 shas.txt | tail -n 1)"
+          echo "::set-output name=PR_SHA1::$(head -n 1 cicd/compare/pr/shas.txt)"
+          echo "::set-output name=PR_SHA2::$(head -n 2 cicd/compare/pr/shas.txt | tail -n 1)"
+      - name: Validate Comparison
+        run: |
+          cicd/compare/scripts/check_comparable.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
       - name: Create Directories
         run: |
           . cicd/compare/scripts/create_directories.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
           echo $COMPARE_DIR > compare.dir
           echo $OUTPUT_BASE > output-base.dir
-      - name: Retain Directory Data
-        uses: actions/upload-artifact@v2
-        with:
-          name: dirs
-          path: '*.dir'
-
-  compare:
-    name: Perform Image Comparison
-    needs: create_dirs
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # required to check out older versions for comparison
-      - name: Retrieve SHAs
-        uses: actions/download-artifact@v2
-        with:
-          name: shas
-      - name: Read to Var
-        id: read_to_var_shas
-        run: |
-          echo "::set-output name=PR_SHA1::$(head -n 1 shas.txt)"
-          echo "::set-output name=PR_SHA2::$(head -n 2 shas.txt | tail -n 1)"
-      - name: Retrieve Dirs
-        uses: actions/download-artifact@v2
-        with:
-          name: dirs
-      - name: Read to Var
+      - name: Read to Var (Dirs)
         id: read_to_var_dirs
         run: |
           echo "::set-output name=COMPARE_DIR::$(head -n 1 compare.dir)"
@@ -129,11 +55,7 @@ jobs:
           docker build -t exporter cicd/export/docker
           docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }} revision=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} png=1
           docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA2 }} revision=${{ steps.read_to_var_shas.outputs.PR_SHA2 }} png=1
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Python Dependencies
+      - name: Python Dependencies (Change Detection)
         run: |
           pip install -r cicd/compare/requirements-detect.txt
       - name: Detect Changes
@@ -143,45 +65,7 @@ jobs:
         run: |
           sudo rm -rf ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }}
           sudo rm -rf ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
-      - name: Bundle Changes
-        uses: papeloto/action-zip@v1
-        with:
-          files: output
-          dest: output.zip
-      - name: Retain Output
-        uses: actions/upload-artifact@v2
-        with:
-          name: output
-          path: output.zip
-
-  upload:
-    name: Upload
-    needs: compare
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Retrieve Dirs
-        uses: actions/download-artifact@v2
-        with:
-          name: dirs
-      - name: Read to Var
-        id: read_to_var_dirs
-        run: |
-          echo "::set-output name=COMPARE_DIR::$(head -n 1 compare.dir)"
-          echo "::set-output name=OUTPUT_BASE::$(head -n 1 output-base.dir)"
-      - name: Retrieve Bundle
-        uses: actions/download-artifact@v2
-        with:
-          name: output
-      - name: Unpack Bundle
-        run: |
-          rm -rf output
-          unzip -d output output.zip
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Python Dependencies
+      - name: Python Dependencies (upload)
         run: |
           pip install -r cicd/upload/requirements.txt
       - name: Upload to Google Drive
@@ -189,48 +73,7 @@ jobs:
           python -m cicd.upload.upload ${{ steps.read_to_var_dirs.outputs.COMPARE_DIR }} $PWD/output
         env:
           GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_PR_UPLOAD_SERVICE_ACCT_INFO }}
-      - name: Bundle Changes
-        uses: papeloto/action-zip@v1
-        with:
-          files: output
-          dest: upload.zip
-      - name: Retain Output
-        uses: actions/upload-artifact@v2
-        with:
-          name: upload
-          path: upload.zip
-
-  update_pr:
-    name: Update PR
-    needs: upload
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Retrieve Dirs
-        uses: actions/download-artifact@v2
-        with:
-          name: dirs
-      - name: Read to Var
-        id: read_to_var_dirs
-        run: |
-          echo "::set-output name=COMPARE_DIR::$(head -n 1 compare.dir)"
-          echo "::set-output name=OUTPUT_BASE::$(head -n 1 output-base.dir)"
-      - name: Retrieve Changes
-        uses: actions/download-artifact@v2
-        with:
-          name: upload
-      - name: Unpack Bundle
-        run: |
-          rm -rf output
-          unzip -d output upload.zip
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Python Dependencies
-        run: |
-          pip install -r cicd/compare/requirements-pr.txt
-      - name: Execute Python
+      - name: Show Changes on PR
         run: |
           python -m cicd.compare.pr.show_changes $GITHUB_REPOSITORY $GITHUB_REF ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/result/changes.json ${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/uploads.json
         env:
