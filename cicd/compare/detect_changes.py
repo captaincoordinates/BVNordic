@@ -56,19 +56,13 @@ def execute(before_dir: str, after_dir: str, compare_base: str) -> None:
         change_type: list() for change_type in ChangeType
     }
 
-    LOGGER.info(f"changes: {changes}")
-
     for addition in added:
         changes[ChangeType.ADDED].append(addition)
         copy_to_result(after_path, addition, result_dir)
 
-    LOGGER.info(f"changes: {changes}")
-
     for removal in removed:
         changes[ChangeType.REMOVED].append(removal)
         copy_to_result(before_path, removal, result_dir)
-
-    LOGGER.info(f"changes: {changes}")
 
     for file_path, change_type in _change_detection_executor(
         result_dir,
@@ -77,8 +71,6 @@ def execute(before_dir: str, after_dir: str, compare_base: str) -> None:
         remained,
     ).parallel(get_process_pool_count()):
         changes[change_type].append(file_path)
-
-    LOGGER.info(f"changes: {changes}")
 
     with open(path.join(result_dir, "changes.json"), "w") as change_json:
         change_json.write(
