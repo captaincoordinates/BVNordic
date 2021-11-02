@@ -19,9 +19,13 @@ pushd $(dirname $0)/../../..
 cicd/compare/scripts/check_comparable.sh before=$BEFORE after=$AFTER
 . cicd/compare/scripts/create_directories.sh before=$BEFORE after=$AFTER
 
-docker build -t exporter cicd/export/docker
-docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/$OUTPUT_BASE/$BEFORE revision=$BEFORE png=1
-docker run --rm -v $PWD:/code exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/$OUTPUT_BASE/$AFTER revision=$AFTER png=1
+UPLOAD_IF_MISSING=0
+if [ "$CI" == "true" ]; then
+    UPLOAD_IF_MISSING=1
+fi
+cicd/scripts/pull_or_build.sh repo=tomfumb image=qgis-exporter build_dir=cicd/export/docker upload_if_missing=$UPLOAD_IF_MISSING
+docker run --rm -v $PWD:/code tomfumb/qgis-exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/$OUTPUT_BASE/$BEFORE revision=$BEFORE png=1
+docker run --rm -v $PWD:/code tomfumb/qgis-exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/$OUTPUT_BASE/$AFTER revision=$AFTER png=1
 
 python -m cicd.compare.detect_changes $BEFORE $AFTER $PWD/$OUTPUT_BASE
 
