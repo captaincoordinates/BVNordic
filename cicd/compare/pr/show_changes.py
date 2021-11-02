@@ -1,13 +1,13 @@
 from argparse import ArgumentParser
 from json import loads
 from logging import getLogger
+from os import path
 from typing import Final  # type: ignore
 
 from cicd.compare.pr.templates.templates import get_rendered_html
 from cicd.compare.pr.util import get_pr_id_from_ref, update_pr
 
 LOGGER: Final = getLogger(__file__)
-FILE_EXT: Final = ".gif"
 
 
 def show_changes(repo: str, pr_id: int, changes_file: str, uploads_file: str) -> None:
@@ -15,12 +15,13 @@ def show_changes(repo: str, pr_id: int, changes_file: str, uploads_file: str) ->
         changes = loads("".join(cfile.readlines()))
 
     with open(uploads_file, "r") as ufile:
-        uploads = loads("".join(ufile.readlines()))
+        uploads = {
+            path.splitext(local_path)[0]: file_id
+            for local_path, file_id in loads("".join(ufile.readlines())).items()
+        }
 
     change_file_ids = {
-        layout: uploads[f"{layout}{FILE_EXT}"]
-        if f"{layout}{FILE_EXT}" in uploads
-        else None
+        layout: uploads[layout] if layout in uploads else None
         for layout in [item for sublist in changes.values() for item in sublist]
     }
     template_data = {
