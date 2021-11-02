@@ -7,10 +7,10 @@ do
     KEY=$(echo $ARGUMENT | cut -f1 -d=)
     VALUE=$(echo $ARGUMENT | cut -f2 -d=)   
     case "$KEY" in
-            repo)             REPO=${VALUE} ;;
-            image)            IMAGE=${VALUE} ;;
-            build_dir)        BUILD_DIR=${VALUE} ;;
-            upload_if_missing UPLOAD_IF_MISSING=${VALUE} ;;
+            repo)              REPO=${VALUE} ;;
+            image)             IMAGE=${VALUE} ;;
+            build_dir)         BUILD_DIR=${VALUE} ;;
+            upload_if_missing) UPLOAD_IF_MISSING=${VALUE} ;;
             *)   
     esac    
 done
