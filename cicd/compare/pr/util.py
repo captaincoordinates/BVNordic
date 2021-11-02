@@ -5,7 +5,7 @@ from typing import Any, Dict
 
 import requests
 
-from cicd.compare.pr.settings import GITHUB_API_BASE
+from cicd.compare.pr.settings import AUTO_CONTENT_REGEX, GITHUB_API_BASE
 
 
 def get_pr_id_from_ref(pr_ref: str) -> int:
@@ -22,10 +22,15 @@ def get_pr(repo: str, pr_id: int) -> Dict[str, Any]:
         )
 
 
-def update_pr(repo: str, pr_id: int, content: str) -> None:
+def update_pr(repo: str, pr_id: int, new_content: str) -> None:
+    pr = get_pr(repo, pr_id)
+    pr_new = pr["body"] or ""
+    if re.search(AUTO_CONTENT_REGEX, pr_new):
+        pr_new = re.sub(AUTO_CONTENT_REGEX, "", pr_new)
+    rendered = "".join([line.strip() for line in new_content.splitlines()])
     response = requests.patch(
         f"{GITHUB_API_BASE}/repos/{repo}/pulls/{pr_id}",
-        json={"body": content},
+        json={"body": f"{pr_new}{rendered}"},
         headers={"Authorization": f"Bearer {environ['PAT_GITHUB_API']}"},
     )
     if response.status_code != HTTPStatus.OK:
