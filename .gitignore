@@ -1,6 +1,13 @@
 *.qgs~
-output/**/*
 **/.DS_Store
-main-data/osm-conversion/tmpdata/**
 **/*.pyc
-!.gitkeep
+**/*.gpkg-shm
+**/*.gpkg-wal
+.autoenv*.zsh
+.vscode
+cicd/osm/tmpdata/**
+output/*
+# Service Account auth key
+cicd/upload/*-key.json
+cicd/compare/pr/shas.txt
+!**/*.gitkeep
