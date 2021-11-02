@@ -34,4 +34,6 @@ def update_pr(repo: str, pr_id: int, new_content: str) -> None:
         headers={"Authorization": f"Bearer {environ['PAT_GITHUB_API']}"},
     )
     if response.status_code != HTTPStatus.OK:
-        raise Exception("Received unexpected response when updating PR")
+        raise Exception(
+            f"Received unexpected response when updating PR: {response.status_code}, {response.text}"
+        )
