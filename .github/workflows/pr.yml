@@ -6,8 +6,26 @@ on:
       - '**'
 
 jobs:
+  
+  check_possible:
+    name: Check visual diff is possible
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Python Dependencies (PR)
+        run: |
+          pip install -r cicd/compare/requirements-pr.txt
+      - name: Show Pending on PR
+        run: |
+          python -m cicd.compare.pr.check_possible $GITHUB_REPOSITORY $GITHUB_REF
+
   visual_diff:
     name: Update PR with visual diff
+    needs: check_possible
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
