@@ -33,6 +33,12 @@ def update_pr(repo: str, pr_id: int, new_content: str) -> None:
         json={"body": f"{pr_new}{rendered}"},
         headers={"Authorization": f"Bearer {environ['PAT_GITHUB_API']}"},
     )
+
+    print(
+        f"PAT length: {len(environ['PAT_GITHUB_API'])}, PAT first 6: {environ['PAT_GITHUB_API'][0:6]}, PAT last 6: {environ['PAT_GITHUB_API'][-6:]}"
+    )
+    print(response.request.headers)
+
     if response.status_code != HTTPStatus.OK:
         raise Exception(
             f"Received unexpected response when updating PR: {response.status_code}, {response.text}"
