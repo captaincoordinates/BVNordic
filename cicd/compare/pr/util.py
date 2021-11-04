@@ -1,6 +1,6 @@
 import re
 from http import HTTPStatus
-from os import environ
+from os import environ, linesep
 from typing import Any, Dict
 
 import requests
@@ -30,7 +30,7 @@ def update_pr(repo: str, pr_id: int, new_content: str) -> None:
     rendered = "".join([line.strip() for line in new_content.splitlines()])
     response = requests.patch(
         f"{GITHUB_API_BASE}/repos/{repo}/pulls/{pr_id}",
-        json={"body": f"{pr_new}{rendered}"},
+        json={"body": f"{pr_new}{linesep}{linesep}{rendered}"},
         headers={"Authorization": f"Bearer {environ['PAT_GITHUB_API']}"},
     )
 
