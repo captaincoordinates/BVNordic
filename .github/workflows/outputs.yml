@@ -93,6 +93,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: outputs
+      - name: Debug
+        run: |
+          ls -AlhR
+          pwd
       - name: Retrieve OSM
         uses: actions/download-artifact@v2
         with:
