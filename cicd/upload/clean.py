@@ -2,9 +2,8 @@ from argparse import ArgumentParser
 from logging import getLogger
 from typing import Final  # type: ignore
 
-from .service import create_service
-from .settings import MIME_FOLDER, ROOT_FOLDER_NAME
-from .util import configure_logging
+from cicd.upload.service import create_service
+from cicd.upload.settings import MIME_FOLDER, ROOT_FOLDER_NAME
 
 LOGGER: Final = getLogger(__file__)
 
@@ -29,7 +28,6 @@ def clean_all(service, include_root: bool, test_only: bool):
 
 
 if __name__ == "__main__":
-    configure_logging()
     parser = ArgumentParser()
     parser.add_argument(
         "--include_root",
@@ -44,7 +42,7 @@ if __name__ == "__main__":
         help="Only delete test- prefix directories",
     )
     parser.set_defaults(include_root=False)
-    parser.set_defaults(test_only=True)
+    parser.set_defaults(test_only=False)
     args = vars(parser.parse_args())
     LOGGER.info(f"{__name__} called with {args}")
     clean_all(create_service(), args["include_root"], args["test_only"])

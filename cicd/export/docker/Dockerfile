@@ -15,6 +15,7 @@ RUN add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main"
 
 RUN apt-get update --fix-missing \
   && apt-get install -y --no-install-recommends \
+  git \
   python-qgis \
   qgis-server \
   xauth \
