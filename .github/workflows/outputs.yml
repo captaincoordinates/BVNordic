@@ -86,13 +86,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: dirs
-      - name: Clear Conflicting Dir
-        run: |
-          sudo rm -rf output
       - name: Retrieve Generated Layouts
         uses: actions/download-artifact@v2
         with:
           name: outputs
+          path: output/
       - name: Debug
         run: |
           ls -AlhR
