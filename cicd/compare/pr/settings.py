@@ -7,3 +7,4 @@ AUTO_CONTENT_REGEX: Final = re.compile(
     f"{re.escape(AUTO_CONTENT_START)}.*{re.escape(AUTO_CONTENT_END)}", re.DOTALL
 )
 GITHUB_API_BASE: Final = "https://api.github.com"
+GITHUB_WEB_BASE: Final = "https://github.com"
