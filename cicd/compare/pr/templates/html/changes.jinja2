@@ -15,12 +15,10 @@
 
 {% if CHANGED|length > 0 %}
     <h2>Changed</h2>
-    <ul>
     {% for entry in CHANGED %}
-        <h4>{{ entry.layout }}</h4>
+        <h3>{{ entry.layout }}&nbsp;&nbsp;<a href="https://drive.google.com/uc?export=download&id={{entry.before}}">Before</a>&nbsp;&nbsp;<a href="https://drive.google.com/uc?export=download&id={{entry.after}}">After</a></h3>
         <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
     {% endfor %}
-    </ul>
 {% else %}
     <!-- No changed content -->
 {% endif %}
@@ -29,7 +27,7 @@
     <h2>Added</h2>
     <ul>
     {% for entry in ADDED %}
-        <h4>{{ entry.layout }}</h4>
+        <h3>{{ entry.layout }}</h3>
         <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
     {% endfor %}
     </ul>
@@ -41,7 +39,7 @@
     <h2>Removed</h2>
     <ul>
     {% for entry in REMOVED %}
-        <h4>{{ entry.layout }}</h4>
+        <h3>{{ entry.layout }}</h3>
         <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
     {% endfor %}
     </ul>

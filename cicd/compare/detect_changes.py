@@ -71,6 +71,9 @@ def execute(before_dir: str, after_dir: str, compare_base: str) -> None:
         remained,
     ).parallel(get_process_pool_count()):
         changes[change_type].append(file_path)
+        if change_type == ChangeType.CHANGED:
+            copy_to_result(before_path, file_path, result_dir, "before")
+            copy_to_result(after_path, file_path, result_dir, "after")
 
     with open(path.join(result_dir, "changes.json"), "w") as change_json:
         change_json.write(
@@ -83,13 +86,18 @@ def execute(before_dir: str, after_dir: str, compare_base: str) -> None:
         )
 
 
-def copy_to_result(source_dir: str, local_path: str, result_dir) -> None:
+def copy_to_result(
+    source_dir: str, local_path: str, result_dir, suffix: str = None
+) -> None:
     local_path_parts = path.split(local_path)
-    local_result_dir = path.join(result_dir, path.join(local_path_parts[0]))
+    local_result_dir = path.join(result_dir, *local_path_parts[:-1])
     Path(local_result_dir).mkdir(parents=True, exist_ok=True)
     copyfile(
         path.join(source_dir, f"{local_path}{IMAGE_EXT}"),
-        path.join(local_result_dir, f"{local_path_parts[1]}{IMAGE_EXT}"),
+        path.join(
+            local_result_dir,
+            f"{local_path_parts[-1:][0]}{'-' + suffix if suffix else ''}{IMAGE_EXT}",
+        ),
     )
 
 

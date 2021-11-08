@@ -28,12 +28,30 @@ def show_changes(repo: str, pr_id: int, changes_file: str, uploads_file: str) ->
         }
 
     change_file_ids = {
-        layout: uploads[layout] if layout in uploads else None
+        layout: {
+            "change": uploads[layout],
+            "before": uploads.get(f"{layout}-before"),
+            "after": uploads.get(f"{layout}-after"),
+        }
+        if layout in uploads
+        else None
         for layout in [item for sublist in changes.values() for item in sublist]
     }
     template_data = {
         change_type: [
-            {"layout": layout, "file_id": change_file_ids[layout]} for layout in layouts
+            {
+                "layout": layout,
+                "file_id": change_file_ids[layout]["change"]
+                if change_file_ids[layout] is not None
+                else None,
+                "before": change_file_ids[layout].get("before")
+                if change_file_ids[layout] is not None
+                else None,
+                "after": change_file_ids[layout].get("after")
+                if change_file_ids[layout] is not None
+                else None,
+            }
+            for layout in layouts
         ]
         for change_type, layouts in changes.items()
     }
