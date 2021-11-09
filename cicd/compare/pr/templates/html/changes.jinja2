@@ -16,7 +16,7 @@
 {% if CHANGED|length > 0 %}
     <h2>Changed</h2>
     {% for entry in CHANGED %}
-        <h3>{{ entry.layout }}&nbsp;&nbsp;<a href="https://drive.google.com/uc?export=download&id={{entry.before}}">Before</a>&nbsp;&nbsp;<a href="https://drive.google.com/uc?export=download&id={{entry.after}}">After</a></h3>
+        <h3>{{ entry.layout }}&nbsp;&nbsp;<a href="https://drive.google.com/file/d/{{entry.before}}/view?usp=sharing">Before</a>&nbsp;&nbsp;<a href="https://drive.google.com/file/d/{{entry.after}}/view?usp=sharing">After</a></h3>
         <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
     {% endfor %}
 {% else %}
@@ -25,24 +25,20 @@
 
 {% if ADDED|length > 0 %}
     <h2>Added</h2>
-    <ul>
     {% for entry in ADDED %}
         <h3>{{ entry.layout }}</h3>
         <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
     {% endfor %}
-    </ul>
 {% else %}
     <!-- No added content -->
 {% endif %}
 
 {% if REMOVED|length > 0 %}
     <h2>Removed</h2>
-    <ul>
     {% for entry in REMOVED %}
         <h3>{{ entry.layout }}</h3>
         <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
     {% endfor %}
-    </ul>
 {% else %}
     <!-- No removed content -->
 {% endif %}
