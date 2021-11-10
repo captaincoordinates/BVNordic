@@ -25,7 +25,7 @@ fi
 cicd/scripts/pull_or_build.sh repo=tomfumb image=bvnordic-osm-exporter build_dir=cicd/osm/docker upload_if_missing=$UPLOAD_IF_MISSING
 docker run --rm -w /data -v $PWD:/data tomfumb/bvnordic-osm-exporter ogr2ogr -sql "SELECT t.geom, t.dog_friend AS dog_friend, t.lights AS lights, t.difficulty AS difficulty, tn.trail_name AS name FROM trails t JOIN trail_names tn ON t.trail_id = tn.trail_id" $TMP_JOINED main-data.gpkg
 
-docker run --rm -v $PWD:/data tomfumb/bvnordic-osm-exporter /source/ogr2osm/ogr2osm.py $TMP_JOINED -f -o $OUT_DIR/bvnordic.osm -t $TRANSLATIONS_DIR/nordic_tags.py
+docker run --rm -v $PWD:/data -e GITHUB_SHA tomfumb/bvnordic-osm-exporter /source/ogr2osm/ogr2osm.py $TMP_JOINED -f -o $OUT_DIR/bvnordic.osm -t $TRANSLATIONS_DIR/nordic_tags.py
 EXIT_CODE=$?
 
 docker run --rm -v $PWD:/data tomfumb/bvnordic-osm-exporter rm $TMP_JOINED
