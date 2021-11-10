@@ -24,7 +24,7 @@ Pre-commit hooks execute `flake8`, `black`, and `mypy` against updated code.
 
 ## Generate Outputs
 ### Deployment Outputs
-Execute `cicd/export/scripts/test.sh` to generate all outputs locally in `output/`. Append `upload=1` to upload the local directory to Google Drive. `GDRIVE_CI_UPLOAD_SERVICE_ACCT_INFO` env var must be set to a valid JSON key for a Google Service Account.
+Execute `cicd/export/scripts/test.sh` to generate all outputs locally in `output/`. Append `upload=1` to upload the local directory to Google Drive. `GDRIVE_UPLOAD_SERVICE_ACCT_INFO` env var must be set to a valid JSON key for a Google Service Account.
 
 ### Visual Diff Outputs
-Execute `cicd/compare/scripts/test.sh before=[[ base commit SHA (full) ]] after=[[ head commit SHA (full) ]]`. Append `upload=1` to upload the local directory to Google Drive. `GDRIVE_PR_UPLOAD_SERVICE_ACCT_INFO` env var must be set to a valid JSON key for a Google Service Account.
+Execute `cicd/compare/scripts/test.sh before=[[ base commit SHA (full) ]] after=[[ head commit SHA (full) ]]`. Append `upload=1` to upload the local directory to Google Drive. `GDRIVE_UPLOAD_SERVICE_ACCT_INFO` env var must be set to a valid JSON key for a Google Service Account.
