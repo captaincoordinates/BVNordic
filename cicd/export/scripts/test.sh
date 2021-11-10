@@ -14,7 +14,8 @@ done
 
 pushd $(dirname $0)/../../..
 
-GITHUB_SHA="test-$(uuidgen)" . cicd/export/scripts/create_directory.sh
+
+GITHUB_SHA="$(uuidgen)" EXPORT_DIR_PREFIX=test- . cicd/export/scripts/create_directory.sh
 
 UPLOAD_IF_MISSING=0
 if [ "$CI" == "true" ]; then
