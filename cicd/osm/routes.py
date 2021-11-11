@@ -32,8 +32,8 @@ def execute(in_path: str, out_path: str) -> None:
             relation.append(bs.new_tag("member", type="way", ref=way))
         for key, value in way_properties[route_name].items():
             relation.append(bs.new_tag("tag", k=key, v=value))
-        relation.append(bs.new_tag("tag", route="piste"))
-        relation.append(bs.new_tag("tag", type="route"))
+        relation.append(bs.new_tag("tag", k="route", v="piste"))
+        relation.append(bs.new_tag("tag", k="type", v="route"))
         root_node.append(relation)
         current_relation_id = current_relation_id + RELATION_ID_INCREMENT
 
