@@ -14,6 +14,9 @@ done
 
 pushd $(dirname $0)/../../..
 
+DOCKER_REPO=tomfumb
+DOCKER_IMAGE=bvnordic-osm-exporter
+DOCKER_TAG=$DOCKER_REPO/$DOCKER_IMAGE
 OUT_DIR=/data/$LOCAL_OUTPUT_DIR
 TMP_JOINED=$OUT_DIR/joined.geojson
 TRANSLATIONS_DIR=/data/cicd/osm/translation
@@ -22,12 +25,14 @@ UPLOAD_IF_MISSING=0
 if [ "$CI" == "true" ]; then
     UPLOAD_IF_MISSING=1
 fi
-cicd/scripts/pull_or_build.sh repo=tomfumb image=bvnordic-osm-exporter build_dir=cicd/osm/docker upload_if_missing=$UPLOAD_IF_MISSING
-docker run --rm -w /data -v $PWD:/data tomfumb/bvnordic-osm-exporter ogr2ogr -sql "SELECT t.geom, t.dog_friend AS dog_friend, t.lights AS lights, t.difficulty AS difficulty, tn.trail_name AS name FROM trails t JOIN trail_names tn ON t.trail_id = tn.trail_id" $TMP_JOINED main-data.gpkg
+cicd/scripts/pull_or_build.sh repo=$DOCKER_REPO image=$DOCKER_IMAGE build_dir=cicd/osm/docker context_dir=cicd/osm upload_if_missing=$UPLOAD_IF_MISSING
+docker run --rm -w /data -v $PWD:/data $DOCKER_TAG ogr2ogr -sql "SELECT t.geom, t.dog_friend AS dog_friend, t.lights AS lights, t.difficulty AS difficulty, tn.trail_name AS name FROM trails t JOIN trail_names tn ON t.trail_id = tn.trail_id" $TMP_JOINED main-data.gpkg
 
-docker run --rm -v $PWD:/data -e GITHUB_SHA tomfumb/bvnordic-osm-exporter /source/ogr2osm/ogr2osm.py $TMP_JOINED -f -o $OUT_DIR/bvnordic.osm -t $TRANSLATIONS_DIR/nordic_tags.py
+docker run --rm -v $PWD:/data -e GITHUB_SHA $DOCKER_TAG ogr2osm $TMP_JOINED -f -o $OUT_DIR/bvnordic.osm -t $TRANSLATIONS_DIR/nordic_tags.py
 EXIT_CODE=$?
 
-docker run --rm -v $PWD:/data tomfumb/bvnordic-osm-exporter rm $TMP_JOINED
+docker run --rm -v $PWD:/data $DOCKER_TAG rm $TMP_JOINED
+
+python -m cicd.osm.routes $LOCAL_OUTPUT_DIR/bvnordic.osm $LOCAL_OUTPUT_DIR/bvnordic-relations.osm
 
 exit $EXIT_CODE
