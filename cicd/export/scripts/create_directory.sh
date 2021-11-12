@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export UNIQUE_DIR=$EXPORT_DIR_PREFIX$GITHUB_SHA
+export LOCAL_OUTPUT_DIR=output/$UNIQUE_DIR
+mkdir -p $LOCAL_OUTPUT_DIR

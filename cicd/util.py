@@ -1,5 +1,6 @@
 import logging
 import logging.config
+from multiprocessing import cpu_count
 from os import environ
 
 
@@ -33,3 +34,7 @@ def configure_logging() -> None:
             },
         }
     )
+
+
+def get_process_pool_count() -> int:
+    return min(8, cpu_count())

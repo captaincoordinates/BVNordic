@@ -1,0 +1,44 @@
+<br />
+<h1>Visual Diff</h1>
+<p>This section identifies visual changes to generated map products. Changes are animated, showing the original image with focal areas outlined in red rectangles and then the updated image.</p>
+<p>Map products that have been added or removed are shown as static images with no animation.</p>
+{% if UNCHANGED|length > 0 %}
+    <h2>Unchanged</h2>
+    <ul>
+    {% for entry in UNCHANGED %}
+        <li>{{ entry.layout }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <!-- No unchanged content -->
+{% endif %}
+
+{% if CHANGED|length > 0 %}
+    <h2>Changed</h2>
+    {% for entry in CHANGED %}
+        <h3>{{ entry.layout }}&nbsp;&nbsp;<a href="https://drive.google.com/file/d/{{entry.before}}/view?usp=sharing">Before</a>&nbsp;&nbsp;<a href="https://drive.google.com/file/d/{{entry.after}}/view?usp=sharing">After</a></h3>
+        <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
+    {% endfor %}
+{% else %}
+    <!-- No changed content -->
+{% endif %}
+
+{% if ADDED|length > 0 %}
+    <h2>Added</h2>
+    {% for entry in ADDED %}
+        <h3>{{ entry.layout }}</h3>
+        <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
+    {% endfor %}
+{% else %}
+    <!-- No added content -->
+{% endif %}
+
+{% if REMOVED|length > 0 %}
+    <h2>Removed</h2>
+    {% for entry in REMOVED %}
+        <h3>{{ entry.layout }}</h3>
+        <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
+    {% endfor %}
+{% else %}
+    <!-- No removed content -->
+{% endif %}

@@ -11,20 +11,20 @@ https://drive.google.com/drive/folders/1BnA7QL0c6nEB3kifgzp8bWXU3SjuD2rf
 
 Previous exports are named according to commit SHA. The following links will always reference the latest file versions:
 - [Print PDF](https://drive.google.com/file/d/1lpf7qo3NgWYj6MZOi5FJ7fjcOuchUvxb/view?usp=sharing)
+- [Print Thumbnail](https://drive.google.com/file/d/17QCZHo1_aAu5rAIrHlpFTzOyBx82mWuq/view?usp=sharing)
 - [Digital-only PDF](https://drive.google.com/file/d/1MimiPeXI22dCuUXUkiCjco6dH6YYfH8v/view?usp=sharing)
 
-## Development
-To begin development execute `scripts/setup.sh`. *Note*: this will install several pip dependencies and should be executed within a virtual environment.
+## Map Data Edits
+Map data edits should be managed via [issues](https://github.com/Bulkley-Valley-Cross-Country-Ski-Club/mapping/issues) and merged to the `master` branch via Pull Request.
 
-Assumes Python 3.9.7 or higher.
+## Development
+To begin development execute `scripts/setup.sh`. *Note*: this will install several pip dependencies and should be executed within a virtual environment. Assumes Python 3.9.7 or higher.
 
 Pre-commit hooks execute `flake8`, `black`, and `mypy` against updated code.
 
 ## Generate Outputs
-Execute `scripts/test.sh` to generate all outputs locally. Run with `UPLOAD=1 scripts/test.sh` to upload to a "test-*" directory on Google Drive (requires `GDRIVE_UPLOAD_SERVICE_ACCT_INFO` to be set with a JSON key)
+### Deployment Outputs
+Execute `cicd/export/scripts/test.sh` to generate all outputs locally in `output/`. Append `upload=1` to upload the local directory to Google Drive. `GDRIVE_UPLOAD_SERVICE_ACCT_INFO` env var must be set to a valid JSON key for a Google Service Account.
 
-Generated outputs:
-- QGIS layout PDFs (georeferenced)
-- QGIS layout PNGs
-- QGIS layout PNG thumbnails (select layouts only)
-- Open Street Map export of trail network
+### Visual Diff Outputs
+Execute `cicd/compare/scripts/test.sh before=[[ base commit SHA (full) ]] after=[[ head commit SHA (full) ]]`. Append `upload=1` to upload the local directory to Google Drive. `GDRIVE_UPLOAD_SERVICE_ACCT_INFO` env var must be set to a valid JSON key for a Google Service Account.

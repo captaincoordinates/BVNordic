@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Define
         run: |
-          . scripts/directory.sh
+          . cicd/export/scripts/create_directory.sh
           echo $UNIQUE_DIR > unique.dir
           echo $LOCAL_OUTPUT_DIR > local-output.dir
       - name: Retain Directory Data
@@ -42,19 +42,13 @@ jobs:
           mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
       - name: Layout Generator
         run: |
-          scripts/generate.sh
-        env:
-          OUTPUT_BASE: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
-      - name: Bundle Generated Layouts
-        uses: papeloto/action-zip@v1
-        with:
-          files: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/
-          dest: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
-      - name: Retain Bundle
+          cicd/scripts/pull_or_build.sh repo=tomfumb image=qgis-exporter build_dir=cicd/export/docker upload_if_missing=1
+          docker run --rm -v $PWD:/code tomfumb/qgis-exporter /code/cicd/export/docker/generate_head.sh output_base=/code/${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }} png=1 pdf=1
+      - name: Retain Generated Layouts
         uses: actions/upload-artifact@v2
         with:
           name: outputs
-          path: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
+          path: output
 
   osm:
     name: Export OSM Data
@@ -75,9 +69,7 @@ jobs:
           mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
       - name: Export OSM
         run: |
-          scripts/osm.sh
-        env:
-          LOCAL_OUTPUT_DIR: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
+          cicd/osm/scripts/export.sh local_output_dir=${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
       - name: Retain OSM Data
         uses: actions/upload-artifact@v2
         with:
@@ -94,10 +86,14 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: dirs
-      - name: Retrieve Bundle
+      - name: Clear Conflicting Dir
+        run: |
+          sudo rm -rf output
+      - name: Retrieve Generated Layouts
         uses: actions/download-artifact@v2
         with:
           name: outputs
+          path: output
       - name: Retrieve OSM
         uses: actions/download-artifact@v2
         with:
@@ -107,15 +103,18 @@ jobs:
         run: |
           echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
           echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
-      - name: Unpack Bundle
-        run: |
-          unzip -d ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }} ${{ steps.read_to_var.outputs.UNIQUE_DIR }}.zip
       - name: Move OSM
         run: |
           mv bvnordic.osm ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Python Dependencies (upload)
+        run: |
+          pip install -r cicd/upload/requirements.txt
       - name: Upload to Google Drive
         run: |
-          scripts/upload.sh --update_latest
+          python -m cicd.upload.upload ${{ steps.read_to_var.outputs.UNIQUE_DIR }} $PWD/output --update_latest
         env:
-          GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_UPLOAD_SERVICE_ACCT_INFO }}
-          UPLOAD_FOLDER_NAME: ${{ steps.read_to_var.outputs.UNIQUE_DIR }}
+          GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_CI_UPLOAD_SERVICE_ACCT_INFO }}

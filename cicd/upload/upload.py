@@ -1,20 +1,22 @@
 import re
 from argparse import ArgumentParser
+from json import dumps
 from logging import getLogger
-from os import linesep, pardir, path, walk
+from os import pardir, path, walk
 from typing import Final  # type: ignore
 
 from googleapiclient.http import MediaFileUpload
 from yaml import safe_load
 
-from .data_object import DataObject
-from .service import create_service
-from .settings import MIME_FOLDER, ROOT_FOLDER_NAME
-from .util import configure_logging
+from cicd.upload.data_object import DataObject
+from cicd.upload.service import create_service
+from cicd.upload.settings import MIME_FOLDER, ROOT_FOLDER_NAME
 
 LOGGER: Final = getLogger(__file__)
 UPLOAD_FOLDER_NAME_KEY: Final = "UPLOAD_FOLDER_NAME"
 UPLOAD_FOLDER_ROOT_KEY: Final = "UPLOAD_FOLDER_ROOT"
+UPLOAD_REPORT_FILENAME: Final = "uploads.json"
+BLACKLIST_PATHS: Final = [UPLOAD_REPORT_FILENAME, "changes.json"]
 
 
 def set_permissions(service, id) -> None:
@@ -97,19 +99,23 @@ def upload_folder(service, folder_name: str, root_path: str, update_latest: bool
     with open(path.join(path.dirname(__file__), "latests.yml"), "r") as config_file:
         latests = safe_load(config_file)["latests"]
 
-    path_ids = {
+    folder_ids = {
         upload_path: create_folder(service, folder_name, remote_root_folder.id).id
     }
+    file_ids = dict()
     for root, _, files in walk(upload_path):
         if root != upload_path:
             LOGGER.info(f"uploading folder {path.basename(root)}")
-            parent_folder_id = path_ids[path.abspath(path.join(root, pardir))]
-            path_ids[root] = create_folder(
+            parent_folder_id = folder_ids[path.abspath(path.join(root, pardir))]
+            folder_ids[root] = create_folder(
                 service,
                 path.basename(root),
                 parent_folder_id,
             ).id
         for file in files:
+            if file in BLACKLIST_PATHS:
+                LOGGER.debug(f"ignoring blacklist file {file}")
+                continue
             LOGGER.info(
                 f"uploading file {path.basename(file)} within {path.basename(root)}"
             )
@@ -118,7 +124,7 @@ def upload_folder(service, folder_name: str, root_path: str, update_latest: bool
                 .create(
                     body={
                         "name": path.basename(file),
-                        "parents": [path_ids[root]],
+                        "parents": [folder_ids[root]],
                     },
                     media_body=MediaFileUpload(path.join(root, file)),
                     fields="*",
@@ -143,13 +149,15 @@ def upload_folder(service, folder_name: str, root_path: str, update_latest: bool
                 else:
                     LOGGER.debug(f"not updating latest ({local_unique_path})")
 
-    LOGGER.info(
-        f"{linesep}https://drive.google.com/drive/folders/{remote_root_folder.id}"
-    )
+            file_ids[local_unique_path] = remote_file_id
+
+    with open(path.join(upload_path, UPLOAD_REPORT_FILENAME), "w") as report_file:
+        report_file.write(dumps(file_ids))
+
+    LOGGER.info(f"https://drive.google.com/drive/folders/{folder_ids[upload_path]}")
 
 
 if __name__ == "__main__":
-    configure_logging()
     parser = ArgumentParser()
     parser.add_argument(
         "upload_folder_name", type=str, help="Name of the folder to be uploaded"
