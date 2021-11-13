@@ -2,12 +2,14 @@
 Translations for Nordic Centre trails.
 Dog-friendly trails are treated as one-way. These trails are only one-way for dogs but the OSM tags do not appear to support this nuance.
 """
+from os import environ
 
 
 def filterTags(attrs):
     if not attrs:
         return
     piste_prefix = "piste:"
+    bvnordic_prefix = "bvnordic:"
     return {
         "name": attrs.get("name", ""),
         f"{piste_prefix}type": "nordic",
@@ -25,4 +27,6 @@ def filterTags(attrs):
         "lit": {0: "no", 1: "yes"}[int(attrs.get("lights", 0))],
         f"{piste_prefix}grooming": "classic;skating",
         "network": "BV Nordic Centre",
+        f"{bvnordic_prefix}readme": "Created by Bulkley Valley Nordic Centre GIS. Please contact osm@bvnordic.ca before making any changes.",
+        f"{bvnordic_prefix}commit-sha": f"{environ['GITHUB_SHA']}",
     }
