@@ -26,7 +26,7 @@ def filterTags(attrs):
         "dog": {0: "no", 1: "yes"}[int(attrs.get("dog_friend", 0))],
         "lit": {0: "no", 1: "yes"}[int(attrs.get("lights", 0))],
         f"{piste_prefix}grooming": "classic;skating",
-        f"{bvnordic_prefix}network": "Bulkley Valley Nordic Centre",
+        "network": "BV Nordic Centre",
         f"{bvnordic_prefix}readme": "Created by Bulkley Valley Nordic Centre GIS. Please contact osm@bvnordic.ca before making any changes.",
         f"{bvnordic_prefix}commit-sha": f"{environ['GITHUB_SHA']}",
     }
