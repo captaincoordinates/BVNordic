@@ -28,11 +28,12 @@ fi
 cicd/scripts/pull_or_build.sh repo=$DOCKER_REPO image=$DOCKER_IMAGE build_dir=cicd/osm/docker context_dir=cicd/osm upload_if_missing=$UPLOAD_IF_MISSING
 docker run --rm -w /data -v $PWD:/data $DOCKER_TAG ogr2ogr -sql "SELECT t.geom, t.dog_friend AS dog_friend, t.lights AS lights, t.difficulty AS difficulty, tn.trail_name AS name FROM trails t JOIN trail_names tn ON t.trail_id = tn.trail_id" $TMP_JOINED main-data.gpkg
 
-docker run --rm -v $PWD:/data -e GITHUB_SHA $DOCKER_TAG ogr2osm $TMP_JOINED -f -o $OUT_DIR/bvnordic.osm -t $TRANSLATIONS_DIR/nordic_tags.py
+docker run --rm -v $PWD:/data -e GITHUB_SHA $DOCKER_TAG ogr2osm $TMP_JOINED -f -o $OUT_DIR/bvnordic-partial.osm -t $TRANSLATIONS_DIR/nordic_tags.py
 EXIT_CODE=$?
 
-docker run --rm -v $PWD:/data $DOCKER_TAG rm $TMP_JOINED
+python -m cicd.osm.routes $LOCAL_OUTPUT_DIR/bvnordic-partial.osm $LOCAL_OUTPUT_DIR/bvnordic.osm
 
-python -m cicd.osm.routes $LOCAL_OUTPUT_DIR/bvnordic.osm $LOCAL_OUTPUT_DIR/bvnordic-relations.osm
+rm $LOCAL_OUTPUT_DIR/*.geojson
+rm $LOCAL_OUTPUT_DIR/bvnordic-partial.osm
 
 exit $EXIT_CODE
