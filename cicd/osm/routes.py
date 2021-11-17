@@ -21,9 +21,10 @@ def execute(in_path: str, out_path: str) -> None:
     way_properties: Dict[str, Dict] = defaultdict(dict)
     for way in root_node.find_all("way"):
         way_id = way.find("tag", {"k": "name"})["v"]
-        way_members[way_id].append(way["id"])
-        for tag in way.find_all("tag"):
-            way_properties[way_id][tag["k"]] = tag["v"]
+        if len(way_id) > 0:
+            way_members[way_id].append(way["id"])
+            for tag in way.find_all("tag"):
+                way_properties[way_id][tag["k"]] = tag["v"]
 
     current_relation_id = INITIAL_RELATION_ID
     for route_name, ways in way_members.items():
