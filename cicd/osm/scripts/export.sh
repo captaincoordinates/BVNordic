@@ -31,7 +31,7 @@ docker run --rm -w /data -v $PWD:/data $DOCKER_TAG ogr2ogr -sql "SELECT t.geom, 
 docker run --rm -v $PWD:/data -e GITHUB_SHA $DOCKER_TAG ogr2osm $TMP_JOINED -f -o $OUT_DIR/bvnordic-partial.osm -t $TRANSLATIONS_DIR/nordic_tags.py
 EXIT_CODE=$?
 
-python -m cicd.osm.routes $LOCAL_OUTPUT_DIR/bvnordic-partial.osm $LOCAL_OUTPUT_DIR/bvnordic.osm
+docker run --rm -w /data -v $PWD:/data $DOCKER_TAG python -m cicd.osm.routes $OUT_DIR/bvnordic-partial.osm $OUT_DIR/bvnordic.osm
 
 rm $LOCAL_OUTPUT_DIR/*.geojson
 rm $LOCAL_OUTPUT_DIR/bvnordic-partial.osm
