@@ -23,9 +23,9 @@ UPLOAD_IF_MISSING=0
 if [ "$CI" == "true" ]; then
     UPLOAD_IF_MISSING=1
 fi
-cicd/scripts/pull_or_build.sh repo=tomfumb image=qgis-exporter build_dir=cicd/export/docker context_dir=cicd/export upload_if_missing=$UPLOAD_IF_MISSING
-docker run --rm -v $PWD:/code tomfumb/qgis-exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/$OUTPUT_BASE/$BEFORE revision=$BEFORE png=1
-docker run --rm -v $PWD:/code tomfumb/qgis-exporter /code/cicd/export/docker/generate_revision.sh output_base=/code/$OUTPUT_BASE/$AFTER revision=$AFTER png=1
+cicd/scripts/pull_or_build.sh repo=tomfumb image=qgis-exporter:1 build_dir=cicd/export/docker context_dir=cicd/export upload_if_missing=$UPLOAD_IF_MISSING
+docker run --rm -v $PWD:/code tomfumb/qgis-exporter:1 /code/cicd/export/docker/generate_revision.sh output_base=/code/$OUTPUT_BASE/$BEFORE revision=$BEFORE png=1
+docker run --rm -v $PWD:/code tomfumb/qgis-exporter:1 /code/cicd/export/docker/generate_revision.sh output_base=/code/$OUTPUT_BASE/$AFTER revision=$AFTER png=1
 
 python -m cicd.compare.detect_changes $BEFORE $AFTER $PWD/$OUTPUT_BASE
 
