@@ -1,5 +1,6 @@
 FROM osgeo/gdal:ubuntu-small-3.1.0
 
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update \
     && apt-get install -y \
     libxml2-dev \
