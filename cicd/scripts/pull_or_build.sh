@@ -8,6 +8,7 @@ do
             repo)              REPO=${VALUE} ;;
             image)             IMAGE=${VALUE} ;;
             build_dir)         BUILD_DIR=${VALUE} ;;
+            context_dir)       CONTEXT_DIR=${VALUE} ;;
             upload_if_missing) UPLOAD_IF_MISSING=${VALUE} ;;
             *)   
     esac    
@@ -17,7 +18,7 @@ if docker pull $REPO/$IMAGE; then
     echo "$REPO/$IMAGE successfully pulled from registry"
 else
     echo "$REPO/$IMAGE not available in registry, building from $BUILD_DIR"
-    docker build -t $REPO/$IMAGE $BUILD_DIR
+    docker build -t $REPO/$IMAGE -f $BUILD_DIR/Dockerfile $CONTEXT_DIR
     EXIT_CODE=$?    # not important enough to fail a build if the remainder fails
     if [ "$UPLOAD_IF_MISSING" == "1" ]; then
         echo "logging in to Docker Hub"
