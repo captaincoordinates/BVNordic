@@ -6,3 +6,5 @@ pip install -r cicd/compare/requirements-detect.txt
 pip install -r cicd/upload/requirements.txt
 pip install -r cicd/osm/requirements.txt
 pre-commit install
+echo "collecting satellite imagery for Stadium"
+cicd/imagery/scripts/update.sh
