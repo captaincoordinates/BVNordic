@@ -32,6 +32,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: dirs
+      - name: Update Satellite Imagery
+        run: |
+          cicd/imagery/scripts/update.sh
       - name: Read to Var
         id: read_to_var
         run: |

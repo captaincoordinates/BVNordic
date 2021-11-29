@@ -1,0 +1,9 @@
+FROM osgeo/gdal:ubuntu-small-3.1.0
+
+RUN apt-get -y update \
+    && apt-get install -y \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt

@@ -54,6 +54,9 @@ jobs:
       - name: Validate Comparison
         run: |
           cicd/compare/scripts/check_comparable.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
+      - name: Update Satellite Imagery
+        run: |
+          cicd/imagery/scripts/update.sh
       - name: Create Directories
         run: |
           . cicd/compare/scripts/create_directories.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}

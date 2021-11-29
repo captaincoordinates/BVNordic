@@ -7,7 +7,9 @@
 .vscode
 cicd/osm/tmpdata/**
 output/*
+cicd/compare/pr/shas.txt
+cicd/imagery/output/**
+cicd/imagery/tmp/**
 # Service Account auth key
 cicd/upload/*-key.json
-cicd/compare/pr/shas.txt
 !**/*.gitkeep
