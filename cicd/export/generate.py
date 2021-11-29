@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 from logging import getLogger
-from os import path
+from os import path, remove
 from pathlib import Path
 from re import search
 from typing import Final  # type: ignore
@@ -60,31 +60,48 @@ def execute(  # noqa: C901
         item = layout_manager.layoutByName(layout_name)
         export = QgsLayoutExporter(item)
 
-        if png:
-            png_path = path.join(output_dir, f"{layout_name}.png")
-            LOGGER.info(f"Exporting {layout_name} PNG")
-            export.exportToImage(
-                png_path,
-                QgsLayoutExporter.ImageExportSettings(),
-            )
-            large_image = Image.open(png_path)
-            large_image.thumbnail((MAX_IMAGE_DIMENSION, MAX_IMAGE_DIMENSION))
-            large_image.save(png_path)
+        png_path = path.join(output_dir, f"{layout_name}.png")
+        pdf_path = path.join(output_dir, f"{layout_name}.pdf")
 
-            if layout_name in thumbnails_by_layout:
-                size = thumbnails_by_layout[layout_name]["size"]
-                thumbnail = Image.open(png_path)
-                thumbnail.thumbnail((size, size))
-                thumbnail.save(path.join(output_dir, f"{layout_name}-thumbnail.png"))
+        if png:
+            LOGGER.info(f"Exporting {layout_name} PNG")
+            export_png(png_path, export)
 
         if pdf:
             LOGGER.info(f"Exporting {layout_name} PDF")
-            export.exportToPdf(
-                path.join(output_dir, f"{layout_name}.pdf"),
-                QgsLayoutExporter.PdfExportSettings(),
-            )
+            export_pdf(pdf_path, export)
+
+        if layout_name in thumbnails_by_layout:
+            LOGGER.info(f"Exporting {layout_name} PNG thumbnail")
+            size = thumbnails_by_layout[layout_name]["size"]
+            clean = False
+            if not path.exists(png_path):
+                export_png(png_path, export)
+                clean = True
+            thumbnail = Image.open(png_path)
+            thumbnail.thumbnail((size, size))
+            thumbnail.save(path.join(output_dir, f"{layout_name}-thumbnail.png"))
+            if clean:
+                remove(png_path)
 
     qgs.exitQgis()
+
+
+def export_png(path: str, exporter: QgsLayoutExporter) -> None:
+    exporter.exportToImage(
+        path,
+        QgsLayoutExporter.ImageExportSettings(),
+    )
+    large_image = Image.open(path)
+    large_image.thumbnail((MAX_IMAGE_DIMENSION, MAX_IMAGE_DIMENSION))
+    large_image.save(path)
+
+
+def export_pdf(path: str, exporter: QgsLayoutExporter) -> None:
+    exporter.exportToPdf(
+        path,
+        QgsLayoutExporter.PdfExportSettings(),
+    )
 
 
 if __name__ == "__main__":
