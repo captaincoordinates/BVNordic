@@ -3,7 +3,7 @@ name: Generate and Persist Outputs
 on:
   push:
     branches:
-      - master
+      - '**'
 
 jobs:
   directory:
@@ -32,6 +32,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: dirs
+      - name: Update Satellite Imagery
+        run: |
+          cicd/imagery/scripts/update.sh
       - name: Read to Var
         id: read_to_var
         run: |
@@ -115,6 +118,7 @@ jobs:
           pip install -r cicd/upload/requirements.txt
       - name: Upload to Google Drive
         run: |
-          python -m cicd.upload.upload ${{ steps.read_to_var.outputs.UNIQUE_DIR }} $PWD/output --update_latest
+          python -m cicd.upload.upload ${{ steps.read_to_var.outputs.UNIQUE_DIR }} $PWD/output
+# --update_latest
         env:
           GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_CI_UPLOAD_SERVICE_ACCT_INFO }}
