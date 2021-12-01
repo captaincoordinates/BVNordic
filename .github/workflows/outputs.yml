@@ -32,6 +32,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: dirs
+      - name: Update Satellite Imagery
+        run: |
+          cicd/imagery/scripts/update.sh
       - name: Read to Var
         id: read_to_var
         run: |
@@ -43,7 +46,7 @@ jobs:
       - name: Layout Generator
         run: |
           cicd/scripts/pull_or_build.sh repo=tomfumb image=qgis-exporter:1 build_dir=cicd/export/docker context_dir=cicd/export upload_if_missing=1
-          docker run --rm -v $PWD:/code tomfumb/qgis-exporter:1 /code/cicd/export/docker/generate_head.sh output_base=/code/${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }} png=1 pdf=1
+          docker run --rm -v $PWD:/code tomfumb/qgis-exporter:1 /code/cicd/export/docker/generate_head.sh output_base=/code/${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }} pdf=1
       - name: Retain Generated Layouts
         uses: actions/upload-artifact@v2
         with:
