@@ -3,48 +3,24 @@ FROM ubuntu:21.10
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update \
     && apt-get install -y \
+    curl \
+    gdal-bin \
+    jq \
     libmapnik3.1 \
     mapnik-utils \
+    netcat \
     osm2pgsql \
     osmium-tool \
+    postgresql-13-postgis-3 \
     python3 \
     python3-mapnik \
+    python3-pip \
+    python3-psycopg2 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get -y update \
-    && apt-get install -y \
-    git \
-    npm \
-    nodejs \
-    wget \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN npm install -g carto
-
-RUN apt-get -y update \
-    && apt-get install -y \
-    fonts-noto-cjk \
-    fonts-noto-hinted \
-    fonts-noto-unhinted \
-    fonts-hanazono \
-    ttf-unifont \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get -y update \
-    && apt-get install -y \
-    postgresql \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get -y update \
-    && apt-get install -y \
-    netcat \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY docker/renderer/render.sh /render.sh
-COPY docker/renderer/generate_image.py /generate_image.py
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g carto
 
 USER postgres
-WORKDIR /source
-RUN git clone --depth 1 https://github.com/gravitystorm/openstreetmap-carto.git
-
-CMD [ "/render.sh" ]
+WORKDIR /home/postgres
