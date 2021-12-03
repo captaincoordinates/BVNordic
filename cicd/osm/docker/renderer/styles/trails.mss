@@ -3,7 +3,15 @@ Map {
 }
 
 #trails {
-  line-color: #FF0000;
-  line-width: 4;
+  line-width: 10;
   line-smooth: .3;
+  [difficulty = 'easy'] {
+      line-color: #72ca61;
+  }
+  [difficulty = 'intermediate'] {
+      line-color: #1b7bc4;
+  }
+  [difficulty = 'advanced'] {
+      line-color: #000000;
+  }
 }

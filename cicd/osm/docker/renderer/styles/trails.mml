@@ -40,10 +40,10 @@ Layer:
     Datasource:
       <<: *osm2pgsql
       table: |-
-        (SELECT
-            way
+        (SELECT way
+              , tags->'piste:difficulty' AS difficulty
           FROM planet_osm_line
-          WHERE tags->'piste:type' = 'nordic'
+         WHERE tags->'piste:type' = 'nordic'
         ) AS trail_line
     properties:
       minzoom: 10
