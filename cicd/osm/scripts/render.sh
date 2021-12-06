@@ -1,5 +1,15 @@
 #!/bin/bash
 
+for ARGUMENT in "$@"
+do
+    KEY=$(echo $ARGUMENT | cut -f1 -d=)
+    VALUE=$(echo $ARGUMENT | cut -f2 -d=)   
+    case "$KEY" in
+            local_output_dir) LOCAL_OUTPUT_DIR=${VALUE} ;;
+            *)
+    esac    
+done
+
 pushd $(dirname $0)/../../..
 
 UPLOAD_IF_MISSING=0
@@ -11,4 +21,4 @@ docker run --rm \
     -v $PWD:/code \
     -p 5432:5432 \
     tomfumb/bvnordic-osm-renderer:1 \
-    /code/cicd/osm/docker/renderer/render.sh
+    /code/cicd/osm/docker/renderer/render.sh data_dir=/code/$LOCAL_OUTPUT_DIR/main
