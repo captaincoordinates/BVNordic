@@ -9,5 +9,6 @@ fi
 cicd/scripts/pull_or_build.sh repo=tomfumb image=bvnordic-osm-renderer:1 build_dir=cicd/osm/docker/renderer context_dir=cicd/osm upload_if_missing=$UPLOAD_IF_MISSING
 docker run --rm \
     -v $PWD:/code \
+    -p 5432:5432 \
     tomfumb/bvnordic-osm-renderer:1 \
     /code/cicd/osm/docker/renderer/render.sh

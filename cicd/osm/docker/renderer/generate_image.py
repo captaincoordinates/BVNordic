@@ -18,7 +18,7 @@ LONLAT: Final = mapnik.Projection("+init=epsg:4326")
 
 def generate() -> None:
     bounds = [float(bound) for bound in environ["EXTENT"].split(" ")]
-    zoom = int(environ.get("MAPNIK_ZOOM", 10))
+    zoom = int(environ.get("MAPNIK_ZOOM", 5))
     imgx = 1000 * zoom
     imgy = 500 * zoom
     LOGGER.info(f"generating for {bounds} as {imgx}x{imgy}")
