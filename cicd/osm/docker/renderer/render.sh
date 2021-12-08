@@ -13,10 +13,8 @@ done
 service postgresql start
 while ! nc -z localhost 5432; do echo "postgres not yet ready"; sleep 1; done;
 
-createdb gis
-psql -d gis -c "CREATE EXTENSION postgis; CREATE EXTENSION hstore;"
-
-psql -d gis -c "ALTER USER postgres PASSWORD '$POSTGRES_PASSWORD';"
+createdb -U postgres gis
+psql -U postgres -d gis -c "CREATE EXTENSION postgis; CREATE EXTENSION hstore;"
 
 osmium renumber -o bvnordic-loader.osm $DATA_DIR/bvnordic.osm
 PGPASSWORD=postgres osm2pgsql -U postgres -d gis --hstore -G bvnordic-loader.osm

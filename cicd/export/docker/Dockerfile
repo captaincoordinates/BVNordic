@@ -21,3 +21,6 @@ RUN apt-get update --fix-missing \
   xauth \
   xvfb \
   && rm -rf /var/lib/apt/lists/*
+
+COPY scripts/revision_entrypoint.sh /entrypoint.sh
+ENTRYPOINT [ "/entrypoint.sh" ]
