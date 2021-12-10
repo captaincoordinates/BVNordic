@@ -70,7 +70,7 @@ jobs:
           echo "::set-output name=LOCAL_OUTPUT_DIR::$(head -n 1 local-output.dir)"
       - name: Create Output Directory
         run: |
-          mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
+          mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/main
       - name: Export OSM XML
         run: |
           cicd/osm/scripts/export.sh local_output_dir=${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
@@ -81,7 +81,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: osm
-          path: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/bvnordic.osm*
+          path: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/main/bvnordic.osm*
 
   upload:
     name: Upload
@@ -112,7 +112,7 @@ jobs:
           echo "::set-output name=UNIQUE_DIR::$(head -n 1 unique.dir)"
       - name: Move OSM
         run: |
-          mv bvnordic.osm ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/
+          mv bvnordic.osm* ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/main
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
