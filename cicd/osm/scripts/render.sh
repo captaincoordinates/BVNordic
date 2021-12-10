@@ -21,4 +21,4 @@ docker run --rm \
     -v $PWD:/code \
     -p 5432:5432 \
     tomfumb/bvnordic-osm-renderer:2 \
-    /code/cicd/osm/docker/renderer/render.sh data_dir=/code/$LOCAL_OUTPUT_DIR/main
+    /workdir/cicd/osm/docker/renderer/render.sh data_dir=/code/$LOCAL_OUTPUT_DIR/main
