@@ -34,7 +34,4 @@ EXIT_CODE=$?
 
 docker run --rm -e REVISION=$REVISION -v $PWD:/code $DOCKER_TAG python -m cicd.osm.routes $OUT_DIR/bvnordic-partial.osm $OUT_DIR/bvnordic.osm
 
-rm $LOCAL_OUTPUT_DIR/main/*.geojson
-rm $LOCAL_OUTPUT_DIR/main/bvnordic-partial.osm
-
 exit $EXIT_CODE
