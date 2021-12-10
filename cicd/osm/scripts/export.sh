@@ -18,7 +18,7 @@ pushd $(dirname $0)/../../..
 DOCKER_REPO=tomfumb
 DOCKER_IMAGE=bvnordic-osm-exporter:2
 DOCKER_TAG=$DOCKER_REPO/$DOCKER_IMAGE
-OUT_DIR=/code/$LOCAL_OUTPUT_DIR
+OUT_DIR=/code/$LOCAL_OUTPUT_DIR/main
 TMP_JOINED=$OUT_DIR/joined.geojson
 TRANSLATIONS_DIR=/workdir/cicd/osm/translation
 
@@ -34,7 +34,7 @@ EXIT_CODE=$?
 
 docker run --rm -e REVISION=$REVISION -v $PWD:/code $DOCKER_TAG python -m cicd.osm.routes $OUT_DIR/bvnordic-partial.osm $OUT_DIR/bvnordic.osm
 
-rm $LOCAL_OUTPUT_DIR/*.geojson
-rm $LOCAL_OUTPUT_DIR/bvnordic-partial.osm
+rm $LOCAL_OUTPUT_DIR/main/*.geojson
+rm $LOCAL_OUTPUT_DIR/main/bvnordic-partial.osm
 
 exit $EXIT_CODE

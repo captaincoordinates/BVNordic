@@ -46,8 +46,8 @@ jobs:
           mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
       - name: Layout Generator
         run: |
-          cicd/scripts/pull_or_build.sh repo=tomfumb image=qgis-exporter:1 build_dir=cicd/export/docker context_dir=cicd/export upload_if_missing=1
-          docker run --rm -v $PWD:/code tomfumb/qgis-exporter:1 /code/cicd/export/docker/generate_head.sh output_base=/code/${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }} pdf=1
+          cicd/scripts/pull_or_build.sh repo=tomfumb image=qgis-exporter:2 build_dir=cicd/export/docker context_dir=cicd upload_if_missing=1
+          docker run --rm -v $PWD:/code tomfumb/qgis-exporter:2 /code/cicd/export/docker/generate.sh output_base=/code/${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }} pdf=1
       - name: Retain Generated Layouts
         uses: actions/upload-artifact@v2
         with:
@@ -71,14 +71,17 @@ jobs:
       - name: Create Output Directory
         run: |
           mkdir -p ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
-      - name: Export OSM
+      - name: Export OSM XML
         run: |
           cicd/osm/scripts/export.sh local_output_dir=${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
+      - name: Render OSM
+        run: |
+          cicd/osm/scripts/render.sh local_output_dir=${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
       - name: Retain OSM Data
         uses: actions/upload-artifact@v2
         with:
           name: osm
-          path: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/bvnordic.osm
+          path: ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/bvnordic.osm*
 
   upload:
     name: Upload
