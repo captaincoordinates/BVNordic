@@ -22,7 +22,7 @@ if [ "$PDF" == "1" ]; then
     FORMATS="$FORMATS --pdf"
 fi
 
-pushd /code
+pushd /workdir
 
 xvfb-run -s '+extension GLX -screen 0 1920x1080x24' python3 -m cicd.export.generate main $OUTPUT_BASE $FORMATS
 xvfb-run -s '+extension GLX -screen 0 1920x1080x24' python3 -m cicd.export.generate stadium $OUTPUT_BASE $FORMATS
