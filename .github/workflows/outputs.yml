@@ -3,8 +3,7 @@ name: Generate and Persist Outputs
 on:
   push:
     branches:
-      # - master
-      - '**'
+      - master
 
 jobs:
   directory:
@@ -122,7 +121,6 @@ jobs:
           pip install -r cicd/upload/requirements.txt
       - name: Upload to Google Drive
         run: |
-          python -m cicd.upload.upload ${{ steps.read_to_var.outputs.UNIQUE_DIR }} $PWD/output
-# --update_latest
+          python -m cicd.upload.upload ${{ steps.read_to_var.outputs.UNIQUE_DIR }} $PWD/output --update_latest
         env:
           GDRIVE_UPLOAD_SERVICE_ACCT_INFO: ${{ secrets.GDRIVE_CI_UPLOAD_SERVICE_ACCT_INFO }}
