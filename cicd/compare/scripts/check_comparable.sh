@@ -13,9 +13,11 @@ done
 
 echo "attempting to compare '$BEFORE' with '$AFTER'"
 
-git merge-base --is-ancestor 62a3bc010eff29f1c97c88a53781d58bb1554bf3 $BEFORE
+# ensure earlier revision supports comparison
+git merge-base --is-ancestor ffece23fabe9d7698519dea4d62be959bc73d8cf $BEFORE
 SUPPORTS_COMPARISON=$?
 
+# ensure later revision is derived from earlier revision
 git merge-base --is-ancestor $BEFORE $AFTER
 CORRECT_ORDER=$?
 
