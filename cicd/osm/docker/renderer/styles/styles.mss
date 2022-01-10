@@ -15,17 +15,6 @@
       line-color: #FFFF00;
     }
   }
-  text-name: "[name]";
-  text-face-name: 'Noto Mono Regular';
-  text-size: 14;
-  text-fill: #ffffff;
-  text-halo-fill: #000000;
-  text-halo-radius: 1;
-  text-allow-overlap: true;
-  text-placement: line;
-  text-placement-type: simple;
-  text-wrap-character: '|';
-  text-wrap-width: 1;
 }
 
 #trails {
@@ -54,4 +43,8 @@
       }
     }
   }
+}
+
+#background {
+  polygon-fill: rgba(255, 255, 255, 0.6);
 }
