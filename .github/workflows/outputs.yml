@@ -79,6 +79,10 @@ jobs:
       - name: Render OSM
         run: |
           cicd/osm/scripts/render.sh local_output_dir=${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}
+      - name: Remove Unnecessary Files
+        run: |
+          sudo rm ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/main/bvnordic.osm*.tif
+          sudo rm ${{ steps.read_to_var.outputs.LOCAL_OUTPUT_DIR }}/main/bvnordic.osm*.xml
       - name: Retain OSM Data
         uses: actions/upload-artifact@v2
         with:
