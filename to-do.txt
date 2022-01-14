@@ -1,2 +1,0 @@
-- write descriptions for layouts
-- write readme (turn on certain layers / styling rules for different kinds of map)
