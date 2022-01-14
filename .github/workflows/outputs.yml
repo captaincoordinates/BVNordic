@@ -3,7 +3,7 @@ name: Generate and Persist Outputs
 on:
   push:
     branches:
-      - '**'
+      - master
 
 jobs:
   directory:
