@@ -21,6 +21,16 @@ Stylesheet:
   - styles.mss
 
 Layer:
+  - id: background
+    geometry: polygon
+    Datasource:
+      <<: *osm2pgsql
+      table: |-
+        (SELECT ST_Envelope(ST_Transform(ST_Buffer(ST_Envelope(ST_Union(way)), 500), 3857)) AS way
+           FROM planet_osm_line
+          WHERE tags->'piste:type' = 'nordic'
+        ) as background
+
   - id: trails
     geometry: linestring
     Datasource:
