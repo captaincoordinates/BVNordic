@@ -56,7 +56,7 @@ jobs:
           cicd/compare/scripts/check_comparable.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
       - name: Update Satellite Imagery
         run: |
-          cicd/imagery/scripts/update.sh
+          cicd/imagery/scripts/update-all.sh
       - name: Create Directories
         run: |
           . cicd/compare/scripts/create_directories.sh before=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} after=${{ steps.read_to_var_shas.outputs.PR_SHA2 }}
@@ -86,7 +86,11 @@ jobs:
         run: |
           cicd/scripts/pull_or_build.sh repo=tomfumb image=bvnordic-osm-renderer:2 build_dir=cicd/osm/docker/renderer context_dir=cicd upload_if_missing=1
           docker run --rm -e REVISION=${{ steps.read_to_var_shas.outputs.PR_SHA1 }} -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 /workdir/cicd/osm/docker/renderer/render.sh data_dir=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }}/main
+          docker run --rm -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 gdalwarp -ts 1600 0 /code/cicd/imagery/output/network.tif /code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }}/main/bvnordic.osm-segments.tif /code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }}/main/bvnordic.osm-segments-merged.tif
+          docker run --rm -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 gdal_translate -of PNG -co zlevel=9 /code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }}/main/bvnordic.osm-segments-merged.tif /code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA1 }}/main/bvnordic.osm-segments-merged.png
           docker run --rm -e REVISION=${{ steps.read_to_var_shas.outputs.PR_SHA2 }} -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 /workdir/cicd/osm/docker/renderer/render.sh data_dir=/code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA2 }}/main
+          docker run --rm -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 gdalwarp -ts 1600 0 /code/cicd/imagery/output/network.tif /code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA2 }}/main/bvnordic.osm-segments.tif /code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA2 }}/main/bvnordic.osm-segments-merged.tif
+          docker run --rm -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 gdal_translate -of PNG -co zlevel=9 /code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA2 }}/main/bvnordic.osm-segments-merged.tif /code/${{ steps.read_to_var_dirs.outputs.OUTPUT_BASE }}/${{ steps.read_to_var_shas.outputs.PR_SHA2 }}/main/bvnordic.osm-segments-merged.png
       - name: Python Dependencies (Change Detection)
         run: |
           pip install -r cicd/compare/requirements-detect.txt

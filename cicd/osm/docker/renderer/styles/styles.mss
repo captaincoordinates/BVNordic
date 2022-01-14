@@ -1,7 +1,3 @@
-@easy: #72ca61;
-@intermediate: #1b7bc4;
-@advanced: #000000;
-
 #trails {
   line-width: 10;
   line-smooth: .3;
@@ -15,43 +11,33 @@
       line-color: #FFFF00;
     }
   }
-  text-name: "[name]";
-  text-face-name: 'Noto Mono Regular';
-  text-size: 14;
-  text-fill: #ffffff;
-  text-halo-fill: #000000;
-  text-halo-radius: 1;
-  text-allow-overlap: true;
-  text-placement: line;
-  text-placement-type: simple;
-  text-wrap-character: '|';
-  text-wrap-width: 1;
+  [lit = 0] {
+    [closed = 0] {
+      ::case {
+        line-width: 16;
+        line-color: #000000;
+      }
+    }
+  }
 }
 
 #trails {
   [closed = 0] {
-    [difficulty = 'easy'] {
-      line-color: @easy;
-    }
-    [difficulty = 'intermediate'] {
-      line-color: @intermediate;
-    }
-    [difficulty = 'advanced'] {
-      line-color: @advanced;
-    }
-    [lit = 1] {
-      ::fill {
-        line-width: 10;
-        [difficulty = 'easy'] {
-          line-color: @easy;
-        }
-        [difficulty = 'intermediate'] {
-          line-color: @intermediate;
-        }
-        [difficulty = 'advanced'] {
-          line-color: @advanced;
-        }
+    ::fill {
+      line-width: 10;
+      [difficulty = 'easy'] {
+        line-color: #72ca61;
+      }
+      [difficulty = 'intermediate'] {
+        line-color: #1b7bc4;
+      }
+      [difficulty = 'advanced'] {
+        line-color: #000000;
       }
     }
   }
+}
+
+#background {
+  polygon-fill: rgba(255, 255, 255, 0.6);
 }

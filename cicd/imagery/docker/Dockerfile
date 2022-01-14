@@ -1,7 +1,10 @@
-FROM osgeo/gdal:ubuntu-small-3.1.0
+FROM ubuntu:21.10
 
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update \
     && apt-get install -y \
+    gdal-bin \
+    python3 \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
