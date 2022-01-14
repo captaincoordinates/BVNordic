@@ -1,27 +1,30 @@
-from glob import glob
 from http import HTTPStatus
 from logging import getLogger
 from math import atan, cos, degrees, floor, log, pi, radians, sinh, tan
 from os import path
 from random import choice
-from typing import Final  # type: ignore
+from typing import Final, List, Tuple  # type: ignore
 
 from osgeo.gdal import BuildVRT, Translate
 from requests import get
 
 from cicd.imagery.bounds import Bounds
-from cicd.imagery.settings import EPSG_4326
+from cicd.imagery.settings import EPSG_3857, EPSG_4326
 
 LOGGER: Final = getLogger(__file__)
 OUTPUT_DIR: Final = path.join(path.dirname(__file__), "output")
+MERCATOR_AXIS_MAX: Final = 20037508.3427892
 
 
-def execute(tile_src: str, zoom: int, bounds: Bounds) -> None:
+def execute(
+    tile_src: str, zoom: int, bounds: Bounds, image_name: str, target_epsg_code: str
+) -> None:
     x_min, x_max, y_min, y_max = bbox_to_xyz(
         bounds.lonmin, bounds.lonmax, bounds.latmin, bounds.latmax, zoom
     )
     LOGGER.info(f"Fetching up to {(x_max - x_min + 1) * (y_max - y_min + 1)} tiles")
     tmpdirpath = path.join(path.dirname(__file__), "tmp")
+    tif_paths = []
     for x in range(x_min, x_max + 1):
         for y in range(y_min, y_max + 1):
             img_base = path.join(tmpdirpath, f"{x}_{y}_{zoom}.")
@@ -44,17 +47,31 @@ def execute(tile_src: str, zoom: int, bounds: Bounds) -> None:
                                 LOGGER.warning(
                                     f"failed to retrieve {url}: {response.status_code}, {response.text}"
                                 )
-                    georeference_raster_tile(x, y, zoom, png_path)
+                    georeference_tile(target_epsg_code, x, y, zoom, png_path)
                 except Exception as e:
                     LOGGER.error(e)
                     raise e
+            tif_paths.append(tif_path)
 
     LOGGER.info("generating merged tif")
-    vrt = BuildVRT("", glob(path.join(tmpdirpath, "*.tif")))
-    Translate(path.join(OUTPUT_DIR, "imagery.tif"), vrt, format="GTiff")
+    vrt = BuildVRT("", tif_paths, addAlpha=True)
+    Translate(
+        path.join(OUTPUT_DIR, f"{image_name}.tif"),
+        vrt,
+        format="GTiff",
+        projWin=[
+            bounds.lonmin,
+            bounds.latmax,
+            bounds.lonmax,
+            bounds.latmin,
+        ],
+        projWinSRS=EPSG_4326,
+    )
 
 
-def bbox_to_xyz(lon_min, lon_max, lat_min, lat_max, z):
+def bbox_to_xyz(
+    lon_min: float, lon_max: float, lat_min: float, lat_max: float, z: int
+) -> Tuple[int, int, int, int]:
     def sec(x):
         return 1 / cos(x)
 
@@ -70,11 +87,36 @@ def bbox_to_xyz(lon_min, lon_max, lat_min, lat_max, z):
     return (floor(x_min), floor(x_max), floor(y_min), floor(y_max))
 
 
-def georeference_raster_tile(x, y, z, tile_path):
-    def mercatorToLat(mercatorY):
+def georeference_tile(epsg_code: str, x: int, y: int, z: int, tile_path: str) -> None:
+    bounds_providers = {
+        EPSG_4326: tile_bounds_4326,
+        EPSG_3857: tile_bounds_3857,
+    }
+    if epsg_code not in bounds_providers.keys():
+        raise Exception(
+            f"cannot georeference tile in {epsg_code}. Options: {bounds_providers.keys()}"
+        )
+    bounds = bounds_providers[epsg_code](x, y, z)
+    filename, _ = path.splitext(tile_path)
+    Translate(filename + ".tif", tile_path, outputSRS=epsg_code, outputBounds=bounds)
+
+
+def tile_bounds_3857(x: int, y: int, z: int) -> List[float]:
+    tile_count = pow(2, z)
+    tile_length = (MERCATOR_AXIS_MAX * 2) / tile_count
+    return [
+        -MERCATOR_AXIS_MAX + tile_length * x,
+        MERCATOR_AXIS_MAX - tile_length * y,
+        -MERCATOR_AXIS_MAX + tile_length * (x + 1),
+        MERCATOR_AXIS_MAX - tile_length * (y + 1),
+    ]
+
+
+def tile_bounds_4326(x: int, y: int, z: int) -> List[float]:
+    def mercatorToLat(mercatorY: int) -> float:
         return degrees(atan(sinh(mercatorY)))
 
-    def y_to_lat_edges(y, z):
+    def y_to_lat_edges(y: int, z: int) -> Tuple[float, float]:
         tile_count = pow(2, z)
         unit = 1 / tile_count
         relative_y1 = y * unit
@@ -83,21 +125,19 @@ def georeference_raster_tile(x, y, z, tile_path):
         lat2 = mercatorToLat(pi * (1 - 2 * relative_y2))
         return (lat1, lat2)
 
-    def x_to_lon_edges(x, z):
+    def x_to_lon_edges(x: int, z: int) -> Tuple[float, float]:
         tile_count = pow(2, z)
         unit = 360 / tile_count
         lon1 = -180 + x * unit
         lon2 = lon1 + unit
         return (lon1, lon2)
 
-    def tile_edges(x, y, z):
+    def tile_edges(x: int, y: int, z: int) -> List[float]:
         lat1, lat2 = y_to_lat_edges(y, z)
         lon1, lon2 = x_to_lon_edges(x, z)
         return [lon1, lat1, lon2, lat2]
 
-    bounds = tile_edges(x, y, z)
-    filename, _ = path.splitext(tile_path)
-    Translate(filename + ".tif", tile_path, outputSRS=EPSG_4326, outputBounds=bounds)
+    return tile_edges(x, y, z)
 
 
 # https://www.scrapehero.com/how-to-fake-and-rotate-user-agents-using-python-3/
