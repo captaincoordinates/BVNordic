@@ -6,6 +6,7 @@ from random import choice
 from typing import Final, List, Tuple  # type: ignore
 
 from osgeo.gdal import BuildVRT, Translate
+from PIL import Image
 from requests import get
 
 from cicd.imagery.bounds import Bounds
@@ -27,8 +28,9 @@ def execute(
     tif_paths = []
     for x in range(x_min, x_max + 1):
         for y in range(y_min, y_max + 1):
-            img_base = path.join(tmpdirpath, f"{x}_{y}_{zoom}.")
+            img_base = path.join(tmpdirpath, f"{x}_{y}_{zoom}_{image_name}.")
             png_path = f"{img_base}png"
+            png_rgb_path = f"{img_base}rgb.png"
             tif_path = f"{img_base}tif"
             if path.exists(tif_path):
                 LOGGER.debug(f"file exists {tif_path}")
@@ -47,7 +49,13 @@ def execute(
                                 LOGGER.warning(
                                     f"failed to retrieve {url}: {response.status_code}, {response.text}"
                                 )
-                    georeference_tile(target_epsg_code, x, y, zoom, png_path)
+                    png_use_path = png_path
+                    if Image.open(png_path).mode == "P":
+                        Translate(png_rgb_path, png_path, rgbExpand="rgb")
+                        png_use_path = png_rgb_path
+                    georeference_tile(
+                        target_epsg_code, x, y, zoom, png_use_path, tif_path
+                    )
                 except Exception as e:
                     LOGGER.error(e)
                     raise e
@@ -87,7 +95,9 @@ def bbox_to_xyz(
     return (floor(x_min), floor(x_max), floor(y_min), floor(y_max))
 
 
-def georeference_tile(epsg_code: str, x: int, y: int, z: int, tile_path: str) -> None:
+def georeference_tile(
+    epsg_code: str, x: int, y: int, z: int, tile_path: str, output_path: str
+) -> None:
     bounds_providers = {
         EPSG_4326: tile_bounds_4326,
         EPSG_3857: tile_bounds_3857,
@@ -98,7 +108,7 @@ def georeference_tile(epsg_code: str, x: int, y: int, z: int, tile_path: str) ->
         )
     bounds = bounds_providers[epsg_code](x, y, z)
     filename, _ = path.splitext(tile_path)
-    Translate(filename + ".tif", tile_path, outputSRS=epsg_code, outputBounds=bounds)
+    Translate(output_path, tile_path, outputSRS=epsg_code, outputBounds=bounds)
 
 
 def tile_bounds_3857(x: int, y: int, z: int) -> List[float]:

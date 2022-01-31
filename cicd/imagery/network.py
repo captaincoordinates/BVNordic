@@ -9,7 +9,7 @@ from cicd.imagery.tiles_to_tiff import execute as tiles_to_tiff
 
 TILE_SRC: Final = environ.get(
     "NETWORK_TILE_SRC",
-    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
 )
 ZOOM: Final = environ.get("NETWORK_TILE_ZOOM", 14)
 
