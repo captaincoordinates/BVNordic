@@ -39,19 +39,16 @@ GITHUB_SHA=$GITHUB_SHA cicd/osm/scripts/export.sh local_output_dir=$OUTPUT_BASE/
 cicd/scripts/pull_or_build.sh repo=tomfumb image=bvnordic-osm-renderer:2 build_dir=cicd/osm/docker/renderer context_dir=cicd upload_if_missing=$UPLOAD_IF_MISSING
 docker run --rm -e REVISION=$BEFORE -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 ogr2ogr -f "GPKG" /code/$OUTPUT_BASE/compare.gpkg /workdir/main-data.gpkg -nln before -sql "SELECT * FROM Trails"
 docker run --rm -e REVISION=$AFTER -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 ogr2ogr -f "GPKG" /code/$OUTPUT_BASE/compare.gpkg /workdir/main-data.gpkg -nln after -update -sql "SELECT * FROM Trails"
-docker run --rm -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 ogr2ogr -f "GeoJSON" /code/$OUTPUT_BASE/diff.geojson /code/$OUTPUT_BASE/compare.gpkg -nln diff -t_srs "EPSG:4326" -dialect sqlite -sql "SELECT geom FROM (SELECT ST_Envelope(ST_Difference(a.geom, b.geom)) AS geom FROM after a LEFT JOIN before b ON a.fid = b.fid UNION SELECT ST_Envelope(ST_Difference(b.geom, a.geom)) as geom FROM before b LEFT JOIN after a ON b.fid = a.fid) WHERE geom iS NOT NULL"
+docker run --rm -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 ogr2ogr -f "GeoJSON" /code/$OUTPUT_BASE/diff_3857.geojson /code/$OUTPUT_BASE/compare.gpkg -nln diff -t_srs "EPSG:3857" -dialect sqlite -sql "SELECT geom FROM (SELECT ST_Envelope(ST_Transform(ST_Difference(a.geom, b.geom), 3857)) AS geom FROM after a LEFT JOIN before b ON a.fid = b.fid UNION SELECT ST_Envelope(ST_Transform(ST_Difference(b.geom, a.geom), 3857)) AS geom FROM before b LEFT JOIN after a ON b.fid = a.fid) WHERE geom IS NOT NULL"
 rm $OUTPUT_BASE/compare.gpkg
 
-# render OSM data from each revision and merge to background imagery to provide context
-docker run --rm -e REVISION=$BEFORE -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 /workdir/cicd/osm/docker/renderer/render.sh data_dir=/code/$OUTPUT_BASE/$BEFORE/main
-docker run --rm -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 gdalwarp -ts 1600 0 /code/cicd/imagery/output/network.tif /code/$OUTPUT_BASE/$BEFORE/main/bvnordic.osm-segments.tif /code/$OUTPUT_BASE/$BEFORE/main/bvnordic.osm-segments-merged.tif
-docker run --rm -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 gdal_translate -of PNG -co zlevel=9 /code/$OUTPUT_BASE/$BEFORE/main/bvnordic.osm-segments-merged.tif /code/$OUTPUT_BASE/$BEFORE/main/bvnordic.osm-segments-merged.png
-docker run --rm -e REVISION=$AFTER  -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 /workdir/cicd/osm/docker/renderer/render.sh data_dir=/code/$OUTPUT_BASE/$AFTER/main
-docker run --rm -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 gdalwarp -ts 1600 0 /code/cicd/imagery/output/network.tif /code/$OUTPUT_BASE/$AFTER/main/bvnordic.osm-segments.tif /code/$OUTPUT_BASE/$AFTER/main/bvnordic.osm-segments-merged.tif
-docker run --rm -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 gdal_translate -of PNG -co zlevel=9 /code/$OUTPUT_BASE/$AFTER/main/bvnordic.osm-segments-merged.tif /code/$OUTPUT_BASE/$AFTER/main/bvnordic.osm-segments-merged.png
+# render OSM data from each revision
+docker run --rm -e REVISION=$BEFORE -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 /workdir/cicd/osm/docker/renderer/render.sh data_dir=/code/$OUTPUT_BASE/$BEFORE/main changes_3857=/code/$OUTPUT_BASE/diff_3857.geojson
+docker run --rm -e REVISION=$AFTER -v $PWD:/code tomfumb/bvnordic-osm-renderer:2 /workdir/cicd/osm/docker/renderer/render.sh data_dir=/code/$OUTPUT_BASE/$AFTER/main changes_3857=/code/$OUTPUT_BASE/diff_3857.geojson
+rm -f $OUTPUT_BASE/diff_3857.geojson
 
-# run change detection on before/after images
-python -m cicd.compare.detect_changes $BEFORE $AFTER $PWD/$OUTPUT_BASE
+# # run change detection on before/after images
+python -m cicd.compare.detect_changes $BEFORE $AFTER $PWD/$OUTPUT_BASE --before_after_exclude bvnordic\\.osm\\-.+
 
 # clean up 
 rm -rf $OUTPUT_BASE/$BEFORE
