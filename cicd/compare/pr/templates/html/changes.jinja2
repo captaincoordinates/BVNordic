@@ -16,7 +16,7 @@
 {% if CHANGED|length > 0 %}
     <h2>Changed</h2>
     {% for entry in CHANGED|sort(attribute='layout') %}
-        <h3>{{ entry.layout }}{% if entry.before %}&nbsp;&nbsp;<a href="https://drive.google.com/file/d/{{entry.before}}/view?usp=sharing">Before</a>{% endif %}{% if entry.after %}&nbsp;&nbsp;<a href="https://drive.google.com/file/d/{{entry.after}}/view?usp=sharing">After</a>{% endif %}}</h3>
+        <h3>{{ entry.layout }}{% if entry.before %}&nbsp;&nbsp;<a href="https://drive.google.com/file/d/{{entry.before}}/view?usp=sharing">Before</a>{% endif %}{% if entry.after %}&nbsp;&nbsp;<a href="https://drive.google.com/file/d/{{entry.after}}/view?usp=sharing">After</a>{% endif %}</h3>
         <img src="https://drive.google.com/uc?export=download&id={{entry.file_id}}">
     {% endfor %}
 {% else %}
