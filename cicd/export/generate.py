@@ -6,7 +6,13 @@ from re import search
 from typing import Final  # type: ignore
 
 from PIL import Image
-from qgis.core import QgsApplication, QgsLayoutExporter, QgsProject
+from qgis.core import (
+    QgsApplication,
+    QgsLabelLineSettings,
+    QgsLayoutExporter,
+    QgsProject,
+    QgsVectorLayer,
+)
 from yaml import safe_load
 
 LOGGER: Final = getLogger(__file__)
@@ -41,6 +47,21 @@ def execute(  # noqa: C901
         if "thumbnails" in config
         else dict()
     )
+
+    # working label position locking
+    # need to drive from outputs.yml and argument whether or not to enable label locking
+    # enable from compare calls, disable from export calls
+    candidates = [
+        layer for layer in project.mapLayers().values() if layer.name() == "Trails"
+    ]
+    if len(candidates) == 1 and isinstance(candidates[0], QgsVectorLayer):
+        layer = candidates[0]
+        for rule in layer.labeling().rootRule().children():
+            settings = rule.settings()
+            line_settings = settings.lineSettings()
+            line_settings.setAnchorType(QgsLabelLineSettings.AnchorType.Strict)
+            settings.setLineSettings(line_settings)
+            rule.setSettings(settings)
 
     for layout in layout_manager.layouts():
         layout_name = layout.name()
