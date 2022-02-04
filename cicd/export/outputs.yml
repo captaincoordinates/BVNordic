@@ -20,6 +20,8 @@ main:
   thumbnails:
     - layout: Print
       size: 300
+  label_locks:
+    - Trails
 stadium:
   common_layers:
     - Stadium Routes
