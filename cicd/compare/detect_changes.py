@@ -129,7 +129,9 @@ class _change_detection_executor:
         after_gray = cv2.cvtColor(after, cv2.COLOR_BGR2GRAY)
         (score, diff) = structural_similarity(before_gray, after_gray, full=True)
         LOGGER.info(f"structural similarity for {local_path}: {score}")
-        if score == 1:
+        if (
+            score >= 0.999999999
+        ):  # some seeming false positives with unexplained origins have similarity *very* close to 1
             return (local_path, ChangeType.UNCHANGED)
 
         diff = (diff * 255).astype("uint8")
