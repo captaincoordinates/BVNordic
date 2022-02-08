@@ -22,11 +22,3 @@ docker run --rm \
     -p 5432:5432 \
     tomfumb/bvnordic-osm-renderer:2 \
     /workdir/cicd/osm/docker/renderer/render.sh data_dir=/code/$LOCAL_OUTPUT_DIR/main
-docker run --rm \
-    -v $PWD:/code \
-    tomfumb/bvnordic-osm-renderer:2 \
-    gdalwarp -ts 1600 0 /code/cicd/imagery/output/network.tif /code/$LOCAL_OUTPUT_DIR/main/bvnordic.osm-segments.tif /code/$LOCAL_OUTPUT_DIR/main/bvnordic.osm-segments-merged.tif
-docker run --rm \
-    -v $PWD:/code \
-    tomfumb/bvnordic-osm-renderer:2 \
-    gdal_translate -of PNG -co zlevel=9 /code/$LOCAL_OUTPUT_DIR/main/bvnordic.osm-segments-merged.tif /code/$LOCAL_OUTPUT_DIR/main/bvnordic.osm-segments-merged.png

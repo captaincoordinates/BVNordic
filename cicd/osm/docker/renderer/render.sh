@@ -31,4 +31,4 @@ OUTPUT_PREFIX=bvnordic.osm- \
 CHANGES_3857=$CHANGES_3857 \
 python3 -m cicd.osm.docker.renderer.generate_image
 
-rm $DATA_DIR/*.aux.xml
+rm -f $DATA_DIR/*.aux.xml
