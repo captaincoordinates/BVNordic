@@ -2,6 +2,5 @@
 
 pushd $(dirname $0)/../../..
 
-cicd/imagery/scripts/update-network-detail.sh
 cicd/imagery/scripts/update-network-overview.sh
 cicd/imagery/scripts/update-stadium.sh
