@@ -6,7 +6,7 @@ from typing import Final  # type: ignore
 from osgeo import ogr
 
 from cicd.imagery.bounds import Bounds
-from cicd.imagery.settings import EPSG_3857
+from cicd.imagery.settings import EPSG_3857, EPSG_4326
 from cicd.imagery.tiles_to_tiff import execute as tiles_to_tiff
 
 LOGGER: Final = getLogger(__file__)
@@ -25,13 +25,14 @@ def execute(zoom: int, image_name: str, tile_src: str) -> None:
         tile_src,
         zoom,
         Bounds(
-            latmin=latmin,
-            latmax=latmax,
-            lonmin=lonmin,
-            lonmax=lonmax,
+            ymin=latmin,
+            ymax=latmax,
+            xmin=lonmin,
+            xmax=lonmax,
         ),
         image_name,
         EPSG_3857,
+        EPSG_4326,
     )
 
 

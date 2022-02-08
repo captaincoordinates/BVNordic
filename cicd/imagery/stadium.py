@@ -27,13 +27,14 @@ def execute(zoom: int, image_name: str, tile_src: str) -> None:
         tile_src,
         zoom,
         Bounds(
-            latmin=latmin,
-            latmax=latmax,
-            lonmin=lonmin,
-            lonmax=lonmax,
+            ymin=latmin,
+            ymax=latmax,
+            xmin=lonmin,
+            xmax=lonmax,
         ),
         image_name,
         EPSG_3857,
+        EPSG_4326,
     )
 
 
