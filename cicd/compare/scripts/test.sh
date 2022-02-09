@@ -45,8 +45,8 @@ rm $OUTPUT_BASE/compare.gpkg $OUTPUT_BASE/parts_3857.geojson
 
 
 # render OSM data from each revision
-docker run --rm -e REVISION=$BEFORE -v $PWD:/code tomfumb/bvnordic-osm-renderer:3 /workdir/cicd/osm/docker/renderer/render.sh data_dir=/code/$OUTPUT_BASE/$BEFORE/main changes_3857=/code/$OUTPUT_BASE/diff_3857.geojson
-docker run --rm -e REVISION=$AFTER -v $PWD:/code tomfumb/bvnordic-osm-renderer:3 /workdir/cicd/osm/docker/renderer/render.sh data_dir=/code/$OUTPUT_BASE/$AFTER/main changes_3857=/code/$OUTPUT_BASE/diff_3857.geojson
+docker run --rm -e REVISION=$BEFORE -v $PWD:/code tomfumb/bvnordic-osm-renderer:3 /workdir/cicd/osm/docker/renderer/render_changes.sh data_dir=/code/$OUTPUT_BASE/$BEFORE/main changes_3857=/code/$OUTPUT_BASE/diff_3857.geojson
+docker run --rm -e REVISION=$AFTER -v $PWD:/code tomfumb/bvnordic-osm-renderer:3 /workdir/cicd/osm/docker/renderer/render_changes.sh data_dir=/code/$OUTPUT_BASE/$AFTER/main changes_3857=/code/$OUTPUT_BASE/diff_3857.geojson
 rm -f $OUTPUT_BASE/diff_3857.geojson
 
 # run change detection on before/after images
