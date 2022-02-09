@@ -6,7 +6,13 @@ from re import search
 from typing import Final  # type: ignore
 
 from PIL import Image
-from qgis.core import QgsApplication, QgsLayoutExporter, QgsProject
+from qgis.core import (
+    QgsApplication,
+    QgsLabelLineSettings,
+    QgsLayoutExporter,
+    QgsProject,
+    QgsVectorLayer,
+)
 from yaml import safe_load
 
 LOGGER: Final = getLogger(__file__)
@@ -14,7 +20,7 @@ MAX_IMAGE_DIMENSION: Final = 1600
 
 
 def execute(  # noqa: C901
-    project_name: str, output_base: str, png: bool, pdf: bool
+    project_name: str, output_base: str, png: bool, pdf: bool, permit_label_locks: bool
 ) -> None:
 
     if not (png or pdf):
@@ -41,6 +47,23 @@ def execute(  # noqa: C901
         if "thumbnails" in config
         else dict()
     )
+
+    if permit_label_locks and "label_locks" in config:
+        for layer_name in config["label_locks"]:
+            candidates = [
+                layer
+                for layer in project.mapLayers().values()
+                if layer.name() == layer_name
+            ]
+            if len(candidates) == 1 and isinstance(candidates[0], QgsVectorLayer):
+                LOGGER.info(f"Locking labels on '{layer_name}' layer")
+                layer = candidates[0]
+                for rule in layer.labeling().rootRule().children():
+                    settings = rule.settings()
+                    line_settings = settings.lineSettings()
+                    line_settings.setAnchorType(QgsLabelLineSettings.AnchorType.Strict)
+                    settings.setLineSettings(line_settings)
+                    rule.setSettings(settings)
 
     for layout in layout_manager.layouts():
         layout_name = layout.name()
@@ -124,8 +147,21 @@ if __name__ == "__main__":
         action="store_true",
         help="Generate PDF output",
     )
+    parser.add_argument(
+        "--permit_label_locks",
+        dest="permit_label_locks",
+        action="store_true",
+        help="Whether locked labels should be permitted (helps avoid false positives in change detection but labels are often poorly placed)",
+    )
     parser.set_defaults(png=False)
     parser.set_defaults(pdf=False)
+    parser.set_defaults(permit_label_locks=False)
     args = vars(parser.parse_args())
     LOGGER.info(f"{__file__} called with {args}")
-    execute(args["project_name"], args["output_base"], args["png"], args["pdf"])
+    execute(
+        args["project_name"],
+        args["output_base"],
+        args["png"],
+        args["pdf"],
+        args["permit_label_locks"],
+    )

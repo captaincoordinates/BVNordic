@@ -33,7 +33,9 @@ def add_dir_to_pairs(
                 pairs[re.sub("^/", "", local_path)].append(image_type)
 
 
-def execute(before_dir: str, after_dir: str, compare_base: str) -> None:
+def execute(
+    before_dir: str, after_dir: str, compare_base: str, before_after_exclude: str
+) -> None:
     result_dir = path.join(compare_base, "result")
     Path(result_dir).mkdir(parents=True, exist_ok=True)
     before_path = path.join(compare_base, before_dir)
@@ -72,8 +74,11 @@ def execute(before_dir: str, after_dir: str, compare_base: str) -> None:
     ).parallel(get_process_pool_count()):
         changes[change_type].append(file_path)
         if change_type == ChangeType.CHANGED:
-            copy_to_result(before_path, file_path, result_dir, "before")
-            copy_to_result(after_path, file_path, result_dir, "after")
+            if before_after_exclude is None or not re.search(
+                before_after_exclude, file_path
+            ):
+                copy_to_result(before_path, file_path, result_dir, "before")
+                copy_to_result(after_path, file_path, result_dir, "after")
 
     with open(path.join(result_dir, "changes.json"), "w") as change_json:
         change_json.write(
@@ -124,7 +129,9 @@ class _change_detection_executor:
         after_gray = cv2.cvtColor(after, cv2.COLOR_BGR2GRAY)
         (score, diff) = structural_similarity(before_gray, after_gray, full=True)
         LOGGER.info(f"structural similarity for {local_path}: {score}")
-        if score == 1:
+        if (
+            score >= 0.999999999
+        ):  # some seeming false positives with unexplained origins have similarity *very* close to 1
             return (local_path, ChangeType.UNCHANGED)
 
         diff = (diff * 255).astype("uint8")
@@ -180,6 +187,18 @@ if __name__ == "__main__":
         "after_dir", type=str, help="Name of the directory containing 'after' images"
     )
     parser.add_argument("compare_base", type=str, help="Path to the comparison directory")
+    parser.add_argument(
+        "--before_after_exclude",
+        default=[None],
+        type=str,
+        nargs=1,
+        help="Regex for filenames to exclude from before/after behaviour, where before and after images are retained in addition to change animation",
+    )
     args = vars(parser.parse_args())
     LOGGER.info(f"{__name__} called with {args}")
-    execute(args["before_dir"], args["after_dir"], args["compare_base"])
+    execute(
+        args["before_dir"],
+        args["after_dir"],
+        args["compare_base"],
+        args["before_after_exclude"][0],
+    )
