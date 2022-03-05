@@ -1,8 +1,8 @@
 from argparse import ArgumentParser
 from logging import getLogger
-from os import path, remove
+from os import environ, path, remove
 from pathlib import Path
-from re import search
+from re import IGNORECASE, match, search
 from typing import Final  # type: ignore
 
 from PIL import Image
@@ -106,6 +106,12 @@ def execute(  # noqa: C901
             thumbnail.save(path.join(output_dir, f"{layout_name}-thumbnail.png"))
             if clean:
                 remove(png_path)
+
+        if match(
+            r"(true|yes|1)", environ.get("SHORTCUT_FOR_TESTING", "false"), IGNORECASE
+        ):
+            LOGGER.warning("exiting layout generation early for test speed")
+            break
 
     qgs.exitQgis()
 

@@ -25,6 +25,8 @@ def generate() -> None:
     with open(environ["CHANGES_3857"], "r") as f:
         changes = loads(f.read())
     for multipolygon in changes["features"]:
+        if multipolygon["geometry"] is None:
+            continue
         for polygon in multipolygon["geometry"]["coordinates"]:
             change_rect = grow_rect_for_rendering(polygon[0])
             rect_id = md5(dumps(change_rect).encode()).hexdigest()
