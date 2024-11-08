@@ -17,7 +17,7 @@ jobs:
           echo $UNIQUE_DIR > unique.dir
           echo $LOCAL_OUTPUT_DIR > local-output.dir
       - name: Retain Directory Data
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: dirs
           path: '*.dir'
